@@ -7,14 +7,12 @@ const express = require('express'),
 const app = express();
 
 const User = require('./models/user');
+const UserRoutes = require('./routes/user');
 
 //Middleware
 app.use(cors());
 app.use(express.json());
-
-app.post('/users', (req, res) => {
-  res.send('testing!');
-});
+app.use(UserRoutes);
 
 //
 if (process.env.NODE_ENV === 'production') {
