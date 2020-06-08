@@ -10,6 +10,14 @@ const User = require('./models/user');
 const UserRoutes = require('./routes/user');
 
 //Middleware
+
+// app.use((req, res) => {
+//   console.log(req.method, req.path);
+//   res
+//     .status(503)
+//     .json({ error: 'Site is down due to Maintenance, Check Back Soon Yall' });
+// });
+
 app.use(cors());
 app.use(express.json());
 app.use(UserRoutes);
