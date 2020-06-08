@@ -1,6 +1,8 @@
 const express = require('express');
 const router = new express.Router();
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth.js');
 
 const User = require('../models/user');
 
@@ -24,22 +26,34 @@ router.post('/users/login', async (req, res) => {
       req.body.email,
       req.body.password
     );
-    res.send(user);
+    const token = await user.generateAuthToken();
+    res.send({ user, token });
   } catch (e) {
     res.status(400).send(e);
   }
 });
 
-// Get all users //
+// Get current user //
 
-router.get('/users', async (req, res) => {
+router.get('/users/me', auth, async (req, res) => {
   try {
-    const users = await User.find({});
-    res.send(users);
+    res.send(req.user);
   } catch (e) {
     res.status(500).send();
   }
 });
+
+// Get all users
+
+router.get('/users', (req,res) => {
+  User.find({})
+  .then(users => {
+    res.send(users);
+  })
+  .catch(e => {
+    res.send(e);
+  })
+})
 
 // Get a specific user //
 
@@ -82,6 +96,19 @@ router.patch('/users/:id', async (req, res) => {
     res.send(user);
   } catch (e) {
     res.status(400).send(e);
+  }
+});
+
+// Logout a user
+router.post('/users/logout', auth, async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.token;
+    });
+    await req.user.save();
+    res.send({message: "Logged out"});
+  } catch (e) {
+    req.status(500).send();
   }
 });
 
