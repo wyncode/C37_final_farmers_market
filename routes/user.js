@@ -45,15 +45,15 @@ router.get('/users/me', auth, async (req, res) => {
 
 // Get all users
 
-router.get('/users', (req,res) => {
+router.get('/users', (req, res) => {
   User.find({})
-  .then(users => {
-    res.send(users);
-  })
-  .catch(e => {
-    res.send(e);
-  })
-})
+    .then((users) => {
+      res.send(users);
+    })
+    .catch((e) => {
+      res.send(e);
+    });
+});
 
 // Get a specific user //
 
@@ -106,20 +106,28 @@ router.post('/users/logout', auth, async (req, res) => {
       return token.token !== req.token;
     });
     await req.user.save();
-    res.send({message: "Logged out"});
+    res.send({ message: 'Logged out' });
   } catch (e) {
     req.status(500).send();
   }
 });
 
-// Delete a User //
-router.delete('/users/:id', async (req, res) => {
+//Logout All Users
+router.post('/users/logoutAll', auth, async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) {
-      res.status(404).send();
-    }
-    res.send(user);
+    req.user.tokens = [];
+    await req.user.save();
+    res.send();
+  } catch (e) {
+    res.status(500).send();
+  }
+});
+
+// Delete a User //
+router.delete('/users/me', auth, async (req, res) => {
+  try {
+    await req.user.remove();
+    res.send(req.user);
   } catch (e) {
     res.status(500).send();
   }
