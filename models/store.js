@@ -19,7 +19,7 @@ const storeSchema = new mongoose.Schema({
     required: false
   },
   orders: {
-    type: Object
+    type: Array
   },
   products: {
     type: Array

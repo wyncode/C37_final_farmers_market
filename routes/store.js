@@ -31,7 +31,7 @@ router.get('/stores', async (req, res) => {
 });
 // update a store
 
-router.patch('/stores/:id', async (req, res) => {
+router.patch('/stores/:id', auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = [
     'storeName',
@@ -47,11 +47,12 @@ router.patch('/stores/:id', async (req, res) => {
     return res.status(400).send({ error: 'Invalid updates!' });
   }
   try {
-    const store = await Store.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
+    const store = await Store.findOne({
+      _id: req.params.id,
+      owner: req.user._id
     });
-    if (!user.farmer) {
+    if (!store) {
+      console.log('oopsies');
       res.status(404).send({ message: 'Must be a farmer to update' });
     }
     updates.forEach((update) => {
@@ -61,14 +62,15 @@ router.patch('/stores/:id', async (req, res) => {
 
     res.send(store);
   } catch (e) {
+    console.log('oopsies x2');
     res.status(400).send(e);
   }
 });
 
 // add a store
 
-router.post('/stores', async (req, res) => {
-  const store = new Store(req.body);
+router.post('/stores', auth, async (req, res) => {
+  const store = new Store({ ...req.body, owner: req.user._id });
   try {
     await store.save();
     res.status(201).send(store);

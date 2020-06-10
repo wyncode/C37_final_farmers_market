@@ -37,9 +37,6 @@ const userSchema = new mongoose.Schema({
   farmer: {
     type: Boolean
   },
-  storeName: {
-    type: mongoose.Schema.Types.ObjectId
-  },
   tokens: [
     {
       token: {
