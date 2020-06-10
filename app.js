@@ -8,8 +8,10 @@ const app = express();
 
 const User = require('./models/user');
 const Store = require('./models/store');
+const Product = require('./models/product');
 const UserRoutes = require('./routes/user');
 const StoreRoutes = require('./routes/store');
+const ProductRoutes = require('./routes/product');
 
 //Middleware
 
@@ -24,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use(UserRoutes);
 app.use(StoreRoutes);
+app.use(ProductRoutes);
 
 //
 if (process.env.NODE_ENV === 'production') {

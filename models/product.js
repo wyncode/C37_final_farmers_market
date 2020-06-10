@@ -10,15 +10,14 @@ const productSchema = new mongoose.Schema({
   foodType: {
     type: String,
     enum: ['Fruit', 'Vegetable', 'Dairy', 'Meat', 'Donation'],
-    require: true
+    required: true
   },
   price: {
     type: Number,
-    required: true,
-    trim: true
+    required: true
   },
   farmerStore: {
-    type: mongoose.Types.Schema.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Store'
   },
   description: {
@@ -28,12 +27,10 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['Non-GMO', 'Organic'],
-    required: true
+    enum: ['Non-GMO', 'Organic']
   },
-  qty: {
-    type: Number,
-    required: true
+  inventory: {
+    type: Number
   }
 });
 const Product = mongoose.model('Product', productSchema);
