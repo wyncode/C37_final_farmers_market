@@ -20,6 +20,13 @@ const storeSchema = new mongoose.Schema({
   },
   orders: {
     type: Object
+  },
+  products: {
+    type: Array
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 

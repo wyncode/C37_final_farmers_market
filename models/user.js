@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
+  farmer: {
+    type: Boolean
+  },
+  storeName: {
+    type: mongoose.Schema.Types.ObjectId
+  },
   tokens: [
     {
       token: {
@@ -42,6 +48,13 @@ const userSchema = new mongoose.Schema({
       }
     }
   ]
+});
+
+// Create relation with store
+userSchema.virtual('stores', {
+  ref: 'Store',
+  localField: '_id',
+  foreignField: 'owner'
 });
 
 // Generate Auth Token
