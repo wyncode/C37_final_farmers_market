@@ -1,11 +1,25 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
-export const AppContext = createContext();
+const AppContext = createContext();
 
-export const AppContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }) => {
 
   const [user, setUser] = useState({})
   const [loggedIn, setLoggedIn] = useState(false)
+
+  const token = localStorage.getItem("token")
+
+  useEffect(() => {
+    if (token) {
+      axios.get("/users/me", {headers: {Authorization: `Bearer ${token}`}})
+      .then(({data}) => {
+        setUser(data)
+        setLoggedIn(true)
+      })
+      .catch((e) => console.log(e.message.toString()))
+    }
+  }, [token])
 
   return (
     <AppContext.Provider
@@ -17,5 +31,7 @@ export const AppContextProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+export { AppContext, AppContextProvider}
 
 
