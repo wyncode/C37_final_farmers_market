@@ -20,14 +20,13 @@ const Signup = () => {
       }
     })
       .then(({ data }) => {
-        console.log(data);
-        setUser(data);
+        setUser(data.user);
         setLoggedIn(true);
         setName('');
         setEmail('');
         setPassword('');
         localStorage.setItem('token', data.token);
-        document.querySelector('form').reset();
+        // document.querySelector('form').reset();
       })
       .catch((e) => console.log(e.message.toString()));
   };
