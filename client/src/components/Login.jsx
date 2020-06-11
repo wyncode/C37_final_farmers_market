@@ -12,13 +12,12 @@ const Login = () => {
         e.preventDefault()
         await axios({
         method: 'POST',
-        url: `http://localhost:8080/users/login`,
+        url: `/users/login`,
         data: {
             email,
             password
         }})
         .then(({data}) => {
-            console.log(data, "response")
             setUser(data.user)
             localStorage.setItem("token", data.token);
             setLoggedIn(true)
