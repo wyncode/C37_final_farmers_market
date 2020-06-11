@@ -8,7 +8,7 @@ const User = require('../models/user');
 
 // Create a user //
 
-router.post('/users/', async (req, res) => {
+router.post('/users', async (req, res) => {
   const user = new User(req.body);
   try {
     await user.save();
