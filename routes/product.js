@@ -7,8 +7,13 @@ const auth = require('../middleware/auth.js');
 
 //get a product
 
-router.get('/products', async (req, res) => {
-  res.send(req.body);
+router.get('/products', (req, res) => {
+  Product.find({})
+  .then((products) =>{
+    res.send(products)
+  } ) .catch((e) => {
+    res.send(e)
+  })
 });
 
 // Create a product //
@@ -23,21 +28,15 @@ router.post('/products', async (req, res) => {
   }
 });
 
-
-// Get current product //
-
-router.get('/products/me', auth, async (req, res) => {
-  try {
-    res.send(req.product);
-  } catch (e) {
-    res.status(500).send();
-  }
-});
+//get a product //
+// get a specific product //
+//  Update a product //
+// 
 
 // Get all products //
 
 router.get('/products', (req,res) => {
-  User.find({})
+  Product.find({})
   .then(products => {
     res.send(products);
   })
@@ -50,18 +49,14 @@ router.get('/products', (req,res) => {
 
 router.get('/products/:id', async (req, res) => {
   const _id = req.params.id;
-  if (mongoose.Types.ObjectId.isValid(_id)) {
-    try {
-      const product = await product.findById(_id);
-      if (!product) {
-        return res.status(404).send();
-      }
-      res.send(product);
-    } catch (e) {
-      res.status(500).send();
+  try {
+    const product = await Product.findOne({ _id });
+    res.send(product);
+    if (!product) {
+      return res.status(404).send();
     }
-  } else {
-    res.status(400).send('Not a valid product');
+  } catch (e) {
+    res.status(500).send();
   }
 });
 
@@ -69,7 +64,7 @@ router.get('/products/:id', async (req, res) => {
 
 router.patch('/products/:id', async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['name', 'foodType', 'price', 'farmerWho'];
+  const allowedUpdates = ['name', 'foodType', 'price', 'farmerStore', 'description', 'category', 'inventory'];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
@@ -97,7 +92,7 @@ router.delete('/products/:id', async (req, res) => {
     if (!product) {
       res.status(404).send();
     }
-    res.send(user);
+    res.send(product);
   } catch (e) {
     res.status(500).send();
   }
