@@ -33,6 +33,14 @@ const productSchema = new mongoose.Schema({
     type: Number
   }
 });
+
+productSchema.virtual('orders', {
+  ref: 'Order',
+  localField: '_id',
+  foreignField: 'products'
+});
+
+
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;

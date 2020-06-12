@@ -54,6 +54,12 @@ userSchema.virtual('stores', {
   foreignField: 'owner'
 });
 
+userSchema.virtual('orders', {
+  ref: 'Order',
+  localField: '_id',
+  foreignField: 'user'
+});
+
 // Generate Auth Token
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
