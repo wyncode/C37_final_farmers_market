@@ -2,6 +2,7 @@ const express = require('express');
 const router = new express.Router();
 const mongoose = require('mongoose');
 const Product = require('../models/product');
+const Order = require('../models/order');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth.js');
 
@@ -97,5 +98,20 @@ router.delete('/products/:id', async (req, res) => {
     res.status(500).send();
   }
 });
+
+//get specific order's products
+
+router.get('/ordersProducts/:id', auth, async (req, res) => {
+  const _id = req.params.id 
+  const order = await Order.findOne({ _id })
+    try {
+      await order
+        .populate('products')
+        .execPopulate();
+      res.send(order.products);
+    } catch (e) {
+      res.status(500).send(e.toString());
+    }
+  });
 
 module.exports = router;

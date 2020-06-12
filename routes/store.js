@@ -79,4 +79,19 @@ router.post('/stores', auth, async (req, res) => {
   }
 });
 
+//this gets the current users store
+
+router.get('/currentStore', auth, async (req, res) => {
+console.log(req.user)
+  try {
+    console.log("insdie try")
+    await req.user
+      .populate('stores')
+      .execPopulate();
+    res.send(req.user.stores);
+  } catch (e) {
+    res.status(500).send(e.toString());
+  }
+});
+
 module.exports = router;
