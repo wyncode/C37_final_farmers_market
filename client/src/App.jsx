@@ -1,5 +1,12 @@
 import React from 'react';
 import { AppContextProvider } from './context/AppContext';
+
+import './App.css';
+import Produce from './pages/produce_page'
+
+// import Login from './components/Login';
+// import Logout from './components/Logout';
+// import Signup from './components/Signup';
 import Navbar from './components/Header/Navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
