@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2.5rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  list-style-type: none;
+  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px;
+  background-color: grey;
+}

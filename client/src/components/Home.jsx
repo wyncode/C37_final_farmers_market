@@ -18,7 +18,7 @@ const Home = () => {
       ) : (
         <div>
           <Login />
-          <span>Log in to get this party started!</span>
+          <span>Log in</span>
           <Signup />
         </div>
       )}
