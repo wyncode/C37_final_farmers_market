@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Account from './components/Account';
 import Farms from './components/Farms';
-import Produce from './components/Produce';
 
 const App = () => {
   return (
