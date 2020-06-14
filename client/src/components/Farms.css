@@ -1,0 +1,11 @@
+.grid-container {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+h2 {
+  width: 300px;
+  height: 420px;
+  border: 1px solid black;
+}
