@@ -50,11 +50,11 @@ const Produce = () => {
                 />
             </Col>
             <Col lg='9'>
-                <Row>
                 {
                     selectedFarmer &&
                     <h1>{selectedFarmer.storeName}</h1>
                 }
+                <Row>
                 {displayedList && displayedList.map(item => (   
                     <Col key={item._id} lg='4'>
                         <Card  style={{width:200, height:300, margin:5, overflow: "hidden"}}>

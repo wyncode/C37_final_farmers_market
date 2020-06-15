@@ -5,6 +5,7 @@ const Store = require('../models/store');
 const auth = require('../middleware/auth');
 
 // get a specific store
+
 router.get('/stores/:id', async (req, res) => {
   const _id = req.params.id;
   try {
@@ -29,6 +30,7 @@ router.get('/stores', async (req, res) => {
       res.send(e);
     });
 });
+
 // update a store
 
 router.patch('/stores/:id', auth, async (req, res) => {
@@ -76,6 +78,21 @@ router.post('/stores', auth, async (req, res) => {
     res.status(201).send(store);
   } catch (e) {
     res.status(400).send(e);
+  }
+});
+
+// delete a store
+router.delete('/stores/:id', async (req, res) => {
+  const _id = req.params.id
+  try {
+    const store = await Store.findOne({_id})
+    await Store.deleteOne(store);
+    if (!store) {
+      res.status(404).send();
+    }
+    res.send(store);
+  } catch (e) {
+    res.status(500).send();
   }
 });
 
