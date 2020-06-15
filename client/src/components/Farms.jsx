@@ -1,44 +1,26 @@
-import React from 'react';
-import logo from '../assets/images/logo.png';
+import React, { useState } from 'react';
 import './Farms.css';
+import FarmContainer from "./FarmComponents/FarmContainer";
+import FarmRow from "./FarmComponents/FarmRow";
 
 const Farms = () => {
-  //some sort of onClick that will be attached the image,
-  // once the user clicks the image, it will change to a different div
+  const [farmNames, setFarmNames] = useState(["bobs farm", "joes farm", "rubens farm", "katie farm", "laz farm"]);
+
+  const rows = []
+  for(let i=0; i < farmNames.length; i+=2){
+    rows.push({farm1: farmNames[i], farm2:farmNames[i+1]})
+  }
+  console.log(rows)
   return (
-    <div className="grid">
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2 className="farmdiv">Joe's Organics</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2 className="farmdiv">Verde Farm</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>Arrow Farm</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>On the Vine</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>Backyard Eggs</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>Finca Fresca</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>Sisters Farm</h2>
-
-      <img src={logo} alt="farmer" width="300" height="420" />
-
-      <h2>Tropical Farm</h2>
-    </div>
+    <FarmContainer>
+     {
+       rows.map(row=>{
+         return(
+           <FarmRow farm1={row.farm1} farm2={row.farm2} />
+         )
+       })
+     }
+    </FarmContainer>
   );
 };
 
