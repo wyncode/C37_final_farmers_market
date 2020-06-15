@@ -22,7 +22,7 @@ const storeSchema = new mongoose.Schema({
   orders: {
     type: Array
   },
-  products: {
+  items: {
     type: Array
   },
   owner: {
