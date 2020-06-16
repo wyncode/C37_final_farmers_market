@@ -8,6 +8,9 @@ const AppContextProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [farmers, setFarmers] = useState([]);
   const [produceList, setProduceList] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
+
+  // setShoppingCart([...shoppingCart, item])
 
   const token = localStorage.getItem('token');
 
