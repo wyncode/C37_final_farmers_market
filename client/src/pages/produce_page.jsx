@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
 import FarmerFilter from '../components/FarmerFilter';
 import { AppContext } from '../context/AppContext';
+import FeaturedItems from '../components/FeaturedItems';
 
 const Produce = () => {
   const { farmers, produceList } = useContext(AppContext);
@@ -30,6 +31,7 @@ const Produce = () => {
 
   return (
     <Container>
+      <FeaturedItems />
       <Row>
         <Col lg="3">
           <FarmerFilter
