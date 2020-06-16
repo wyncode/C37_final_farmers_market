@@ -3,12 +3,15 @@ import { Row, Container, Col, Card } from 'react-bootstrap';
 import FarmerFilter from '../components/FarmerFilter';
 import { AppContext } from '../context/AppContext';
 import FeaturedItems from '../components/FeaturedItems';
+import { useHistory } from 'react-router-dom'
 
 const Produce = () => {
   const { farmers, produceList } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
+
+  const history = useHistory()
 
   const noImg =
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
@@ -61,6 +64,7 @@ const Produce = () => {
                       src={noImg}
                       alt={item.description}
                       width={200}
+                      onClick={() => history.push(`/produce/${item._id}`)}
                     />
                     <Card.Body>
                       <Card.Title>{item.name}</Card.Title>
