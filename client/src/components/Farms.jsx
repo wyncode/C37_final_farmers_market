@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../context/AppContext'
 import './Farms.css';
 import FarmRow from './FarmComponents/FarmRow';
 import Navbar from "../components/Header/Navbar"
 
 const Farms = () => {
-  const [farmNames, setFarmNames] = useState([
-    'bobs farm',
-    'joes farm',
-    'rubens farm',
-    'katie farm',
-    'laz farm'
-  ]);
+  const { farmers } = useContext(AppContext)
+  const [farmNames, setFarmNames] = useState([]);
+
+  useEffect(() => {
+    farmers && farmers.map(farmer =>  setFarmNames(farmer.storeName))
+  },[])
+
+
+
+  console.log(farmNames)
+  
 
   const rows = [];
-  for (let i = 0; i < farmNames.length; i += 2) {
+
+
+  for (let i = 0; i < farmers.length; i += 2) {
     rows.push({ farm1: farmNames[i], farm2: farmNames[i + 1] });
   }
-  console.log(rows);
+  
+  // console.log(rows);
   return (
     <>
     <Navbar />
     <div className="farm-container">
       {rows.map((row) => {
-        return <FarmRow farm1={row.farm1} farm2={row.farm2} />;
+        return <FarmRow farm1={farmNames} farm2={farmNames} />;
       })}
     </div>
     </>
