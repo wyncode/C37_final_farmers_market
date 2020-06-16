@@ -34,8 +34,38 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
+  streetAddress: {
+    type: String,
+    required: true
+  },
+  buildingApt: {
+    type: String,
+    required: false
+  },
+  city: {
+    type: String,
+    required: true
+  },
+  state: {
+    type: String,
+    required: true
+  },
+  zipcode: {
+    type: String,
+    required: true,
+    validate(value) {
+      if (value.length !== 5) {
+        throw new Error("Zipcode must be 5 numbers");
+      }
+    }
+  },
+  phone: {
+    type: String,
+    required: false
+  },
   farmer: {
-    type: Boolean
+    type: Boolean,
+    required: true
   },
   tokens: [
     {
