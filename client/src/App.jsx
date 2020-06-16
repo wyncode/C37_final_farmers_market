@@ -2,7 +2,6 @@ import React from 'react';
 import { AppContextProvider } from './context/AppContext';
 import './App.css';
 import Produce from './pages/ProducePage';
-import Navbar from './components/Header/Navbar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Account from './components/Account';
@@ -13,7 +12,6 @@ const App = () => {
   return (
     <Router>
       <AppContextProvider>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/produce" component={Produce} />

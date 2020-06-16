@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Farms.css';
 import FarmRow from './FarmComponents/FarmRow';
+import Navbar from "../components/Header/Navbar"
 
 const Farms = () => {
   const [farmNames, setFarmNames] = useState([
@@ -17,11 +18,14 @@ const Farms = () => {
   }
   console.log(rows);
   return (
+    <>
+    <Navbar />
     <div className="farm-container">
       {rows.map((row) => {
         return <FarmRow farm1={row.farm1} farm2={row.farm2} />;
       })}
     </div>
+    </>
   );
 };
 

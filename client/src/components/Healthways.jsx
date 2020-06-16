@@ -1,16 +1,21 @@
 import React from 'react';
 import womanFarmer from '../assets/images/woman_farmer.jpg';
+import "./Healthways.css"
+import Navbar from "./Header/Navbar"
+
 const Healthyways = () => {
   console.log('test');
   return (
-    <div>
-      <h3 className="subtitle">Healthy habits make for Health Living</h3>
-      <img src={womanFarmer} alt="woman farmer" width="279"></img>
-      <p>
-        <b>Quality Products</b>
-        <b>Support a High Energy Lifestyle</b>
-      </p>
-      <button>Healthy Ways</button>
+    <div className="healthways-hero">
+      <Navbar />
+      <div className="hero-left">
+        <h1>Local, seasonal, fresh.</h1>
+        <h2>Your one-stop access to farmers and food-artisans in the 305.</h2>
+        <button>Shop Produce</button>
+      </div>
+
+      
+      
     </div>
     )
   }; 
