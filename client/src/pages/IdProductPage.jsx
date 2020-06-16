@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import './IdProduce.css'
+import Navbar from "../components/Header/Navbar"
 
 const IdProduct = () => {
 
@@ -18,6 +19,7 @@ const IdProduct = () => {
 
     return (
         <div>
+            <Navbar />
             <button onClick={() => history.push(`/produce`)}>
                 Produce</button> {product && product.name}
             <div id="layoutProduct">
@@ -26,7 +28,7 @@ const IdProduct = () => {
             <h1>{product && product.name}</h1>
             <h3>${product && product.price}</h3>
             <h3>{product && product.description}</h3>
-            <h3>Contributing Farm >>> Links {product && product.farmerStore}</h3>
+            <h3>Contributing Farm &gt;&gt;&gt; Links {product && product.farmerStore}</h3>
             </div>
             </div>
         </div>

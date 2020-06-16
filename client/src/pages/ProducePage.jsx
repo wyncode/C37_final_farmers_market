@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
 import FarmerFilter from '../components/FarmerFilter';
+import Navbar from "../components/Header/Navbar"
 import { AppContext } from '../context/AppContext';
 import FeaturedItems from '../components/FeaturedItems';
 import { useHistory } from 'react-router-dom'
@@ -34,6 +35,7 @@ const Produce = () => {
 
   return (
     <Container>
+      <Navbar />
       <FeaturedItems />
       <Row>
         <Col lg="3">
