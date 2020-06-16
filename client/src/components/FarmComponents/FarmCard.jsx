@@ -14,7 +14,7 @@ const FarmCard = (props) => {
       <div className="background-image" />
       <div className="info">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h2>{props.name}</h2>
+          <h2>{props.farm.storeName}</h2>
           <h2>{props.currentSelection === 'closed' ? null : 'X'}</h2>
         </div>
       </div>
