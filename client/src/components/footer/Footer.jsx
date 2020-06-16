@@ -6,15 +6,15 @@ const Footer = () => {
     <div className="footer">
         <div className="footer-social footer-section">
             <a>
-              <i class="fab fa-instagram"></i>
+              <i className="fab fa-instagram"></i>
             </a>
 
             <a>
-              <i class="fab fa-facebook-f"></i>
+              <i className="fab fa-facebook-f"></i>
             </a>
 
             <a>
-              <i class="fab fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </a>
           </div>
           <ul className="footer-links footer-section">
