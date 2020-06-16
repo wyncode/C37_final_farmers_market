@@ -56,5 +56,20 @@ router.get('/userOrders', auth, async (req, res) => {
       }
     });
 
+// delete an order
+router.delete('/orders/:id', async (req, res) => {
+    const _id = req.params.id
+    try {
+      const order = await Order.findOne({_id})
+      await Order.deleteOne(order);
+      if (!order) {
+        res.status(404).send();
+      }
+      res.send(order);
+    } catch (e) {
+      res.status(500).send();
+    }
+  });
+
 module.exports = router
 
