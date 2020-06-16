@@ -17,6 +17,7 @@ const productSchema = new mongoose.Schema({
     required: true
   },
   farmerStore: {
+    required: true,
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Store'
   },
@@ -39,7 +40,6 @@ productSchema.virtual('orders', {
   localField: '_id',
   foreignField: 'products'
 });
-
 
 const Product = mongoose.model('Product', productSchema);
 

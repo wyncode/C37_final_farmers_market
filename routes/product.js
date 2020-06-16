@@ -10,11 +10,12 @@ const auth = require('../middleware/auth.js');
 
 router.get('/products', (req, res) => {
   Product.find({})
-  .then((products) =>{
-    res.send(products)
-  } ) .catch((e) => {
-    res.send(e)
-  })
+    .then((products) => {
+      res.send(products);
+    })
+    .catch((e) => {
+      res.send(e);
+    });
 });
 
 // Create a product //
@@ -32,19 +33,19 @@ router.post('/products', async (req, res) => {
 //get a product //
 // get a specific product //
 //  Update a product //
-// 
+//
 
 // Get all products //
 
-router.get('/products', (req,res) => {
+router.get('/products', (req, res) => {
   Product.find({})
-  .then(products => {
-    res.send(products);
-  })
-  .catch(e => {
-    res.send(e);
-  })
-})
+    .then((products) => {
+      res.send(products);
+    })
+    .catch((e) => {
+      res.send(e);
+    });
+});
 
 // Get a specific product //
 
@@ -65,7 +66,15 @@ router.get('/products/:id', async (req, res) => {
 
 router.patch('/products/:id', async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['name', 'foodType', 'price', 'farmerStore', 'description', 'category', 'inventory'];
+  const allowedUpdates = [
+    'name',
+    'foodType',
+    'price',
+    'farmerStore',
+    'description',
+    'category',
+    'inventory'
+  ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
@@ -102,17 +111,14 @@ router.delete('/products/:id', async (req, res) => {
 //get specific order's products
 
 router.get('/ordersProducts/:id', auth, async (req, res) => {
-  const _id = req.params.id 
-  const order = await Order.findOne({ _id })
-    try {
-      await order
-        .populate('products')
-        .execPopulate();
-      res.send(order.products);
-    } catch (e) {
-      res.status(500).send(e.toString());
-    }
-  });
-
+  const _id = req.params.id;
+  const order = await Order.findOne({ _id });
+  try {
+    await order.populate('products').execPopulate();
+    res.send(order.products);
+  } catch (e) {
+    res.status(500).send(e.toString());
+  }
+});
 
 module.exports = router;

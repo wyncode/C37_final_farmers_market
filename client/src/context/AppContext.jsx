@@ -6,6 +6,8 @@ const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [farmers, setFarmers] = useState([]);
+  const [produceList, setProduceList] = useState([]);
 
   const token = localStorage.getItem('token');
 
@@ -21,13 +23,43 @@ const AppContextProvider = ({ children }) => {
     }
   }, [token]);
 
+  useEffect(() => {
+    const getProducts = async () => {
+      await axios({
+        method: 'GET',
+        url: `/products`
+      })
+        .then(({ data }) => {
+          setProduceList(data);
+        })
+        .catch((e) => console.log(e.message.toString()));
+    };
+    getProducts();
+
+    const getStores = async () => {
+      await axios({
+        method: 'GET',
+        url: `/stores`
+      })
+        .then(({ data }) => {
+          setFarmers(data);
+        })
+        .catch((e) => console.log(e.message.toString()));
+    };
+    getStores();
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
         user,
         setUser,
         loggedIn,
-        setLoggedIn
+        setLoggedIn,
+        farmers,
+        setFarmers,
+        produceList,
+        setProduceList
       }}
     >
       {children}
