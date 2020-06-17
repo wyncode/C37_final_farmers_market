@@ -29,6 +29,7 @@
 
 .fab{
     font-size: 32px !important;
+    color: black;
 }
 
 .fab:hover{
@@ -41,4 +42,9 @@ ul{
     list-style: none;
     padding: 10px;
     margin: -60px;
+}
+
+i{
+    color: none;
+    background: none;
 }
