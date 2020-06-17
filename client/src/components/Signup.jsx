@@ -7,6 +7,11 @@ const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [apt, setApt] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const signUp = async (name, email, password, e) => {
     e.preventDefault();
@@ -33,8 +38,12 @@ const Signup = () => {
 
   return (
     <div>
-      <form onSubmit={(e) => signUp(name, email, password, e)}>
-        <h1>Sign Up or DIE!</h1>
+      <form
+        onSubmit={(e) =>
+          signUp(name, email, password, address, city, zipcode, e)
+        }
+      >
+        <h1>Sign Up</h1>
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -68,6 +77,63 @@ const Signup = () => {
             placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="phoneNumber">Phone Number (optional)</label>
+          <input
+            type="phoneNumber"
+            name="phoneNumber"
+            id="phoneNumber"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="address">Street address*</label>
+          <input
+            type="street address"
+            name="street address"
+            id="street address"
+            placeholder="Enter Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="city">City*</label>
+          <input
+            type="city"
+            name="city"
+            id="city"
+            placeholder="Enter City"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="bldg">Bldg/Apt(optional)</label>
+          <input
+            type="apt"
+            name="apt"
+            id="apt"
+            placeholder="apt"
+            value={apt}
+            onChange={(e) => setApt(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="zipcode">Zip code*</label>
+          <input
+            type="zipcode"
+            name="zipcode"
+            id="zipcode"
+            placeholder="Zip Code"
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
             required
           />
         </div>

@@ -6,6 +6,8 @@ import { Card, Button } from 'react-bootstrap';
 const FeaturedItems = () => {
   const { produceList } = useContext(AppContext);
 
+  console.log(produceList);
+
   const featuredItem = produceList.map((item) => item.name);
 
   return (

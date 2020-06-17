@@ -1,0 +1,26 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.loveus {
+  text-align: center;
+  margin: 50px;
+}
+
+.loveflex {
+  display: flex;
+}
+button.meetfarmers {
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #cc5547;
+  color: #cc5547;
+  padding: 12px;
+  font-size: 30px;
+  height: 74px;
+  width: 342px;
+}
+
+img {
+  object-fit: contain;
+}

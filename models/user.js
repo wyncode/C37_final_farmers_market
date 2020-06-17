@@ -46,16 +46,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  state: {
-    type: String,
-    required: true
-  },
   zipcode: {
     type: String,
     required: true,
     validate(value) {
       if (value.length !== 5) {
-        throw new Error("Zipcode must be 5 numbers");
+        throw new Error('Zipcode must be 5 numbers');
       }
     }
   },

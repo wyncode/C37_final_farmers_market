@@ -20,7 +20,6 @@ const App = () => {
           <Route exact path="/farms" component={Farms} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/cart" component={Cart} />
-          {/* <Home /> */}
         </Switch>
       </AppContextProvider>
     </Router>
