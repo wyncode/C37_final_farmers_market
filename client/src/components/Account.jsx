@@ -3,12 +3,14 @@ import { AppContext } from '../context/AppContext';
 import Login from './Login';
 import Logout from './Logout';
 import Signup from './Signup';
+import Navbar from './Header/Navbar';
 
 const Account = () => {
   const { user, loggedIn } = useContext(AppContext);
 
   return (
     <div>
+      <Navbar />
       {loggedIn ? (
         <div>
           {user.name}

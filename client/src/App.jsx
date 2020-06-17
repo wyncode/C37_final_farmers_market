@@ -9,6 +9,7 @@ import Farms from './components/Farms';
 import SingleFarm from './components/FarmComponents/SingleFarm'
 import IdProduct from './pages/IdProductPage';
 import Checkout from './components/Checkout';
+import Help from './components/Help';
 
 const App = () => {
   return (
@@ -19,7 +20,10 @@ const App = () => {
           <Route exact path="/produce" component={Produce} />
           <Route exact path="/produce/:id" component={IdProduct} />
           <Route exact path="/farms" component={Farms} />
+          <Route exact path="/help" component={Help} />
+
           <Route exact path="/farms/:id" component={SingleFarm} />
+          <Route exact path="/help" component={Help} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/checkout" component={Checkout} />
         </Switch>
