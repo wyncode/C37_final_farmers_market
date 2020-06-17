@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import {AppContext} from "../../context/AppContext"
 
-const Navbar = () => (
+const Navbar = () => {
+  const {shoppingCart} = useContext(AppContext)
+  return(
   <div>
     <header className="navbar">
       <div className="navbar-left">
@@ -30,11 +33,13 @@ const Navbar = () => (
             <div className="navbar__item">Account</div>
           </Link>
           <Link to="/checkout">
-            <div className="navbar__item">Cart</div>
+            <div className="navbar__item">Cart<span>{shoppingCart.length}</span></div>
           </Link>
         </div>
       </div>
     </header>
   </div>
-);
+  )
+}
+;
 export default Navbar;
