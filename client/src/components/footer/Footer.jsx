@@ -5,15 +5,15 @@ const Footer = () => {
   return (
     <div className="footer">
         <div className="footer-social footer-section">
-            <a>
+            <a href="http://www.instagram.com">
               <i className="fab fa-instagram"></i>
             </a>
 
-            <a>
+            <a href="http://www.facebook.com">
               <i className="fab fa-facebook-f"></i>
             </a>
 
-            <a>
+            <a href="http://www.twitter.com">
               <i className="fab fa-twitter"></i>
             </a>
           </div>
