@@ -48,16 +48,16 @@ const CheckoutOne = () => {
       .catch((e) => console.log(e.message.toString()));
   };
 
-  //   const sendOrder = async (e) => {
-  //     await axios({
-  //       method: 'POST',
-  //       url: `/orders`,
-  //       data: {
-  //         orderNumber,
-  //         user
-  //       }
-  //     });
-  //   };
+  // const sendOrder = async (e) => {
+  //   await axios({
+  //     method: 'POST',
+  //     url: `/orders`,
+  //     data: {
+  //       orderNumber,
+  //       user
+  //     }
+  //   });
+  // };
 
   return (
     <div>
