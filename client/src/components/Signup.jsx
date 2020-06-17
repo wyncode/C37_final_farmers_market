@@ -34,7 +34,7 @@ const Signup = () => {
   return (
     <div>
       <form onSubmit={(e) => signUp(name, email, password, e)}>
-        <h1>Sign Up or DIE!</h1>
+        <h1>Sign Up</h1>
         <div>
           <label htmlFor="name">Name:</label>
           <input

@@ -31,7 +31,8 @@ const Login = () => {
 
   return (
     <>
-      <h1>One click is all it takes...</h1>
+      <h1>Welcome to The Market!</h1>
+      <h1>Sign in below</h1>
       <form onSubmit={(e) => logIn(email, password, e)}>
         <input
           type="email"

@@ -1,0 +1,9 @@
+.hide {
+  display: none;
+}
+
+.payment-cycle {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+}

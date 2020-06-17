@@ -1,9 +1,11 @@
 import React from 'react';
-import womanFarmer from '../assets/images/woman_farmer.jpg';
-import "./Healthways.css"
-import Navbar from "./Header/Navbar"
+import './Healthways.css';
+import Navbar from './Header/Navbar';
+import { useHistory } from 'react-router-dom';
 
 const Healthyways = () => {
+  const history = useHistory();
+
   console.log('test');
   return (
     <div className="healthways-hero">
@@ -11,12 +13,9 @@ const Healthyways = () => {
       <div className="hero-left">
         <h1>Local, seasonal, fresh.</h1>
         <h2>Your one-stop access to farmers and food-artisans in the 305.</h2>
-        <button>Shop Produce</button>
+        <button onClick={() => history.push(`./produce`)}>Shop Produce</button>
       </div>
-
-      
-      
     </div>
-    )
-  }; 
-  export default Healthyways;
+  );
+};
+export default Healthyways;
