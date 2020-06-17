@@ -7,7 +7,7 @@ import Home from './components/Home';
 import Account from './components/Account';
 import Farms from './components/Farms';
 import IdProduct from './pages/IdProductPage';
-import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
           <Route exact path="/produce/:id" component={IdProduct} />
           <Route exact path="/farms" component={Farms} />
           <Route exact path="/account" component={Account} />
-          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/checkout" component={Checkout} />
         </Switch>
       </AppContextProvider>
     </Router>

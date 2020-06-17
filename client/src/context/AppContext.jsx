@@ -62,7 +62,9 @@ const AppContextProvider = ({ children }) => {
         farmers,
         setFarmers,
         produceList,
-        setProduceList
+        setProduceList,
+        shoppingCart,
+        setShoppingCart
       }}
     >
       {children}

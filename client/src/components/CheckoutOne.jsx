@@ -4,7 +4,7 @@ import { AppContext } from '../context/AppContext';
 import './Cart.css';
 
 const CheckoutOne = () => {
-  const { setUser, setLoggedIn } = useContext(AppContext);
+  const { setUser, setLoggedIn, shoppingCart } = useContext(AppContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -48,16 +48,20 @@ const CheckoutOne = () => {
       .catch((e) => console.log(e.message.toString()));
   };
 
-  // const sendOrder = async (e) => {
-  //   await axios({
-  //     method: 'POST',
-  //     url: `/orders`,
-  //     data: {
-  //       orderNumber,
-  //       user
-  //     }
-  //   });
-  // };
+  const sendOrder = async (e) => {
+    const prodIds = shoppingCart.map((id) => shoppingCart._id);
+    const token = localStorage.getItem('token');
+    await axios({
+      method: 'POST',
+      url: `/orders`,
+      headers: { Authorization: `Bearer ${token}` },
+      data: {
+        products: prodIds
+      }
+    }).then(({ data }) => {
+      console.log(data);
+    });
+  };
 
   return (
     <div>
@@ -212,7 +216,9 @@ const CheckoutOne = () => {
             required
           />
         </div>
-        <button type="submit">Checkout</button>
+        <button type="submit" onClick={sendOrder}>
+          Pay Now
+        </button>
       </form>
     </div>
   );
