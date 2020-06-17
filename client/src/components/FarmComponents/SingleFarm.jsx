@@ -1,21 +1,39 @@
-import React from 'react';
-import Breadcrumb from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-import Card from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Breadcrumb, Card, Button, Container, Col, Row } from 'react-bootstrap';
+import { useHistory, useParams } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
+import Navbar from '../Header/Navbar'
+import Footer from '../footer/Footer'
+import '../Farms.css';
 
-const Farm = () => {
+
+const SingleFarm = () => {
+
   const history = useHistory();
+  const { id } = useParams()
+  const { farmers, produceList } = useContext(AppContext);
+
+  const farm = farmers.find(farm => farm._id === id)
+
+  const newProduceList = produceList.filter(item => {
+    return item.farmerStore === id
+  } )
+
+  const noImg ='https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
+  const farmImg ='https://www.vhv.rs/dpng/d/226-2261166_farm-cartoon-png-transparent-png.png';
+
 
   return (
     <div>
+    <Navbar />
       <Breadcrumb>
-        <Breadcrumb.Item href="#">Farms</Breadcrumb.Item>
-        <Breadcrumb.Item active>Farmer Poo</Breadcrumb.Item>
+        <Breadcrumb.Item onClick={() => history.push(`/farms`)}>Farms</Breadcrumb.Item>
+        <Breadcrumb.Item active>{farm && farm.storeName}</Breadcrumb.Item>
       </Breadcrumb>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="left" src="holder.js/100px180" />
+        <Card.Img variant="left" src={farmImg} />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{farm && farm.storeName}</Card.Title>
           <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -23,8 +41,31 @@ const Farm = () => {
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
+      <Container>
+        <Row>
+            {newProduceList && newProduceList.map(item => (
+                <Col lg='4'>
+                    <Card key={item.id} style={{width:200, height:300, margin:5, overflow: "hidden"}}>
+                        <Card.Img
+                            variant="top"
+                            src={noImg}
+                            alt={item.description}
+                            width={200}
+                            onClick={() => history.push(`/produce/${item._id}`)}
+                        />
+                        <Card.Body>
+                            <Card.Title>{item.name}</Card.Title>
+                            <Card.Text>${item.price}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                )
+            )}
+        </Row>
+        </Container>
+      <Footer />
     </div>
   );
 };
 
-export default Farm;
+export default SingleFarm;

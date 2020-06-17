@@ -37,6 +37,27 @@
   background-color: gray;
 }
 
+.addInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
 .start {
   justify-content: flex-start;
 }
+
+.link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: green
+}
+
+/* #farmImage {
+  padding: 75px;
+  max-width: 100%;
+  height: auto;
+} */
