@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
 import FarmerFilter from '../components/FarmerFilter';
-import Navbar from "../components/Header/Navbar"
+import Navbar from '../components/Header/Navbar';
 import { AppContext } from '../context/AppContext';
 import FeaturedItems from '../components/FeaturedItems';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 const Produce = () => {
-  const { farmers, produceList } = useContext(AppContext);
+  const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(
+    AppContext
+  );
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
 
-  const history = useHistory()
+  const history = useHistory();
 
   const noImg =
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
@@ -72,6 +74,11 @@ const Produce = () => {
                       <Card.Title>{item.name}</Card.Title>
                       <Card.Text>${item.price}</Card.Text>
                     </Card.Body>
+                    <button
+                      onClick={() => setShoppingCart([...shoppingCart, item])}
+                    >
+                      Add to Cart
+                    </button>
                   </Card>
                 </Col>
               ))}

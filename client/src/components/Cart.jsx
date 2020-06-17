@@ -1,10 +1,15 @@
-import React from 'react';
-import CheckoutOne from './CheckoutOne';
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 
 const Cart = () => {
+  const { shoppingCart } = useContext(AppContext);
+
   return (
     <div>
-      <CheckoutOne />
+      {shoppingCart &&
+        shoppingCart.map((item) => {
+          return <div>{item.name}</div>;
+        })}
     </div>
   );
 };
