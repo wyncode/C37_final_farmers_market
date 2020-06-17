@@ -20,9 +20,9 @@ const Login = () => {
       .then(({ data }) => {
         setUser(data.user);
         localStorage.setItem('token', data.token);
-        setLoggedIn(true);
         setEmail('');
         setPassword('');
+        setLoggedIn(true);
       })
       .catch((e) => {
         console.log(e.message.toString(), 'Credentials Error');
