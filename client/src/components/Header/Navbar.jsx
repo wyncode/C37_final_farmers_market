@@ -29,7 +29,7 @@ const Navbar = () => (
           <Link to="/account">
             <div className="navbar__item">Account</div>
           </Link>
-          <Link to="/cart">
+          <Link to="/checkout">
             <div className="navbar__item">Cart</div>
           </Link>
         </div>
