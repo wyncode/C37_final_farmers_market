@@ -13,7 +13,7 @@ const Signup = () => {
   const [zipcode, setZipcode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  const signUp = async (name, email, password, e) => {
+  const signUp = async (name, email, password, address, city, zipcode, e) => {
     e.preventDefault();
     await axios({
       method: 'POST',
@@ -21,7 +21,10 @@ const Signup = () => {
       data: {
         name,
         email,
-        password
+        password,
+        address,
+        city,
+        zipcode
       }
     })
       .then(({ data }) => {
@@ -30,6 +33,7 @@ const Signup = () => {
         setName('');
         setEmail('');
         setPassword('');
+        setAddress('');
         localStorage.setItem('token', data.token);
         // document.querySelector('form').reset();
       })

@@ -34,11 +34,11 @@ const userSchema = new mongoose.Schema({
       }
     }
   },
-  streetAddress: {
+  address: {
     type: String,
     required: true
   },
-  buildingApt: {
+  apt: {
     type: String,
     required: false
   },
@@ -48,20 +48,15 @@ const userSchema = new mongoose.Schema({
   },
   zipcode: {
     type: String,
-    required: true,
-    validate(value) {
-      if (value.length !== 5) {
-        throw new Error('Zipcode must be 5 numbers');
-      }
-    }
+    required: true
   },
-  phone: {
-    type: String,
+  phoneNumber: {
+    type: Number,
     required: false
   },
   farmer: {
     type: Boolean,
-    required: true
+    required: false
   },
   tokens: [
     {
