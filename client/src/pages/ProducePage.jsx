@@ -75,7 +75,7 @@ const Produce = () => {
                       <Card.Text>${item.price}</Card.Text>
                     </Card.Body>
                     <button
-                      onClick={() => setShoppingCart([...shoppingCart, item])}
+                      onClick={() => setShoppingCart([...shoppingCart, {...item, cartCount: 1}])}
                     >
                       Add to Cart
                     </button>

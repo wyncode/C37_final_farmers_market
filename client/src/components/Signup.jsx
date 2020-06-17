@@ -35,7 +35,6 @@ const Signup = () => {
         setPassword('');
         setAddress('');
         localStorage.setItem('token', data.token);
-        // document.querySelector('form').reset();
       })
       .catch((e) => console.log(e.message.toString()));
   };

@@ -9,6 +9,7 @@ const AppContextProvider = ({ children }) => {
   const [farmers, setFarmers] = useState([]);
   const [produceList, setProduceList] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [systemMessage, setSystemMessage] = useState("")
 
   // setShoppingCart([...shoppingCart, item])
 
@@ -64,7 +65,9 @@ const AppContextProvider = ({ children }) => {
         produceList,
         setProduceList,
         shoppingCart,
-        setShoppingCart
+        setShoppingCart,
+        systemMessage,
+        setSystemMessage
       }}
     >
       {children}
