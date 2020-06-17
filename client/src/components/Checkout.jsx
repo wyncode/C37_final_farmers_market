@@ -7,6 +7,7 @@ const Checkout = () => {
     <div>
       <CheckoutOne />
       <Cart />
+      <button></button>
     </div>
   );
 };
