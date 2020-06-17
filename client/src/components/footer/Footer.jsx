@@ -13,7 +13,7 @@ const Footer = () => {
               <i className="fab fa-facebook-f"></i>
             </a>
 
-            <a href="http://www.facebook.com">
+            <a href="http://www.twitter.com">
               <i className="fab fa-twitter"></i>
             </a>
           </div>
