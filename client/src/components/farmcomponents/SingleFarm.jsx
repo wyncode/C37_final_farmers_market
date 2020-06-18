@@ -9,13 +9,29 @@ import './farms.css';
 const SingleFarm = () => {
   const history = useHistory();
   const { id } = useParams();
-  const { farmers, produceList } = useContext(AppContext);
+  const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(AppContext);
 
   const farm = farmers.find((farm) => farm._id === id);
 
   const newProduceList = produceList.filter((item) => {
     return item.farmerStore === id;
   });
+
+  const handleUpdateCart = (produce) => {
+    const currentItemInCart = shoppingCart[produce._id];
+
+    if (!currentItemInCart) {
+      return setShoppingCart({
+        ...shoppingCart,
+        [produce._id]: { count: 1, produce }
+      });
+    }
+
+    setShoppingCart({
+      ...shoppingCart,
+      [produce._id]: { count: currentItemInCart.count + 1, produce }
+    });
+  };
 
   const noImg =
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
@@ -67,6 +83,9 @@ const SingleFarm = () => {
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
                   </Card.Body>
+                  <button onClick={() => handleUpdateCart(item)}>
+                      Add to Cart
+                    </button>
                 </Card>
               </Col>
             ))}
