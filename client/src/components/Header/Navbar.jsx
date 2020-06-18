@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import LogoWhite from '../../assets/images/LogoWhite.png';
+import cart from '../../assets/images/cart.png';
 
 const Navbar = () => {
   const { shoppingCart } = useContext(AppContext);
@@ -16,7 +18,9 @@ const Navbar = () => {
         <div className="navbar-left">
           <div className="nav-items">
             <Link to="/">
-              <div className="navbar__title navbar__item">The Market</div>
+              <div className="logo-white">
+                <img src={LogoWhite} alt="logo"></img>
+              </div>
             </Link>
             <Link to="/produce">
               <div className="navbar__item_left">Produce</div>
@@ -39,7 +43,8 @@ const Navbar = () => {
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">
-                Cart<span>{cartCount || ''}</span>
+                <img src={cart}></img>
+                <span>{cartCount || ''}</span>
               </div>
             </Link>
           </div>
