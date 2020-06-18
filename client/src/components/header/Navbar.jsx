@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import LogoWhite from '../../assets/images/LogoWhite.png';
 import cart from '../../assets/images/cart.png';
+import CartDropDown from "./CartDropdown"
 
 const Navbar = () => {
   const { shoppingCart } = useContext(AppContext);
+
+  const [toggleCart, setToggleCart] = useState(false)
 
   const cartCount = Object.values(shoppingCart).reduce(
     (acc, item) => acc + item.count,
@@ -41,8 +44,8 @@ const Navbar = () => {
             <Link to="/account">
               <div className="navbar__item">Account</div>
             </Link>
-            <Link to="/checkout">
-              <div className="navbar__item">
+            <Link to="#">
+              <div onClick={()=> setToggleCart(!toggleCart)} className="navbar__item">
                 <img src={cart}></img>
                 <span>{cartCount || ''}</span>
               </div>
@@ -50,6 +53,13 @@ const Navbar = () => {
           </div>
         </div>
       </header>
+      {
+        toggleCart ? 
+        <div className="cart-dropdown">
+          <CartDropDown/>
+        </div>
+         : null
+      }
     </div>
   );
 };
