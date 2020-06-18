@@ -13,9 +13,6 @@ const Farms = () => {
     rows.push({ farm1: farmers[i], farm2: farmers[i + 1] });
   }
 
-  console.log(farmers);
-  console.log(rows, 'rows');
-
   return (
     <>
       <Navbar />
