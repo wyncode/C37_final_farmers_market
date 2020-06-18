@@ -25,3 +25,16 @@
 .navbar__item_left {
   margin-top: 25px;
 }
+
+.cart-dropdown{
+  position: absolute;
+  right: 100px;
+  width: 500px;
+  background-color: #ffdd9d;
+  color: #595454;
+  font-family: Poppins;
+  font-size: 22px;
+  letter-spacing: 0.17px;
+  line-height: 33px;
+  z-index: 100;
+}
