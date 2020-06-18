@@ -1,12 +1,16 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
-import { AppContext } from '../context/AppContext';
-import './Cart.css';
+import { AppContext } from '../../context/AppContext';
+import './cart.css';
 
 const CheckoutOne = () => {
-  const { setUser, loggedIn, setLoggedIn, shoppingCart, setSystemMessage } = useContext(
-    AppContext
-  );
+  const {
+    setUser,
+    loggedIn,
+    setLoggedIn,
+    shoppingCart,
+    setSystemMessage
+  } = useContext(AppContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -76,6 +80,9 @@ const CheckoutOne = () => {
         setEmail('');
         setPassword('');
         setAddress('');
+        setApt('');
+        setCity('');
+        setZipcode('');
         localStorage.setItem('token', data.token);
       })
       .catch((e) => console.log(e.message.toString()));
@@ -96,14 +103,21 @@ const CheckoutOne = () => {
     });
   };
 
-  const createAndOrder = async (name, email, password, address, city, zipcode, e) => {
-    await signUp(name, email, password, address, city, zipcode, e)
-    await sendOrder(e)
-    .then(()=>{
-      console.log("order placed")
-      setSystemMessage("Order placed, thank you!")
-    })
-  }
+  const createAndOrder = async (
+    name,
+    email,
+    password,
+    address,
+    city,
+    zipcode,
+    e
+  ) => {
+    await signUp(name, email, password, address, city, zipcode, e);
+    await sendOrder(e).then(() => {
+      console.log('order placed');
+      setSystemMessage('Order placed, thank you!');
+    });
+  };
 
   return (
     <div>
@@ -264,7 +278,12 @@ const CheckoutOne = () => {
                 required
               />
             </div>
-            <button type="submit" onClick={(e) => createAndOrder(name, email, password, address, city, zipcode, e)}>
+            <button
+              type="submit"
+              onClick={(e) =>
+                createAndOrder(name, email, password, address, city, zipcode, e)
+              }
+            >
               Pay Now
             </button>
           </form>

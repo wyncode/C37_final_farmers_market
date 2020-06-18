@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
-import FarmerFilter from '../components/FarmerFilter';
-import Navbar from '../components/Header/Navbar';
-import { AppContext } from '../context/AppContext';
-import FeaturedItems from '../components/FeaturedItems';
+import FarmerFilter from './FarmerFilter';
+import Navbar from '../header/Navbar';
+import { AppContext } from '../../context/AppContext';
+import FeaturedItems from './FeaturedItems';
 import { useHistory } from 'react-router-dom';
 
 const Produce = () => {
@@ -75,7 +75,12 @@ const Produce = () => {
                       <Card.Text>${item.price}</Card.Text>
                     </Card.Body>
                     <button
-                      onClick={() => setShoppingCart([...shoppingCart, {...item, cartCount: 1}])}
+                      onClick={() =>
+                        setShoppingCart([
+                          ...shoppingCart,
+                          { ...item, cartCount: 1 }
+                        ])
+                      }
                     >
                       Add to Cart
                     </button>

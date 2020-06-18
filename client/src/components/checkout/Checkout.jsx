@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import CheckoutOne from './CheckoutOne';
 import Cart from './Cart';
-import Navbar from './Header/Navbar';
-import {AppContext} from "../context/AppContext"
+import Navbar from '../header/Navbar';
+import { AppContext } from '../../context/AppContext';
 
 const Checkout = () => {
-  const {systemMessage} = useContext(AppContext)
+  const { systemMessage } = useContext(AppContext);
   return (
     <div>
       <Navbar />

@@ -1,14 +1,14 @@
 import React from 'react';
 import { AppContextProvider } from './context/AppContext';
 import './App.css';
-import Produce from './pages/ProducePage';
+import Produce from './components/produce/ProducePage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/homepage/Home';
 import Account from './components/Account';
-import Farms from './components/Farms';
-import SingleFarm from './components/FarmComponents/SingleFarm'
-import IdProduct from './pages/IdProductPage';
-import Checkout from './components/Checkout';
+import Farms from './components/farmcomponents/Farms';
+import SingleFarm from './components/farmcomponents/SingleFarm';
+import IdProduct from './components/produce/IdProductPage';
+import Checkout from './components/checkout/Checkout';
 import Help from './components/Help';
 
 const App = () => {

@@ -1,12 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
 import { Card, Button } from 'react-bootstrap';
 
 const FeaturedItems = () => {
   const { produceList } = useContext(AppContext);
-
-  console.log(produceList);
 
   const featuredItem = produceList.map((item) => item.name);
 

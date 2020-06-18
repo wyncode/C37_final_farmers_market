@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './footer/Footer';
-import Navbar from './Header/Navbar';
+import Navbar from './header/Navbar';
 import { Form, Row, Col } from 'react-bootstrap';
 
 const Help = () => {

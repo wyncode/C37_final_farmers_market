@@ -1,6 +1,6 @@
 import React from 'react';
-import './Healthways.css';
-import Navbar from './Header/Navbar';
+import './healthways.css';
+import Navbar from '../header/Navbar';
 import { useHistory } from 'react-router-dom';
 
 const Healthyways = () => {
