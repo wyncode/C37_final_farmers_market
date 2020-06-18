@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">
-                <img src={cart} style={{ height: '41px', width: '46px' }}></img>
+                <img src={cart}></img>
                 <span>{cartCount || ''}</span>
               </div>
             </Link>
