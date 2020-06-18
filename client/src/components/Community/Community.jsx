@@ -1,6 +1,6 @@
 import React from 'react';
-import comPic from '../Community/gardenkids.jpg'
-import '../Community/Community.css'
+import comPic from './gardenkids.jpg'
+import './Community.css'
 
 const Community = () => {
     return(
