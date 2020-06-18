@@ -1,0 +1,35 @@
+.theBox{
+   width: 85%;
+   height: 550px;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   background-color: #FFDD9D;
+   margin: 41px auto;
+   font-family: 'Poppins', sans-serif;
+   
+   
+}
+
+.howTitle{
+    margin-top: -25rem;
+
+text-align: center;
+margin-left: 10px;
+}
+
+.howImg{
+   display: block;
+
+margin-left: auto;
+margin-right: 120px;
+}
+
+.howButton{
+    text-align: center;
+width: 90%;
+height: 50px;
+fill-opacity: inherit;
+background-color: #FFDD9D;
+border: red 1px solid;
+}
