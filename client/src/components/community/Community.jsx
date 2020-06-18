@@ -1,20 +1,25 @@
 import React from 'react';
-import comPic from './gardenkids.jpg'
-import './Community.css'
+import comPic from './gardenkids.jpg';
+import './Community.css';
 
 const Community = () => {
-    return(
-        <div>
-            <h1>Community Connection</h1>
-<img src={comPic} className="comPicture" >
-</img>
-    We believe in healthy food accessible to all. We offer
-    educational programs & veggie boxes for families.
-
-<button type='button'>Get Involved</button>
+  return (
+    <div>
+      <h2 style={{ textAlign: 'center' }}>Community Connection</h2>
+      <div className="community-connection">
+        <img src={comPic} className="comPicture"></img>
+        <div className="small-div">
+          <p>
+            We believe in healthy food accessible to all. We offer educational
+            programs and veggie boxes for families.
+          </p>
+          <button type="button" className="community-button">
+            Get Involved
+          </button>
         </div>
-    )
-}
-
+      </div>
+    </div>
+  );
+};
 
 export default Community;

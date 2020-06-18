@@ -48,9 +48,8 @@ const Navbar = () => {
               <div
                 onClick={() => setToggleCart(!toggleCart)}
                 className="navbar__item"
-                style={{ height: '41px', width: '46px' }}
               >
-                <img src={cart}></img>
+                <img src={cart} style={{ height: '41px', width: '46px' }}></img>
                 <span>{cartCount || ''}</span>
               </div>
             </Link>

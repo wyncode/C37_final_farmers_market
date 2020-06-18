@@ -15,4 +15,25 @@
   width: 484px;
   border-radius: 12px;
   background-color: #cc5547;
+  margin-left: 8px;
+}
+
+div.order-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.count {
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  max-width: 45px;
 }
