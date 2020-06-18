@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  background: rgba(6, 6, 6, 0.31);
+  height: 120px;
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-items a {
+  padding: 0 20px;
+}
+
+.logo-white {
+  height: 72px;
+  width: 133px;
+  padding: 8px;
+}
+
+.navbar__item_left {
+  margin-top: 25px;
+}
