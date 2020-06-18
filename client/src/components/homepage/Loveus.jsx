@@ -1,9 +1,9 @@
 import React from 'react';
 import './loveus.css';
-import womanfarmer from '../assets/images/womanfarmer.png';
-import producebag from '../assets/images/producebag.png';
-import citymap from '../assets/images/citymap.png';
 import { useHistory } from 'react-router-dom';
+import producebag from '../../assets/images/producebag.png';
+import womanfarmer from '../../assets/images/womanfarmer.png';
+import citymap from '../../assets/images/citymap.png';
 
 const Loveus = () => {
   const history = useHistory();

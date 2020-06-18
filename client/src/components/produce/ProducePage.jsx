@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
-import FarmerFilter from '../components/FarmerFilter';
-import Navbar from '../components/Header/Navbar';
-import { AppContext } from '../context/AppContext';
-import FeaturedItems from '../components/FeaturedItems';
+import FarmerFilter from './FarmerFilter';
+import Navbar from '../header/Navbar';
+import { AppContext } from '../../context/AppContext';
+import FeaturedItems from './FeaturedItems';
 import { useHistory } from 'react-router-dom';
 
 const Produce = () => {
@@ -13,6 +13,22 @@ const Produce = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
+
+  const handleUpdateCart = (produce) => {
+    const currentItemInCart = shoppingCart[produce._id];
+
+    if (!currentItemInCart) {
+      return setShoppingCart({
+        ...shoppingCart,
+        [produce._id]: { count: 1, produce }
+      });
+    }
+
+    setShoppingCart({
+      ...shoppingCart,
+      [produce._id]: { count: currentItemInCart.count + 1, produce }
+    });
+  };
 
   const history = useHistory();
 
@@ -34,6 +50,8 @@ const Produce = () => {
       produce.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
+
+  console.log(shoppingCart);
 
   return (
     <Container>
@@ -74,9 +92,7 @@ const Produce = () => {
                       <Card.Title>{item.name}</Card.Title>
                       <Card.Text>${item.price}</Card.Text>
                     </Card.Body>
-                    <button
-                      onClick={() => setShoppingCart([...shoppingCart, {...item, cartCount: 1}])}
-                    >
+                    <button onClick={() => handleUpdateCart(item)}>
                       Add to Cart
                     </button>
                   </Card>

@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import Login from './Login';
 import Logout from './Logout';
 import Signup from './Signup';
-import Navbar from './Header/Navbar';
+import Navbar from './header/Navbar';
 
 const Account = () => {
   const { user, loggedIn } = useContext(AppContext);
