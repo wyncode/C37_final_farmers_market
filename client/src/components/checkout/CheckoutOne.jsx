@@ -89,7 +89,12 @@ const CheckoutOne = () => {
   };
 
   const sendOrder = async (e) => {
-    const prodIds = shoppingCart.map((item) => item._id);
+    const prodIds = Object.values(shoppingCart).reduce((acc, item) => {
+      for (let i = 0; i < item.count; i++) {
+        acc.push(item.produce.id);
+      }
+      return acc;
+    }, []);
     const token = localStorage.getItem('token');
     await axios({
       method: 'POST',

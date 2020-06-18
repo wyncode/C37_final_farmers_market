@@ -6,10 +6,13 @@ const Cart = () => {
 
   return (
     <div>
-      {shoppingCart &&
-        shoppingCart.map((item) => {
-          return <div>{item.name}</div>;
-        })}
+      {Object.values(shoppingCart).map((item) => {
+        return (
+          <div>
+            {item.produce.name} - {item.count}
+          </div>
+        );
+      })}
     </div>
   );
 };

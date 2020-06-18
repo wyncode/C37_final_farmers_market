@@ -5,6 +5,11 @@ import { AppContext } from '../../context/AppContext';
 
 const Navbar = () => {
   const { shoppingCart } = useContext(AppContext);
+
+  const cartCount = Object.values(shoppingCart).reduce(
+    (acc, item) => acc + item.count,
+    0
+  );
   return (
     <div>
       <header className="navbar">
@@ -34,7 +39,7 @@ const Navbar = () => {
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">
-                Cart<span>{shoppingCart.length}</span>
+                Cart<span>{cartCount || ''}</span>
               </div>
             </Link>
           </div>
