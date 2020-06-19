@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
+import './login.css';
 
 const Login = () => {
   const { user, setUser, setLoggedIn } = useContext(AppContext);
@@ -30,29 +31,36 @@ const Login = () => {
   };
 
   return (
-    <>
-      <h1>Welcome to The Market!</h1>
-      <h1>Sign in below</h1>
-      <form onSubmit={(e) => logIn(email, password, e)}>
-        <input
-          type="email"
-          name="email"
-          placeholder="enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="enter your secret passcode"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">LOG IN</button>({user.name ? user.name : ''})
-      </form>
-    </>
+    <div className="login">
+      <h1>Log In</h1>
+      <div className="loginFlex">
+        <form
+          onSubmit={(e) => logIn(email, password, e)}
+          className="login-form"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit" className="login-button">
+            LOG IN
+          </button>
+          ({user.name ? user.name : ''})
+        </form>
+      </div>
+    </div>
   );
 };
 

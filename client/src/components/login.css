@@ -1,0 +1,30 @@
+.login {
+  margin: 50px 50px;
+  padding: 50px;
+}
+
+.loginFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-button {
+  height: 74px;
+  width: 200px;
+  border-radius: 12px;
+  background-color: #cc5547;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  width: 300px;
+}
