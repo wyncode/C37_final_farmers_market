@@ -1,16 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { AppContext } from '../../context/AppContext';
-import FarmerFilter from './FarmerFilter';
 
-const TypeFilter = ({ chosenType, setChosenType }) => {
-  const { produceList } = useContext(AppContext);
-  const checkboxOne = document.getElementById('checkbox-1').checked;
-  const handleTypeFilter = (type, checkbox) => {
-    const checkboxOne = document.getElementById('checkbox-1').checked;
-    const checkboxTwo = document.getElementById('checkbox-2').checked;
-    const checkboxThree = document.getElementById('checkbox-3').checked;
-    const checkboxFour = document.getElementById('checkbox-4').checked;
-    const checkboxFive = document.getElementById('checkbox-5').checked;
+const TypeFilter = ({ setChosenType }) => {
+
+
+    const checkboxOne = document.getElementById('checkbox-1');
+    const checkboxTwo = document.getElementById('checkbox-2');
+    const checkboxThree = document.getElementById('checkbox-3');
+    const checkboxFour = document.getElementById('checkbox-4');
+    const checkboxFive = document.getElementById('checkbox-5');
 
     const checkArr = [
       checkboxOne,
@@ -19,8 +17,10 @@ const TypeFilter = ({ chosenType, setChosenType }) => {
       checkboxFour,
       checkboxFive
     ];
-    const isBoxChecked = checkArr.filter((box) => box !== checkbox);
-
+  
+  const handleTypeFilter = (type, checkbox) => {
+    const isBoxChecked = checkArr.filter((box) => checkbox !== box);
+    isBoxChecked.forEach(box => box.checked=false)
     console.log(isBoxChecked);
     setChosenType(type);
   };
@@ -40,7 +40,7 @@ const TypeFilter = ({ chosenType, setChosenType }) => {
       <div>
         <label htmlFor="Fruit">Fruit</label>
         <input
-          onChange={() => handleTypeFilter('Fruit')}
+          onChange={() => handleTypeFilter('Fruit', checkboxTwo)}
           type="checkbox"
           value="Fruit"
           id="checkbox-2"
@@ -49,7 +49,7 @@ const TypeFilter = ({ chosenType, setChosenType }) => {
       <div>
         <label htmlFor="Dairy">Dairy</label>
         <input
-          onChange={() => handleTypeFilter('Dairy')}
+          onChange={() => handleTypeFilter('Dairy', checkboxThree)}
           type="checkbox"
           value="Dairy"
           id="checkbox-3"
@@ -58,7 +58,7 @@ const TypeFilter = ({ chosenType, setChosenType }) => {
       <div>
         <label htmlFor="Meat">Meat</label>
         <input
-          onChange={() => handleTypeFilter('Meat')}
+          onChange={() => handleTypeFilter('Meat', checkboxFour)}
           type="checkbox"
           value="Meat"
           id="checkbox-4"
@@ -67,7 +67,7 @@ const TypeFilter = ({ chosenType, setChosenType }) => {
       <div>
         <label htmlFor="Eggs">Eggs</label>
         <input
-          onChange={() => handleTypeFilter('Eggs')}
+          onChange={() => handleTypeFilter('Eggs', checkboxFive)}
           type="checkbox"
           value="Eggs"
           id="checkbox-5"

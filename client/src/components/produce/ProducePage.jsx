@@ -14,7 +14,8 @@ const Produce = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
-  const [chosenType, setChosenType] = useState('Fruit');
+  const [chosenType, setChosenType] = useState('');
+  const [displayedList, setDisplayedList] = useState([])
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -67,30 +68,26 @@ const Produce = () => {
 
   useEffect(() => {
     if (chosenStore === '')
-      return setSelectedFarmer({ storeName: 'All Stores' });
+      return setDisplayedList(produceList);
     const currentFarmer = farmers.filter(
       (farmer) => farmer._id === chosenStore
     );
     setSelectedFarmer(currentFarmer[0]);
+    selectedFarmer && setDisplayedList(produceList.filter((produce) => {
+      return (
+        (produce.farmerStore === chosenStore || !chosenStore) &&
+        produce.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }))
   }, [chosenStore, farmers]);
 
-  const displayedList = produceList.filter((produce) => {
-    return (
-      (produce.farmerStore === chosenStore || !chosenStore) &&
-      produce.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-
-  const displayedType = produceList.filter((produce) => {
-    return produce.foodType === chosenType || !chosenType;
-  });
-
-  console.log(displayedType);
-
-  // useEffect(() => {
-  //   if (chosenType === '') return produce;
-  // });
-
+  useEffect(()=>{
+    setDisplayedList(produceList.filter((produce) => {
+      return produce.foodType === chosenType || !chosenType;
+    }));
+    console.log(displayedList)
+  }, [chosenType])
+  
   return (
     <Container>
       <NavbarTwo />
@@ -104,7 +101,7 @@ const Produce = () => {
             setChosenStore={setChosenStore}
             farmers={farmers}
           />
-          <TypeFilter chosenType={chosenType} setChosenType={setChosenType} />
+          <TypeFilter setChosenType={setChosenType} />
         </Col>
         <Col lg="9">
           {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}
