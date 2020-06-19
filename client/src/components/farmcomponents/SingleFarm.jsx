@@ -83,7 +83,7 @@ const SingleFarm = () => {
           <img src={farmImg} style={{ textAlign: 'center' }}></img>
           <div className="minifarminfo">
             <h1>{farm && farm.storeName}</h1>
-            <h1>Description about the farm</h1>
+            <h1>{farm && farm.description}</h1>
             <h1>Location: {farm && farm.address}</h1>
           </div>
         </div>

@@ -5,6 +5,7 @@ import NavbarTwo from '../header/NavbarTwo';
 import { AppContext } from '../../context/AppContext';
 import FeaturedItems from './FeaturedItems';
 import { useHistory } from 'react-router-dom';
+import TypeFilter from './TypeFilter';
 
 const Produce = () => {
   const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(
@@ -92,6 +93,7 @@ const Produce = () => {
             setChosenStore={setChosenStore}
             farmers={farmers}
           />
+          <TypeFilter />
         </Col>
         <Col lg="9">
           {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}

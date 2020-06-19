@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 const TypeFilter = () => {
-  return null;
+  const { produceList } = useContext(AppContext);
+  return (
+    <div>
+      <h1>Type</h1>
+      {produceList &&
+        produceList.map((produce) => {
+          return <h1>{produce.foodType}</h1>;
+        })}
+    </div>
+  );
 };
 
 {
