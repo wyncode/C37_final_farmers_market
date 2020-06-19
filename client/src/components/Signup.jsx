@@ -45,6 +45,7 @@ const Signup = () => {
         onSubmit={(e) =>
           signUp(name, email, password, address, city, zipcode, e)
         }
+        className="signup-form"
       >
         <h1>Sign Up</h1>
         <div>

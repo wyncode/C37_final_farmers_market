@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Product = require('./product')
+const Product = require('./product');
 
 const storeSchema = new mongoose.Schema({
   storeName: {
@@ -25,6 +25,9 @@ const storeSchema = new mongoose.Schema({
   items: {
     type: Array
   },
+  description: {
+    type: String
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
@@ -36,7 +39,7 @@ storeSchema.virtual('products', {
   ref: 'Product',
   localField: '_id',
   foreignField: 'farmerStore'
-})
+});
 
 //Delete store's products when a store is removed
 storeSchema.pre('deleteOne', async function (next) {
@@ -45,7 +48,7 @@ storeSchema.pre('deleteOne', async function (next) {
     farmerStore: store._conditions._id
   });
   next();
-})
+});
 
 const Store = mongoose.model('Store', storeSchema);
 module.exports = Store;
