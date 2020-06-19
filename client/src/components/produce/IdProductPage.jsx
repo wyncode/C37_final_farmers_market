@@ -49,8 +49,8 @@ const IdProduct = () => {
   }
   }
 
-  const currentItemCart = (product) => {
-    const currentItemInCart = shoppingCart[product._id];
+  const currentItemCart = (produce) => {
+    const currentItemInCart = shoppingCart[produce._id];
     if(currentItemInCart) {
       return true
     } else {

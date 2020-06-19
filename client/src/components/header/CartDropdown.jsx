@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
-<<<<<<< HEAD
 import './CartDropdown.css';
 import axios from 'axios';
 
@@ -39,42 +38,23 @@ const CartDrodown = () => {
         const total = item.produce.price * item.count;
         const subTotal = Object.keys(shoppingCart).length;
 
-=======
-const CartDrodown = () => {
-  const { shoppingCart } = useContext(AppContext);
-
-  return (
-    <div className="order-container">
-      <h2>Order Summary</h2>
-      {Object.values(shoppingCart).map((item) => {
->>>>>>> 4fe2100298d62c888b5214b0d6f183c77897bf71
         return (
           <div>
             <div className="item-block">
               <div>
                 <img src="" alt="product image" />
               </div>
-<<<<<<< HEAD
               <div className="item-div">
                 <p>{item.produce.name}</p>
                 <p>${item.produce.price}</p>
                 <div className="count">{item.count}</div>
               </div>
               <div>${total}</div>
-=======
-              <div>
-                <p>{item.produce.name}</p>
-                <p>${item.produce.price}</p>
-                <div>{item.count}</div>
-              </div>
-              <div>{item.produce.price * item.count}</div>
->>>>>>> 4fe2100298d62c888b5214b0d6f183c77897bf71
             </div>
             {/* {item.produce.name} - {item.count} */}
           </div>
         );
       })}
-<<<<<<< HEAD
       <div className="checkout-div">
         <p className="subtotal" style={{ textAlign: 'center' }}>
           Subtotal: $
@@ -87,11 +67,3 @@ const CartDrodown = () => {
   );
 };
 export default CartDrodown;
-=======
-      <p className="subtotal">Subtotal: total</p>
-      <button className="checkout-button">Checkout</button>
-    </div>
-  );
-};
-export default CartDrodown;
->>>>>>> 4fe2100298d62c888b5214b0d6f183c77897bf71
