@@ -9,6 +9,7 @@
 
 .loveflex {
   display: flex;
+  flex-direction: row;
 }
 button.meetfarmers {
   box-sizing: border-box;

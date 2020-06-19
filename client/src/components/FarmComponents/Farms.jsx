@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './farms.css';
 import FarmRow from './FarmRow';
-import Navbar from '../header/Navbar';
+import NavbarTwo from '../header/NavbarTwo';
 
 const Farms = () => {
   const { farmers } = useContext(AppContext);
@@ -15,7 +15,7 @@ const Farms = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarTwo />
       <div className="farm-container">
         {rows.length > 0 &&
           rows.map((row, i) => {
