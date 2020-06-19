@@ -67,19 +67,23 @@ const Produce = () => {
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
 
   useEffect(() => {
-    if (chosenStore === '')
-      return setDisplayedList(produceList);
+    if (chosenStore === '' && !searchTerm){
+      return(
+        setDisplayedList(produceList),
+        setSelectedFarmer({})
+      ) 
+    } ;
     const currentFarmer = farmers.filter(
       (farmer) => farmer._id === chosenStore
     );
     setSelectedFarmer(currentFarmer[0]);
-    selectedFarmer && setDisplayedList(produceList.filter((produce) => {
+    (selectedFarmer || searchTerm) && setDisplayedList(produceList.filter((produce) => {
       return (
         (produce.farmerStore === chosenStore || !chosenStore) &&
         produce.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }))
-  }, [chosenStore, farmers]);
+  }, [chosenStore, farmers, searchTerm]);
 
   useEffect(()=>{
     setDisplayedList(produceList.filter((produce) => {
@@ -104,7 +108,7 @@ const Produce = () => {
           <TypeFilter setChosenType={setChosenType} />
         </Col>
         <Col lg="9">
-          {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}
+          {selectedFarmer && <h1>{selectedFarmer.storeName || "All Stores"} </h1>}
           <Row>
             {displayedList &&
               displayedList.map((item) => (

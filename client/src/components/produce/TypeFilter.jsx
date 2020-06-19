@@ -2,8 +2,6 @@ import React from 'react';
 import { AppContext } from '../../context/AppContext';
 
 const TypeFilter = ({ setChosenType }) => {
-
-
     const checkboxOne = document.getElementById('checkbox-1');
     const checkboxTwo = document.getElementById('checkbox-2');
     const checkboxThree = document.getElementById('checkbox-3');
