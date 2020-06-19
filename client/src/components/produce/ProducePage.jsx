@@ -14,6 +14,7 @@ const Produce = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
+  const [chosenType, setChosenType] = useState('Fruit');
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -80,6 +81,16 @@ const Produce = () => {
     );
   });
 
+  const displayedType = produceList.filter((produce) => {
+    return produce.foodType === chosenType || !chosenType;
+  });
+
+  console.log(displayedType);
+
+  // useEffect(() => {
+  //   if (chosenType === '') return produce;
+  // });
+
   return (
     <Container>
       <NavbarTwo />
@@ -93,7 +104,7 @@ const Produce = () => {
             setChosenStore={setChosenStore}
             farmers={farmers}
           />
-          <TypeFilter />
+          <TypeFilter chosenType={chosenType} setChosenType={setChosenType} />
         </Col>
         <Col lg="9">
           {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}
