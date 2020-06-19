@@ -33,6 +33,33 @@ const SingleFarm = () => {
     });
   };
 
+  const decrementUpdateCart = (produce) => {
+    let currentItemInCart = shoppingCart[produce._id];
+  
+
+    if (currentItemInCart.count === 1) { 
+      
+      currentItemInCart= ({...shoppingCart,[produce._id]: { count: 0, produce }})
+        delete currentItemInCart[produce._id]
+        return setShoppingCart(currentItemInCart)
+      }
+  if (currentItemInCart) {
+        return setShoppingCart({
+          ...shoppingCart,
+          [produce._id]: { count: currentItemInCart.count - 1, produce }
+    })
+  }
+  }
+
+  const currentItemCart = (product) => {
+    const currentItemInCart = shoppingCart[product._id];
+    if(currentItemInCart) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const noImg =
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
   const farmImg =
@@ -67,7 +94,7 @@ const SingleFarm = () => {
                   key={item.id}
                   style={{
                     width: 200,
-                    height: 300,
+                    height: 350,
                     margin: 5,
                     overflow: 'hidden'
                   }}
@@ -86,6 +113,7 @@ const SingleFarm = () => {
                   <button onClick={() => handleUpdateCart(item)}>
                       Add to Cart
                     </button>
+                    {currentItemCart(item) ? <button onClick={() => decrementUpdateCart(item)}>Remove</button> : null}
                 </Card>
               </Col>
             ))}

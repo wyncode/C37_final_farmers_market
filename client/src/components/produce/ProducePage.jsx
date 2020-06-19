@@ -30,6 +30,33 @@ const Produce = () => {
     });
   };
 
+  const decrementUpdateCart = (produce) => {
+    let currentItemInCart = shoppingCart[produce._id];
+  
+
+    if (currentItemInCart.count === 1) { 
+      
+      currentItemInCart= ({...shoppingCart,[produce._id]: { count: 0, produce }})
+        delete currentItemInCart[produce._id]
+        return setShoppingCart(currentItemInCart)
+      }
+  if (currentItemInCart) {
+        return setShoppingCart({
+          ...shoppingCart,
+          [produce._id]: { count: currentItemInCart.count - 1, produce }
+    })
+  }
+  }
+
+  const currentItemCart = (product) => {
+    const currentItemInCart = shoppingCart[product._id];
+    if(currentItemInCart) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const history = useHistory();
 
   const noImg =
@@ -76,7 +103,7 @@ const Produce = () => {
                   <Card
                     style={{
                       width: 200,
-                      height: 300,
+                      height: 350,
                       margin: 5,
                       overflow: 'hidden'
                     }}
@@ -95,6 +122,7 @@ const Produce = () => {
                     <button onClick={() => handleUpdateCart(item)}>
                       Add to Cart
                     </button>
+                    {currentItemCart(item) ? <button onClick={() => decrementUpdateCart(item)}>Remove</button> : null}
                   </Card>
                 </Col>
               ))}
