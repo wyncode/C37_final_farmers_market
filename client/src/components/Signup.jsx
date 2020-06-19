@@ -11,9 +11,25 @@ const Signup = () => {
   const [city, setCity] = useState('');
   const [apt, setApt] = useState('');
   const [zipcode, setZipcode] = useState('');
+  const [state, setState] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
+  const [cardName, setCardName] = useState('');
+  const [expirationDate, setExpirationDate] = useState('');
 
-  const signUp = async (name, email, password, address, city, zipcode, e) => {
+  const signUp = async (
+    name,
+    email,
+    password,
+    address,
+    city,
+    state,
+    zipcode,
+    cardName,
+    cardNumber,
+    expirationDate,
+    e
+  ) => {
     e.preventDefault();
     await axios({
       method: 'POST',
@@ -24,7 +40,11 @@ const Signup = () => {
         password,
         address,
         city,
-        zipcode
+        state,
+        zipcode,
+        cardName,
+        cardNumber,
+        expirationDate
       }
     })
       .then(({ data }) => {
@@ -43,7 +63,19 @@ const Signup = () => {
     <div>
       <form
         onSubmit={(e) =>
-          signUp(name, email, password, address, city, zipcode, e)
+          signUp(
+            name,
+            email,
+            password,
+            address,
+            city,
+            state,
+            zipcode,
+            cardName,
+            cardNumber,
+            expirationDate,
+            e
+          )
         }
         className="signup-form"
       >
@@ -130,6 +162,18 @@ const Signup = () => {
           />
         </div>
         <div>
+          <label htmlFor="state">State*</label>
+          <input
+            type="state"
+            name="state"
+            id="state"
+            placeholder="State"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            required
+          />
+        </div>
+        <div>
           <label htmlFor="zipcode">Zip code*</label>
           <input
             type="zipcode"
@@ -138,6 +182,40 @@ const Signup = () => {
             placeholder="Zip Code"
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="name">Name on card</label>
+          <input
+            type="name"
+            name="name"
+            id="name"
+            value={cardName}
+            onChange={(e) => setCardName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="cardNumber">Card Number</label>
+          <input
+            type="Card Number"
+            name="Card Number"
+            id="Card Number"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="name">Expiration Date</label>
+          <input
+            type="Expiration Date"
+            name="Expiration Date"
+            id="Expiration Date"
+            placeholder="MM/YY"
+            value={expirationDate}
+            onChange={(e) => setExpirationDate(e.target.value)}
             required
           />
         </div>
