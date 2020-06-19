@@ -4,8 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 const FarmCard = (props) => {
   const history = useHistory();
-  //some sort of onClick that will be attached the image,
-  // once the user clicks the image, it will change to a different div
+
   return (
     <div
       className={
