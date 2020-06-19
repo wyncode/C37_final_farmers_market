@@ -7,7 +7,7 @@
   font-weight: 600;
   color: #000000;
   background: #ffffff;
-  width: 100%;
+  width: 100vw;
 }
 header.navbartwo {
   display: flex;
@@ -19,7 +19,9 @@ header.navbartwo {
   color: #000000;
   background: #ffffff;
   height: 120px;
-  width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .navtwo-items {
