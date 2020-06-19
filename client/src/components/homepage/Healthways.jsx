@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom';
 const Healthyways = () => {
   const history = useHistory();
 
-  console.log('test');
   return (
     <div className="healthways-hero">
       <Navbar />

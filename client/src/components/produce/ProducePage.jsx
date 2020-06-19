@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Row, Container, Col, Card } from 'react-bootstrap';
 import FarmerFilter from './FarmerFilter';
-import Navbar from '../header/Navbar';
+import NavbarTwo from '../header/NavbarTwo';
 import { AppContext } from '../../context/AppContext';
 import FeaturedItems from './FeaturedItems';
 import { useHistory } from 'react-router-dom';
+import TypeFilter from './TypeFilter';
 
 const Produce = () => {
   const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(
@@ -32,30 +33,31 @@ const Produce = () => {
 
   const decrementUpdateCart = (produce) => {
     let currentItemInCart = shoppingCart[produce._id];
-  
 
-    if (currentItemInCart.count === 1) { 
-      
-      currentItemInCart= ({...shoppingCart,[produce._id]: { count: 0, produce }})
-        delete currentItemInCart[produce._id]
-        return setShoppingCart(currentItemInCart)
-      }
-  if (currentItemInCart) {
-        return setShoppingCart({
-          ...shoppingCart,
-          [produce._id]: { count: currentItemInCart.count - 1, produce }
-    })
-  }
-  }
+    if (currentItemInCart.count === 1) {
+      currentItemInCart = {
+        ...shoppingCart,
+        [produce._id]: { count: 0, produce }
+      };
+      delete currentItemInCart[produce._id];
+      return setShoppingCart(currentItemInCart);
+    }
+    if (currentItemInCart) {
+      return setShoppingCart({
+        ...shoppingCart,
+        [produce._id]: { count: currentItemInCart.count - 1, produce }
+      });
+    }
+  };
 
   const currentItemCart = (product) => {
     const currentItemInCart = shoppingCart[product._id];
-    if(currentItemInCart) {
-      return true
+    if (currentItemInCart) {
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   const history = useHistory();
 
@@ -78,11 +80,9 @@ const Produce = () => {
     );
   });
 
-  console.log(shoppingCart);
-
   return (
     <Container>
-      <Navbar />
+      <NavbarTwo />
       <FeaturedItems />
       <Row>
         <Col lg="3">
@@ -93,6 +93,7 @@ const Produce = () => {
             setChosenStore={setChosenStore}
             farmers={farmers}
           />
+          <TypeFilter />
         </Col>
         <Col lg="9">
           {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}
@@ -122,7 +123,11 @@ const Produce = () => {
                     <button onClick={() => handleUpdateCart(item)}>
                       Add to Cart
                     </button>
-                    {currentItemCart(item) ? <button onClick={() => decrementUpdateCart(item)}>Remove</button> : null}
+                    {currentItemCart(item) ? (
+                      <button onClick={() => decrementUpdateCart(item)}>
+                        Remove
+                      </button>
+                    ) : null}
                   </Card>
                 </Col>
               ))}

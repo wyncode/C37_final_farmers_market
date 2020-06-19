@@ -43,3 +43,7 @@ margin-left: 10px;
   display: flex;
   flex-direction: row;
 }
+
+.howitwork p {
+  width: 314px;
+}
