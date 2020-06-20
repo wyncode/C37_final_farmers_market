@@ -14,6 +14,8 @@ const Produce = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [chosenStore, setChosenStore] = useState('');
   const [selectedFarmer, setSelectedFarmer] = useState({});
+  const [chosenType, setChosenType] = useState('');
+  const [displayedList, setDisplayedList] = useState([])
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -65,21 +67,31 @@ const Produce = () => {
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
 
   useEffect(() => {
-    if (chosenStore === '')
-      return setSelectedFarmer({ storeName: 'All Stores' });
+    if (chosenStore === '' && !searchTerm){
+      return(
+        setDisplayedList(produceList),
+        setSelectedFarmer({})
+      ) 
+    } ;
     const currentFarmer = farmers.filter(
       (farmer) => farmer._id === chosenStore
     );
     setSelectedFarmer(currentFarmer[0]);
-  }, [chosenStore, farmers]);
+    (selectedFarmer || searchTerm) && setDisplayedList(produceList.filter((produce) => {
+      return (
+        (produce.farmerStore === chosenStore || !chosenStore) &&
+        produce.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }))
+  }, [chosenStore, farmers, searchTerm]);
 
-  const displayedList = produceList.filter((produce) => {
-    return (
-      (produce.farmerStore === chosenStore || !chosenStore) &&
-      produce.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-
+  useEffect(()=>{
+    setDisplayedList(produceList.filter((produce) => {
+      return produce.foodType === chosenType || !chosenType;
+    }));
+    console.log(displayedList)
+  }, [chosenType])
+  
   return (
     <Container>
       <NavbarTwo />
@@ -93,10 +105,10 @@ const Produce = () => {
             setChosenStore={setChosenStore}
             farmers={farmers}
           />
-          <TypeFilter />
+          <TypeFilter setChosenType={setChosenType} />
         </Col>
         <Col lg="9">
-          {selectedFarmer && <h1>{selectedFarmer.storeName}</h1>}
+          {selectedFarmer && <h1>{selectedFarmer.storeName || "All Stores"} </h1>}
           <Row>
             {displayedList &&
               displayedList.map((item) => (
