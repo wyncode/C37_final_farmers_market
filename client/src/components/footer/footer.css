@@ -6,8 +6,10 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: #ffdd9d;
-  margin: 0 auto;
+  margin: 24px auto 0 auto;
   font-family: 'Poppins', sans-serif;
+  bottom: 0;
+
 }
 
 .footer-section {
@@ -40,8 +42,7 @@
 ul {
   text-align: center;
   list-style: none;
-  padding: 10px;
-  margin: -60px;
+  margin-bottom: 0;
 }
 
 i {
