@@ -1,12 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios'
+import { useHistory } from 'react-router-dom';
+
 
 
 const CheckoutLoggedIn = () => {
 
     const { user, setUser, shoppingCart, setShoppingCart, setSystemMessage } = useContext(AppContext);
     const [updateUser, setUpdateUser] = useState(false)
+    const history = useHistory()
 
     const [name, setName] = useState(user && user.name);
     const [address, setAddress] = useState(user && user.address);
@@ -38,6 +41,7 @@ const CheckoutLoggedIn = () => {
           });
       };
 
+
       useEffect(() => {
          setUpdateUser(false)
       }, [user])
@@ -56,8 +60,8 @@ const CheckoutLoggedIn = () => {
           headers: { Authorization: `Bearer ${token}` },
           data: { products }
         }).then(({ data }) => {
-          setSystemMessage('Order placed, thank you!')  
           setShoppingCart({})
+          history.push(`/confirm/${data._id}`)        
         });
       };
 

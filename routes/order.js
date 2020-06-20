@@ -33,11 +33,9 @@ router.get('/orders', async (req, res) => {
 // add/place an order
 
 router.post('/orders', auth, async (req, res) => {
-  console.log('HELLO');
   const order = new Order({ ...req.body, user: req.user._id });
   try {
-    console.log('WTF');
-    console.log(order);
+
     await order.save();
 
     res.status(201).send(order);
@@ -50,7 +48,6 @@ router.post('/orders', auth, async (req, res) => {
 router.get('/userOrders', auth, async (req, res) => {
   console.log(req.user);
   try {
-    console.log('insdie try');
     await req.user.populate('orders').execPopulate();
     res.send(req.user.orders);
   } catch (e) {

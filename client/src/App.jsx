@@ -10,7 +10,11 @@ import SingleFarm from './components/farmcomponents/SingleFarm';
 import IdProduct from './components/produce/IdProductPage';
 import Checkout from './components/checkout/Checkout';
 import Help from './components/Help';
+<<<<<<< HEAD
 import Signup from './components/Signup';
+=======
+import Confirmation from './components/checkout/Confirmation'
+>>>>>>> 8d70eaa... confirmation done
 
 const App = () => {
   return (
@@ -25,7 +29,11 @@ const App = () => {
           <Route exact path="/help" component={Help} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/checkout" component={Checkout} />
+<<<<<<< HEAD
           <Route exact path="/signup" component={Signup} />
+=======
+          <Route exact path="/confirm/:id" component={Confirmation} />
+>>>>>>> 8d70eaa... confirmation done
         </Switch>
       </AppContextProvider>
     </Router>
