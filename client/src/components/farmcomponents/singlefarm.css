@@ -37,3 +37,7 @@ ol.breadcrumb:active {
 :link {
   color: #464646;
 }
+
+.farmPic {
+  width: 550px;
+}

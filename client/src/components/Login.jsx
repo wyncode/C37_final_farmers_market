@@ -32,7 +32,6 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h1>Log In</h1>
       <div className="loginFlex">
         <form
           onSubmit={(e) => logIn(email, password, e)}
@@ -45,6 +44,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="login-input"
           />
           <input
             type="password"
@@ -53,11 +53,11 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="login-input"
           />
           <button type="submit" className="login-button">
             LOG IN
           </button>
-          ({user.name ? user.name : ''})
         </form>
       </div>
     </div>
