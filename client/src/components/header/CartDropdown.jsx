@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './CartDropdown.css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'
 
 const CartDrodown = () => {
   const { shoppingCart } = useContext(AppContext);
+  const history = useHistory()
 
   // const getTotal = () => {
   //   const total = Object.keys(shoppingCart).length;
@@ -59,7 +61,11 @@ const CartDrodown = () => {
         <p className="subtotal" style={{ textAlign: 'center' }}>
           Subtotal: $
         </p>
-        <button className="checkout-button" onClick={sendOrder}>
+        <button 
+        className="checkout-button" 
+        onClick={sendOrder}
+        onClick={() => history.push(`/checkout`)}
+        >
           Checkout
         </button>
       </div>
