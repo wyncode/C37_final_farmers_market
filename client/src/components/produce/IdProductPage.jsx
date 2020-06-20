@@ -154,9 +154,14 @@ const IdProduct = () => {
         <img src={cuteLogo} alt="cute logo" />
         <div className="yb-info">
           <h3>Organic because:</h3>
-          <p>It's muy delicious</p>
+          <p style={{ maxWidth: '693px', marginRight: '50px' }}>
+            Organic farming is a method of crop and livestock production that
+            involves much more than choosing not to use pesticides, fertilizers,
+            genetically modified organisms, antibiotics and growth hormones.
+          </p>
         </div>
       </div>
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Recipes</h1>
       <div className="recipe-block">
         <div>
           <img src="" alt="recipe pic" />
@@ -167,6 +172,9 @@ const IdProduct = () => {
           <Link>Recipe title</Link>
         </div>
       </div>
+      <h1 style={{ textAlign: 'center' }}>
+        Enjoy {product && product.name} with
+      </h1>
       <div className="enjoywith-block">
         <div className="lilpairflex">
           <img
