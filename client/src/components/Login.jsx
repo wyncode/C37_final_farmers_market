@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import './login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const { user, setUser, setLoggedIn } = useContext(AppContext);
@@ -32,7 +33,6 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h1>Log In</h1>
       <div className="loginFlex">
         <form
           onSubmit={(e) => logIn(email, password, e)}
@@ -45,6 +45,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="login-input"
           />
           <input
             type="password"
@@ -53,11 +54,16 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="login-input"
           />
           <button type="submit" className="login-button">
             LOG IN
           </button>
-          ({user.name ? user.name : ''})
+          <div>
+            <h3>
+              Don't have an account? <Link>Sign Up</Link>
+            </h3>
+          </div>
         </form>
       </div>
     </div>

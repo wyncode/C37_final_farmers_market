@@ -20,7 +20,11 @@ const Logout = () => {
       .catch((e) => console.log(e.message.toString()));
   };
 
-  return <button onClick={logOut}>LOG OUT</button>;
+  return (
+    <button className="logout-button" onClick={logOut}>
+      LOG OUT
+    </button>
+  );
 };
 
 export default Logout;

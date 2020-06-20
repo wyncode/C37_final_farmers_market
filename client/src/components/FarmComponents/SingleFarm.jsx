@@ -6,6 +6,8 @@ import NavbarTwo from '../header/NavbarTwo';
 import Footer from '../footer/Footer';
 import './farms.css';
 import './singlefarm.css';
+import '../produce/producepage.css';
+import farm_img from '../../assets/images/farm_img.jpg';
 
 const SingleFarm = () => {
   const history = useHistory();
@@ -80,7 +82,11 @@ const SingleFarm = () => {
       </Breadcrumb>
       <div>
         <div className="singlefarminfo">
-          <img src={farmImg} style={{ textAlign: 'center' }}></img>
+          <img
+            className="farmPic"
+            src={farm_img}
+            style={{ textAlign: 'center' }}
+          ></img>
           <div className="minifarminfo">
             <h1>{farm && farm.storeName}</h1>
             <h1>{farm && farm.description}</h1>
@@ -114,12 +120,18 @@ const SingleFarm = () => {
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
                   </Card.Body>
-                  <button onClick={() => handleUpdateCart(item)}>
-                    Add to Cart
+                  <button
+                    className="add-to-cart-button"
+                    onClick={() => handleUpdateCart(item)}
+                  >
+                    +
                   </button>
                   {currentItemCart(item) ? (
-                    <button onClick={() => decrementUpdateCart(item)}>
-                      Remove
+                    <button
+                      className="remove-from-cart-button"
+                      onClick={() => decrementUpdateCart(item)}
+                    >
+                      -
                     </button>
                   ) : null}
                 </Card>

@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
   },
   foodType: {
     type: String,
-    enum: ['Fruit', 'Vegetable', 'Dairy', 'Meat', 'Donation'],
+    enum: ['Fruit', 'Vegetable', 'Dairy', 'Meat', , 'Eggs', 'Donation'],
     required: true
   },
   price: {
@@ -28,10 +28,14 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['Non-GMO', 'Organic']
+    enum: ['Non-GMO', 'Organic', 'Local']
   },
   inventory: {
     type: Number
+  },
+  images: {
+    type: String,
+    required: false
   }
 });
 

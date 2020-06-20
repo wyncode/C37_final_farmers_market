@@ -30,11 +30,6 @@ router.post('/products', async (req, res) => {
   }
 });
 
-//get a product //
-// get a specific product //
-//  Update a product //
-//
-
 // Get all products //
 
 router.get('/products', (req, res) => {
