@@ -1,7 +1,24 @@
 .accountPage {
   padding: 20px;
   background-image: url(https://res.cloudinary.com/farmersmarket/image/upload/v1592669106/veggie_background_gszr5b.png);
+  height: 100%;
+  width: 90%;
 }
+
 .logdiv {
   font-family: 'Poppins';
+}
+
+.accountWhole {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+}
+
+.accountNav {
+  width: 90%;
 }

@@ -11,8 +11,8 @@ const Account = () => {
   const { user, loggedIn } = useContext(AppContext);
 
   return (
-    <div>
-      <NavbarTwo />
+    <div className="accountWhole">
+      <NavbarTwo className="accountNav" />
 
       <div className="accountPage">
         <h1 style={{ textAlign: 'center' }}>
