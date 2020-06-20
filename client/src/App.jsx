@@ -11,6 +11,7 @@ import IdProduct from './components/produce/IdProductPage';
 import Checkout from './components/checkout/Checkout';
 import Help from './components/Help';
 import Signup from './components/Signup';
+import Confirmation from './components/checkout/Confirmation'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route exact path="/account" component={Account} />
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/confirm/:id" component={Confirmation} />
         </Switch>
       </AppContextProvider>
     </Router>
