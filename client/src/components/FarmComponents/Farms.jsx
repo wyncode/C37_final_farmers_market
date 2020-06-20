@@ -3,6 +3,7 @@ import { AppContext } from '../../context/AppContext';
 import './farms.css';
 import FarmRow from './FarmRow';
 import NavbarTwo from '../header/NavbarTwo';
+import Footer from '../footer/Footer';
 
 const Farms = () => {
   const { farmers } = useContext(AppContext);
@@ -24,6 +25,7 @@ const Farms = () => {
             })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

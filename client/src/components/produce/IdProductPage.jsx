@@ -3,8 +3,9 @@ import { useParams, useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { Breadcrumb } from 'react-bootstrap';
 import NavbarTwo from '../header/NavbarTwo';
-import Footer from '../footer/Footer';
+
 import './IdProduce.css';
+import cuteLogo from '../../assets/images/cuteLogo.png';
 
 const IdProduct = () => {
   const history = useHistory();
@@ -15,7 +16,8 @@ const IdProduct = () => {
   const { id } = useParams();
 
   const product = produceList.find((product) => product._id === id);
-  const farm =  product && farmers.find((farm) => farm._id === product.farmerStore);
+  const farm =
+    product && farmers.find((farm) => farm._id === product.farmerStore);
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -54,8 +56,8 @@ const IdProduct = () => {
 
   const currentItemCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
-    if(currentItemInCart) {
-      return true
+    if (currentItemInCart) {
+      return true;
     } else {
       return false;
     }
@@ -73,12 +75,12 @@ const IdProduct = () => {
         </Breadcrumb.Item>
         <Breadcrumb.Item active>{product && product.name}</Breadcrumb.Item>
       </Breadcrumb>
-      <div id="layoutProduct">
+      <div className="layout-product">
         <div className="imageFlex">
-          <img id="productImage" src={prodImg} alt="" />
-          <img id="productImage" src={prodImg} alt="" />
-          <img id="productImage" src={prodImg} alt="" />
-          <img id="productImage" src={prodImg} alt="" />
+          <img className="product-image" src={prodImg} alt="" />
+          <img className="product-image" src={prodImg} alt="" />
+          <img className="product-image" src={prodImg} alt="" />
+          <img className="product-image" src={prodImg} alt="" />
         </div>
         <div id="productInfo">
           <h1>{product && product.name}</h1>
@@ -90,7 +92,7 @@ const IdProduct = () => {
           >
             Add to Cart
           </button>
-          { product && currentItemCart(product) ? (
+          {product && currentItemCart(product) ? (
             <button onClick={() => decrementUpdateCart(product)}>Remove</button>
           ) : null}
           <h3>{product && product.description}</h3>
@@ -103,7 +105,30 @@ const IdProduct = () => {
           </h3>
         </div>
       </div>
-      <Footer />
+      <div className="product-detail-block">
+        <div className="good-for-you">
+          <ul>
+            <li>Good for you because:</li>
+            <li>{product && product.name} is heart healthy.</li>
+            <li>It has minerals known to improve health!</li>
+          </ul>
+        </div>
+        <div className="health-card">
+          <ul>
+            <li className="product-title">{product && product.name}</li>
+            <li>134% of your daily vitamin C intake!</li>
+            <li>Loaded with cancer fighting antioxidents</li>
+            <li>Another cute random fact about this veggie!</li>
+          </ul>
+        </div>
+      </div>
+      <div className="yellow-block">
+        <img src={cuteLogo} alt="cute logo" />
+        <div className="yb-info">
+          <h3>Organic because:</h3>
+          <p>It's muy delicious</p>
+        </div>
+      </div>
     </div>
   );
 };
