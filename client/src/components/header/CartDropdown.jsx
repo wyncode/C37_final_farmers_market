@@ -37,23 +37,27 @@ const CartDrodown = () => {
       <h2 style={{ textAlign: 'center' }}>Order Summary</h2>
       {Object.values(shoppingCart).map((item) => {
         const total = item.produce.price * item.count;
+
         return (
           <div>
             <div className="item-block">
               <div>
                 <img src="" alt="product image" />
               </div>
+
               <div className="item-div">
                 <p>{item.produce.name}</p>
                 <p>${item.produce.price}</p>
                 <div className="count">{item.count}</div>
               </div>
               <div>${total}</div>
+
             </div>
             {/* {item.produce.name} - {item.count} */}
           </div>
         );
       })}
+
       <div className="checkout-div">
         <p className="subtotal" style={{ textAlign: 'center' }}>
           Subtotal: ${grandTotal}
@@ -66,6 +70,7 @@ const CartDrodown = () => {
           Checkout
         </button>
       </div>
+
     </div>
   );
 };

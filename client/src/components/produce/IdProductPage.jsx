@@ -7,6 +7,7 @@ import Reviews from '../../assets/images/Reviews.png';
 import './IdProduce.css';
 import cuteLogo from '../../assets/images/cuteLogo.png';
 import Footer from '../footer/Footer';
+import RandomRecipes from './RandomRecipes';
 
 const IdProduct = () => {
   const history = useHistory();
@@ -162,6 +163,9 @@ const IdProduct = () => {
         </div>
       </div>
       <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Recipes</h1>
+      <div>
+        <RandomRecipes searchTerm={product && product.name}/>
+      </div>
       <div className="recipe-block">
         <div>
           <img src="" alt="recipe pic" />
