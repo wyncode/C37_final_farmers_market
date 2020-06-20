@@ -12,11 +12,7 @@ const Home = () => {
       <Healthways />
       <Loveus />
       <HowWorks />
-
-      <Aboutus />
-
       <Community />
-
       <Footer />
     </div>
   );
