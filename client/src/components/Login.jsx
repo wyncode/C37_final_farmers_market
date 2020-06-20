@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import './login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const { user, setUser, setLoggedIn } = useContext(AppContext);
@@ -58,6 +59,11 @@ const Login = () => {
           <button type="submit" className="login-button">
             LOG IN
           </button>
+          <div>
+            <h3>
+              Don't have an account? <Link>Sign Up</Link>
+            </h3>
+          </div>
         </form>
       </div>
     </div>

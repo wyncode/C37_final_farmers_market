@@ -93,7 +93,6 @@ const Produce = () => {
         return produce.foodType === chosenType || !chosenType;
       })
     );
-    console.log(displayedList);
   }, [chosenType]);
 
   return (
@@ -130,7 +129,7 @@ const Produce = () => {
                     >
                       <Card.Img
                         variant="top"
-                        src={noImg}
+                        src={item.images}
                         alt={item.description}
                         width={200}
                         onClick={() => history.push(`/produce/${item._id}`)}

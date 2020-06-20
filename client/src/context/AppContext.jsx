@@ -34,6 +34,7 @@ const AppContextProvider = ({ children }) => {
         url: `/products`
       })
         .then(({ data }) => {
+          console.log(data, 'wtf');
           setProduceList(data);
         })
         .catch((e) => console.log(e.message.toString()));

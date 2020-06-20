@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { Breadcrumb } from 'react-bootstrap';
 import NavbarTwo from '../header/NavbarTwo';
-
+import Reviews from '../../assets/images/Reviews.png';
 import './IdProduce.css';
 import cuteLogo from '../../assets/images/cuteLogo.png';
 
@@ -128,6 +128,29 @@ const IdProduct = () => {
           <h3>Organic because:</h3>
           <p>It's muy delicious</p>
         </div>
+      </div>
+      <div className="recipe-block">
+        <div>
+          <img src="" alt="recipe pic" />
+          <Link>Recipe title</Link>
+        </div>
+        <div>
+          <img src="" alt="recipe pic" />
+          <Link>Recipe title</Link>
+        </div>
+      </div>
+      <div className="enjoywith-block">
+        <div>
+          <img src="" alt="produce" />
+          <Link>Produce title</Link>
+        </div>
+        <div>
+          <img src="" alt="produce" />
+          <Link>Produce title</Link>
+        </div>
+      </div>
+      <div>
+        <img src={Reviews} alt="reviews" />
       </div>
     </div>
   );
