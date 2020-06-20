@@ -15,7 +15,7 @@ const IdProduct = () => {
   const { id } = useParams();
 
   const product = produceList.find((product) => product._id === id);
-  const farm = farmers.find((farm) => farm._id === product.farmerStore);
+  const farm =  product && farmers.find((farm) => farm._id === product.farmerStore);
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -52,10 +52,10 @@ const IdProduct = () => {
     }
   };
 
-  const currentItemCart = (product) => {
-    const currentItemInCart = shoppingCart[product._id];
-    if (currentItemInCart) {
-      return true;
+  const currentItemCart = (produce) => {
+    const currentItemInCart = shoppingCart[produce._id];
+    if(currentItemInCart) {
+      return true
     } else {
       return false;
     }
@@ -90,7 +90,7 @@ const IdProduct = () => {
           >
             Add to Cart
           </button>
-          {currentItemCart(product) ? (
+          { product && currentItemCart(product) ? (
             <button onClick={() => decrementUpdateCart(product)}>Remove</button>
           ) : null}
           <h3>{product && product.description}</h3>

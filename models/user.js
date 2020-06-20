@@ -46,17 +46,34 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  state: {
+    type: String,
+    required: true
+  },
   zipcode: {
     type: String,
     required: true
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     required: false
+  },
+  cardName: {
+    type: String,
+    required: true
+  },
+  cardNumber: {
+    type: String,
+    required: true
+  },
+  expirationDate: {
+    type: String,
+    required: true
   },
   farmer: {
     type: Boolean,
-    required: false
+    required: false,
+    default: false
   },
   tokens: [
     {
