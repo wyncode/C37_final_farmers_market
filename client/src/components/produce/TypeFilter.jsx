@@ -19,7 +19,6 @@ const TypeFilter = ({ setChosenType }) => {
   const handleTypeFilter = (type, checkbox) => {
     const isBoxChecked = checkArr.filter((box) => checkbox !== box);
     isBoxChecked.forEach((box) => (box.checked = false));
-    console.log(isBoxChecked);
     setChosenType(type);
   };
 

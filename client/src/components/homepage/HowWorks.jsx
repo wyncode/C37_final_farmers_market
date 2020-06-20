@@ -1,8 +1,8 @@
 import React from 'react';
 import './HowWorks.css';
-import Avocado from '../assets/images/Avocado.png';
-import Farmer from '../assets/images/Farmer.png';
-import utensils from '../assets/images/utensils.png';
+import Avocado from '../../assets/images/Avocado.png';
+import Farmer from '../../assets/images/Farmer.png';
+import utensils from '../../assets/images/utensils.png';
 
 const HowWorks = () => {
   return (

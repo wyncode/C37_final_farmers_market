@@ -2,12 +2,14 @@ import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import './login.css';
-import { Link } from 'react-router-dom';
+import Footer from './footer/Footer';
+import { Link, useHistory } from 'react-router-dom';
 
 const Login = () => {
   const { user, setUser, setLoggedIn } = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const logIn = async (email, password, e) => {
     e.preventDefault();
@@ -61,7 +63,8 @@ const Login = () => {
           </button>
           <div>
             <h3>
-              Don't have an account? <Link>Sign Up</Link>
+              Don't have an account?{' '}
+              <Link onClick={() => history.push(`/signup`)}>Sign Up</Link>
             </h3>
           </div>
         </form>

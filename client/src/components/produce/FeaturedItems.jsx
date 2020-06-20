@@ -31,7 +31,7 @@ const FeaturedItems = () => {
       <div className="featured">
         {featuredItems.map((item) => (
           <Card style={{ width: '30rem' }}>
-            <Card.Img variant="top" src={logo} />
+            <Card.Img variant="top" src={item.images || logo} />
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
