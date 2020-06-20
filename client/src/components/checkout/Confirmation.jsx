@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import NavbarTwo from '../header/NavbarTwo'
 import Footer from '../footer/Footer'
 import { AppContext } from '../../context/AppContext'
+import './cart.css'
 
 
 const Confirmation = () => {
@@ -13,7 +14,7 @@ const Confirmation = () => {
     const orderId = arrayId.splice(0 , 8)
 
     return (
-        <>
+        <div className="confirmContainer">
             <NavbarTwo />
         <div>
             <h1>Order Confirmed!</h1>
@@ -21,7 +22,7 @@ const Confirmation = () => {
             <h3>An email has been sent to you at {user && user.email}</h3>
         </div>
             <Footer />
-        </>
+        </div>
     )
 }
 
