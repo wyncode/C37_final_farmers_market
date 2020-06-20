@@ -11,9 +11,12 @@ const Home = () => {
     <div className="home">
       <Healthways />
       <Loveus />
-      <Community />
       <HowWorks />
+
       <Aboutus />
+
+      <Community />
+
       <Footer />
     </div>
   );

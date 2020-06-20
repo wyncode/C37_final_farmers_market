@@ -1,19 +1,37 @@
 import React, { useContext } from 'react';
 import CheckoutOne from './CheckoutOne';
 import Cart from './Cart';
-import Navbar from '../header/Navbar';
+import CheckoutLoggedIn from './CheckoutLoggedIn'
+import NavbarTwo from '../header/NavbarTwo';
 import { AppContext } from '../../context/AppContext';
+import Footer from '../footer/Footer'
 
 const Checkout = () => {
-  const { systemMessage } = useContext(AppContext);
+  const { systemMessage, loggedIn } = useContext(AppContext);
+
   return (
     <div>
-      <Navbar />
-      <CheckoutOne />
+    {
+      loggedIn ? (
+      <div>
+      <NavbarTwo />
+      <CheckoutLoggedIn />
       <Cart />
       {systemMessage ? systemMessage : null}
+      <Footer />
+      </div>
+      ) : (
+        <div>
+        <NavbarTwo />
+        <CheckoutOne />
+        <Cart />
+        {systemMessage ? systemMessage : null}
+        <Footer />
+        </div>
+      )
+    }
     </div>
   );
-};
+}
 
 export default Checkout;

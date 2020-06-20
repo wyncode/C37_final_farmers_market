@@ -10,13 +10,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* .howTitle{
-    margin-top: -25rem;
-
-text-align: center;
-margin-left: 10px;
-} */
-
 .howImg {
   display: block;
 
@@ -42,4 +35,8 @@ margin-left: 10px;
 .howitwork {
   display: flex;
   flex-direction: row;
+}
+
+.howitwork p {
+  width: 314px;
 }

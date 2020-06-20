@@ -13,6 +13,7 @@ const UserRoutes = require('./routes/user');
 const StoreRoutes = require('./routes/store');
 const ProductRoutes = require('./routes/product');
 const OrderRoutes = require('./routes/order');
+const RecipeRoutes = require('./routes/recipe');
 
 //Middleware
 
@@ -29,6 +30,7 @@ app.use(UserRoutes);
 app.use(StoreRoutes);
 app.use(ProductRoutes);
 app.use(OrderRoutes);
+app.use(RecipeRoutes);
 
 //
 if (process.env.NODE_ENV === 'production') {

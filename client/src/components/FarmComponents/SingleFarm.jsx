@@ -2,14 +2,19 @@ import React, { useContext } from 'react';
 import { Breadcrumb, Card, Button, Container, Col, Row } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
-import Navbar from '../header/Navbar';
+import NavbarTwo from '../header/NavbarTwo';
 import Footer from '../footer/Footer';
 import './farms.css';
+import './singlefarm.css';
+import '../produce/producepage.css';
+import farm_img from '../../assets/images/farm_img.jpg';
 
 const SingleFarm = () => {
   const history = useHistory();
   const { id } = useParams();
-  const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(AppContext);
+  const { farmers, produceList, shoppingCart, setShoppingCart } = useContext(
+    AppContext
+  );
 
   const farm = farmers.find((farm) => farm._id === id);
 
@@ -35,30 +40,31 @@ const SingleFarm = () => {
 
   const decrementUpdateCart = (produce) => {
     let currentItemInCart = shoppingCart[produce._id];
-  
 
-    if (currentItemInCart.count === 1) { 
-      
-      currentItemInCart= ({...shoppingCart,[produce._id]: { count: 0, produce }})
-        delete currentItemInCart[produce._id]
-        return setShoppingCart(currentItemInCart)
-      }
-  if (currentItemInCart) {
-        return setShoppingCart({
-          ...shoppingCart,
-          [produce._id]: { count: currentItemInCart.count - 1, produce }
-    })
-  }
-  }
+    if (currentItemInCart.count === 1) {
+      currentItemInCart = {
+        ...shoppingCart,
+        [produce._id]: { count: 0, produce }
+      };
+      delete currentItemInCart[produce._id];
+      return setShoppingCart(currentItemInCart);
+    }
+    if (currentItemInCart) {
+      return setShoppingCart({
+        ...shoppingCart,
+        [produce._id]: { count: currentItemInCart.count - 1, produce }
+      });
+    }
+  };
 
   const currentItemCart = (product) => {
     const currentItemInCart = shoppingCart[product._id];
-    if(currentItemInCart) {
-      return true
+    if (currentItemInCart) {
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  };
 
   const noImg =
     'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
@@ -67,25 +73,29 @@ const SingleFarm = () => {
 
   return (
     <div>
-      <Navbar />
+      <NavbarTwo />
       <Breadcrumb>
         <Breadcrumb.Item onClick={() => history.push(`/farms`)}>
           Farms
         </Breadcrumb.Item>
         <Breadcrumb.Item active>{farm && farm.storeName}</Breadcrumb.Item>
       </Breadcrumb>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="left" src={farmImg} />
-        <Card.Body>
-          <Card.Title>{farm && farm.storeName}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Container>
+      <div>
+        <div className="singlefarminfo">
+          <img
+            className="farmPic"
+            src={farm_img}
+            style={{ textAlign: 'center' }}
+          ></img>
+          <div className="minifarminfo">
+            <h1>{farm && farm.storeName}</h1>
+            <h1>{farm && farm.description}</h1>
+            <h1>Location: {farm && farm.address}</h1>
+          </div>
+        </div>
+      </div>
+
+      <Container className="farm-items-div">
         <Row>
           {newProduceList &&
             newProduceList.map((item) => (
@@ -110,10 +120,20 @@ const SingleFarm = () => {
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
                   </Card.Body>
-                  <button onClick={() => handleUpdateCart(item)}>
-                      Add to Cart
+                  <button
+                    className="add-to-cart-button"
+                    onClick={() => handleUpdateCart(item)}
+                  >
+                    +
+                  </button>
+                  {currentItemCart(item) ? (
+                    <button
+                      className="remove-from-cart-button"
+                      onClick={() => decrementUpdateCart(item)}
+                    >
+                      -
                     </button>
-                    {currentItemCart(item) ? <button onClick={() => decrementUpdateCart(item)}>Remove</button> : null}
+                  ) : null}
                 </Card>
               </Col>
             ))}

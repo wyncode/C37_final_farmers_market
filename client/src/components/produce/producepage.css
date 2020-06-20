@@ -1,0 +1,50 @@
+.farm-rectangle {
+  box-sizing: border-box;
+  border: 2px solid #008827;
+  border-radius: 12px;
+  font-family: Poppins;
+  font-size: 25px;
+  letter-spacing: 0.19px;
+  line-height: 38px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-button {
+  border-radius: 11px;
+  background-color: #008827;
+  height: 39px;
+  width: 40px;
+  color: white;
+}
+
+.remove-from-cart-button {
+  border-radius: 11px;
+  background-color: #008827;
+  height: 39px;
+  width: 40px;
+  color: white;
+}
+
+.type-div {
+  color: #595454;
+  font-family: Poppins;
+  font-size: 22px;
+  display: inline;
+  margin: 10px;
+}
+.type-container {
+  margin-top: 10px;
+}
+
+.fruit-div,
+.veggie-div,
+.meat-div,
+.egg-div,
+.dairy-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  width: 300px;
+}

@@ -1,32 +1,98 @@
-#layoutProduct {
-    width: 100vw;
-    height: 100vh;
-    /* margin-top: 100px; */
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  #productImage {
-    padding: 75px;
-    width: 100%;
-    height: auto;
-  }
+.layout-product {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
 
-  #productInfo {
-    width: 100vw;
-    height: 100vh;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    align-items: left;
-  }
+.product-image {
+  height: 282px;
+  width: 282px;
+}
 
-  .link {
-    color: red;
-    text-decoration: underline;
-  }
-  
-  .link:hover {
-    color: green;
-  }
+#productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.link {
+  color: red;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: green;
+}
+
+.addtocart {
+  height: 74px;
+  width: 514px;
+  border-radius: 12px;
+  background-color: #cc5547;
+}
+
+.imageFlex {
+  display: flex;
+  max-width: 600px;
+  max-height: 600px;
+  flex-wrap: wrap;
+}
+
+.product-detail-block {
+  display: flex;
+  justify-content: space-around;
+  height: 600px;
+}
+
+.yellow-block {
+  background-color: #ffdd9d;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 348px;
+}
+
+.good-for-you {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.health-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 406px;
+  width: 576px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.5);
+}
+
+.yb-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+}
+.product-title {
+  color: #99b382;
+  font-family: Poppins;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 0.54px;
+  line-height: 106px;
+}
+
+.recipe-block {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enjoywith-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

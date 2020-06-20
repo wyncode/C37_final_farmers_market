@@ -2,6 +2,8 @@ import React, { useContext, useMemo } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
 import { Card, Button } from 'react-bootstrap';
+import logo from '../../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 const FeaturedItems = () => {
   const { produceList } = useContext(AppContext);
@@ -29,14 +31,12 @@ const FeaturedItems = () => {
       <div className="featured">
         {featuredItems.map((item) => (
           <Card style={{ width: '30rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={logo} />
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Text>{item.description}</Card.Text>
+              <Card.Text>{item.farmerStore}</Card.Text>
+              <Link>Tell me more</Link>
             </Card.Body>
           </Card>
         ))}
