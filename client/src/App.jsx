@@ -10,6 +10,7 @@ import SingleFarm from './components/farmcomponents/SingleFarm';
 import IdProduct from './components/produce/IdProductPage';
 import Checkout from './components/checkout/Checkout';
 import Help from './components/Help';
+import Signup from './components/Signup';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route exact path="/help" component={Help} />
           <Route exact path="/account" component={Account} />
           <Route exact path="/checkout" component={Checkout} />
+          <Route exact path="/signup" component={Signup} />
         </Switch>
       </AppContextProvider>
     </Router>

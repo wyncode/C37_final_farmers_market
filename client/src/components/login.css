@@ -11,10 +11,16 @@
 }
 
 .login-button {
-  height: 74px;
+  height: 50px;
   width: 200px;
   border-radius: 12px;
   background-color: #cc5547;
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.19px;
+  line-height: 38px;
 }
 
 .login-form {
@@ -30,7 +36,8 @@
   justify-content: center;
 }
 .login-input {
-  width: 300px;
+  width: 350px;
   height: 50px;
   margin: 5px;
+  border-radius: 5px;
 }

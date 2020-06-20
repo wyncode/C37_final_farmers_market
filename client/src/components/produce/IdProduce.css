@@ -7,6 +7,7 @@
 .product-image {
   height: 282px;
   width: 282px;
+  padding: 10px;
 }
 
 #productInfo {
@@ -17,12 +18,13 @@
 }
 
 .link {
-  color: red;
+  color: #cc5547;
   text-decoration: underline;
+  font-size: 25px;
 }
 
 .link:hover {
-  color: green;
+  color: #99b382;
 }
 
 .addtocart {
@@ -42,14 +44,14 @@
 .product-detail-block {
   display: flex;
   justify-content: space-around;
-  height: 600px;
+  margin: 50px;
 }
 
 .yellow-block {
   background-color: #ffdd9d;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 348px;
 }
 
@@ -57,6 +59,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-size: 25px;
+  margin: 100px;
+  padding: 50px;
 }
 
 .health-card {
@@ -73,7 +78,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 40px;
 }
 .product-title {
   color: #99b382;
@@ -93,6 +97,30 @@
 
 .enjoywith-block {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 50px;
+}
+
+.review {
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+}
+.insta {
+  height: 291px;
+  width: 291px;
+  object-fit: cover;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.lilpairflex {
+  display: flex;
+  flex-direction: column;
 }
