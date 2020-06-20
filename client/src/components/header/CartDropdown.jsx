@@ -6,12 +6,11 @@ import axios from 'axios';
 const CartDrodown = () => {
   const { shoppingCart } = useContext(AppContext);
 
-  // const getTotal = () => {
-  //   const total = Object.keys(shoppingCart).length;
-  //   const subTotal = item.produce.price;
-  //   return subTotal * total;
-  // };
-  // console.log(getTotal);
+  const grandTotal = Object.values(shoppingCart).reduce((acc, item) => {
+    return (acc = acc += item.produce.price * item.count);
+  }, 0);
+  console.log(grandTotal);
+
   const sendOrder = async (e) => {
     const prodIds = Object.values(shoppingCart).reduce((acc, item) => {
       for (let i = 0; i < item.count; i++) {
@@ -36,8 +35,6 @@ const CartDrodown = () => {
       <h2 style={{ textAlign: 'center' }}>Order Summary</h2>
       {Object.values(shoppingCart).map((item) => {
         const total = item.produce.price * item.count;
-        const subTotal = Object.keys(shoppingCart).length;
-
         return (
           <div>
             <div className="item-block">
@@ -57,7 +54,7 @@ const CartDrodown = () => {
       })}
       <div className="checkout-div">
         <p className="subtotal" style={{ textAlign: 'center' }}>
-          Subtotal: $
+          Subtotal: ${grandTotal}
         </p>
         <button className="checkout-button" onClick={sendOrder}>
           Checkout
