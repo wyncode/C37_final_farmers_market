@@ -1,25 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 const RandomRecipes = ({ searchTerm }) => {
   const [recipeImage, setRecipeImage] = useState(null);
   const [recipeLink, setRecipeLink] = useState(null);
   const [recipeName, setRecipeName] = useState(null);
 
+  console.log(searchTerm)
+
   useEffect(() => {
-    axios.get(`/recipe/${searchTerm}`).then((response) => {
-      response.data.map((data) => {
-        setRecipeImage(data.image);
-        setRecipeLink(data.sourceUrl);
-        setRecipeName(data.title);
-      });
+
+    axios.get(`/recipe/${searchTerm}`).then(response => {
+      console.log(response.data)
+   setRecipeImage(response.data.image)
+   setRecipeName(response.data.title)
+   setRecipeLink(response.data.sourceUrl)
     });
-  }, []);
+    
+  
+  },[searchTerm]);
 
   return (
     <div>
       <h1>Recipes</h1>
-      <p>{recipeName}</p>
+     
+      <img src={recipeImage}/>
+
+      <a href={recipeLink} target="_blank">{recipeName}</a>
+  
     </div>
   );
 };

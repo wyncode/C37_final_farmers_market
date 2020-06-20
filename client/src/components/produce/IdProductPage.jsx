@@ -6,6 +6,7 @@ import NavbarTwo from '../header/NavbarTwo';
 import Reviews from '../../assets/images/Reviews.png';
 import './IdProduce.css';
 import cuteLogo from '../../assets/images/cuteLogo.png';
+import RandomRecipes from './RandomRecipes';
 
 const IdProduct = () => {
   const history = useHistory();
@@ -128,6 +129,9 @@ const IdProduct = () => {
           <h3>Organic because:</h3>
           <p>It's muy delicious</p>
         </div>
+      </div>
+      <div>
+        <RandomRecipes searchTerm={product && product.name}/>
       </div>
       <div className="recipe-block">
         <div>
