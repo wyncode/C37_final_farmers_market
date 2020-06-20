@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const CheckoutLoggedIn = () => {
 
-    const { user, setUser } = useContext(AppContext);
+    const { user, setUser, shoppingCart, setShoppingCart, setSystemMessage } = useContext(AppContext);
     const [updateUser, setUpdateUser] = useState(false)
 
     const [name, setName] = useState(user && user.name);
@@ -23,7 +23,6 @@ const CheckoutLoggedIn = () => {
     
     const updateUserInfo = async (name, address, apt, city, state, zipcode, cardName, cardNumber, expirationDate, e) => {
         e.preventDefault();
-        console.log(user)
         await axios({
             method: 'PATCH',
             url: `/users/${user && user._id}`,
@@ -42,6 +41,25 @@ const CheckoutLoggedIn = () => {
       useEffect(() => {
          setUpdateUser(false)
       }, [user])
+
+      const sendOrder = async (e) => {
+        const token = localStorage.getItem('token');
+        const products = Object.values(shoppingCart).reduce((acc, item) => {
+          for (let i = 0; i < item.count; i++) {
+            acc.push(item.produce._id);
+          }
+          return acc;
+        }, []);
+        await axios({
+          method: 'POST',
+          url: `/orders`,
+          headers: { Authorization: `Bearer ${token}` },
+          data: { products }
+        }).then(({ data }) => {
+          setSystemMessage('Order placed, thank you!')  
+          setShoppingCart({})
+        });
+      };
 
     return (
         <div>
@@ -123,6 +141,11 @@ const CheckoutLoggedIn = () => {
             <h3><span>Delivery  </span><span>{user && user.address}, {user && user.apt} {user && user.city} {user && user.zipcode}  </span></h3>
             <h3><span>Payment Info  </span><span>Card ending in {lastDigits}</span></h3>
             <button onClick={()=>setUpdateUser(true)}>Change</button>
+            <div>
+            <button type="submit" onClick={sendOrder}>
+            Pay Now
+            </button>
+            </div>
         </div>
             )
         }

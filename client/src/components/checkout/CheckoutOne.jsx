@@ -4,18 +4,13 @@ import { AppContext } from '../../context/AppContext';
 import './cart.css';
 
 const CheckoutOne = () => {
-  const {
-    setUser,
-    loggedIn,
-    setLoggedIn,
-    shoppingCart,
-    setSystemMessage
-  } = useContext(AppContext);
+  const { setUser, setLoggedIn } = useContext(AppContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
+  const [state, setState] = useState('');
   const [apt, setApt] = useState('');
   const [zipcode, setZipcode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -47,8 +42,12 @@ const CheckoutOne = () => {
         address,
         city,
         apt,
+        state,
         zipcode,
-        phoneNumber
+        phoneNumber,
+        cardName,
+        cardNumber,
+        expirationDate
       }
     })
       .then(({ data }) => {
@@ -59,7 +58,7 @@ const CheckoutOne = () => {
       .catch((e) => console.log(e.message.toString()));
   };
 
-  const signUp = async (name, email, password, address, city, zipcode, e) => {
+  const signUp = async (e) => {
     e.preventDefault();
     await axios({
       method: 'POST',
@@ -68,9 +67,15 @@ const CheckoutOne = () => {
         name,
         email,
         password,
+        phoneNumber,
         address,
         city,
-        zipcode
+        apt,
+        state,
+        zipcode,
+        cardName,
+        cardNumber,
+        expirationDate
       }
     })
       .then(({ data }) => {
@@ -82,56 +87,16 @@ const CheckoutOne = () => {
         setAddress('');
         setApt('');
         setCity('');
+        setState('');
         setZipcode('');
         localStorage.setItem('token', data.token);
       })
       .catch((e) => console.log(e.message.toString()));
   };
 
-  const sendOrder = async (e) => {
-    const prodIds = Object.values(shoppingCart).reduce((acc, item) => {
-      for (let i = 0; i < item.count; i++) {
-        acc.push(item.produce.id);
-      }
-      return acc;
-    }, []);
-    const token = localStorage.getItem('token');
-    await axios({
-      method: 'POST',
-      url: `/orders`,
-      headers: { Authorization: `Bearer ${token}` },
-      data: {
-        products: prodIds
-      }
-    }).then(({ data }) => {
-      console.log(data);
-    });
-  };
-
-  const createAndOrder = async (
-    name,
-    email,
-    password,
-    address,
-    city,
-    zipcode,
-    e
-  ) => {
-    await signUp(name, email, password, address, city, zipcode, e);
-    await sendOrder(e).then(() => {
-      console.log('order placed');
-      setSystemMessage('Order placed, thank you!');
-    });
-  };
 
   return (
     <div>
-      {loggedIn ? (
-        <button type="submit" onClick={sendOrder}>
-          Pay Now
-        </button>
-      ) : (
-        <>
           <div className="payment-cycle">
             <h3>1. Information</h3>
             <h3>2. Pick up or delivery</h3>
@@ -223,6 +188,18 @@ const CheckoutOne = () => {
               />
             </div>
             <div>
+              <label htmlFor="city">State*</label>
+              <input
+                type="state"
+                name="state"
+                id="state"
+                placeholder="Enter State"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required
+              />
+            </div>
+            <div>
               <label htmlFor="bldg">Bldg/Apt(optional)</label>
               <input
                 type="apt"
@@ -285,15 +262,15 @@ const CheckoutOne = () => {
             </div>
             <button
               type="submit"
-              onClick={(e) =>
-                createAndOrder(name, email, password, address, city, zipcode, e)
+              onClick={
+                signUp
               }
             >
-              Pay Now
+              Proceed to Checkout
             </button>
           </form>
-        </>
-      )}
+        
+      
     </div>
   );
 };
