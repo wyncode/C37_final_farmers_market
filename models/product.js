@@ -34,7 +34,7 @@ const productSchema = new mongoose.Schema({
     type: Number
   },
   images: {
-    type: String,
+    type: Array,
     required: false
   }
 });
