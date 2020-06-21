@@ -35,7 +35,6 @@ const RandomRecipes = ({ searchTerm }) => {
       <a href={recipeOne.sourceUrl} target="_blank">
         {recipeOne.title}
       </a>
-
       <img src={recipeTwo.image} />
       <a href={recipeTwo.sourceUrl} target="_blank">
         {recipeTwo.title}

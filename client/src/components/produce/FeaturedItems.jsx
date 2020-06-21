@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 const FeaturedItems = () => {
   const { produceList, farmers } = useContext(AppContext);
+
   const history = useHistory();
 
   const getRandomItemRecursive = (acc) => {
