@@ -12,6 +12,11 @@ const FarmCard = (props) => {
       }
       onClick={props.setCurrentSelection}
     >
+      {/* <img
+        className="background-image"
+        src={props.farm.storeImage}
+        alt="farm-image"
+      /> */}
       <div className="background-image" />
       <div className="info">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
