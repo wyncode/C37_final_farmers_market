@@ -75,6 +75,9 @@ const userSchema = new mongoose.Schema({
     required: false,
     default: false
   },
+  image: {
+    type: String
+  },
   tokens: [
     {
       token: {
