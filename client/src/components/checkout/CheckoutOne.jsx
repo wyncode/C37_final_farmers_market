@@ -98,14 +98,16 @@ const CheckoutOne = () => {
   return (
     <div>
       <div className="static-checkout-div">
-        <div className="payment-cycle">
-          <p>1. Information &nbsp;</p>
-          <p>2. Pick up or delivery &nbsp;</p>
-          <p>3. Payment</p>
-        </div>
-        <br></br>
         <div className="miniformdiv">
           <form id="form1" onSubmit={form1}>
+            <div className="payment-cycle">
+              <p>
+                <b>1. Information </b>&nbsp;
+              </p>
+              <p>2. Pick up or delivery &nbsp;</p>
+              <p>3. Payment</p>
+            </div>
+            <br></br>
             <h2>Contact Information</h2>
             <br></br>
             <p style={{ fontSize: '22px' }}>
@@ -167,77 +169,97 @@ const CheckoutOne = () => {
           </form>
 
           <form className="hide" id="form2" onSubmit={form2}>
-            <button>Delivery</button>
-            <button>Pick up</button>
-            <p>
-              Delivery available in Miami Dade Country. Minimum order $50, $7
-              fee. Free delivery for $150+
-            </p>
             <div>
-              <label htmlFor="address">Street address*</label>
-              <input
-                type="street address"
-                name="street address"
-                id="street address"
-                placeholder="Enter Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                required
-              />
+              <div className="payment-cycle">
+                <p>1. Information&nbsp;</p>
+                <p>
+                  <b>2. Pick up or delivery</b> &nbsp;
+                </p>
+                <p>3. Payment</p>
+              </div>
+              <br></br>
+              <div className="delivery-div">
+                <button className="delivery-button">Delivery</button>
+                <button className="delivery-button">Pick up</button>
+                <p>
+                  Delivery available in Miami Dade Country. Minimum order $50,
+                  $7 fee. Free delivery for $150+
+                </p>
+              </div>
+              <div>
+                <label htmlFor="address">Street address*</label>
+                <input
+                  type="street address"
+                  name="street address"
+                  id="street address"
+                  placeholder="Enter Address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="city">City*</label>
+                <input
+                  type="city"
+                  name="city"
+                  id="city"
+                  placeholder="Enter City"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="city">State*</label>
+                <input
+                  type="state"
+                  name="state"
+                  id="state"
+                  placeholder="Enter State"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="bldg">Bldg/Apt(optional)</label>
+                <input
+                  type="apt"
+                  name="apt"
+                  id="apt"
+                  placeholder="apt"
+                  value={apt}
+                  onChange={(e) => setApt(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="zipcode">Zip code*</label>
+                <input
+                  type="zipcode"
+                  name="zipcode"
+                  id="zipcode"
+                  placeholder="Zip Code"
+                  value={zipcode}
+                  onChange={(e) => setZipcode(e.target.value)}
+                  required
+                />
+              </div>
+              <button className="checkout-button" type="submit">
+                Continue to Payment
+              </button>
             </div>
-            <div>
-              <label htmlFor="city">City*</label>
-              <input
-                type="city"
-                name="city"
-                id="city"
-                placeholder="Enter City"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="city">State*</label>
-              <input
-                type="state"
-                name="state"
-                id="state"
-                placeholder="Enter State"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="bldg">Bldg/Apt(optional)</label>
-              <input
-                type="apt"
-                name="apt"
-                id="apt"
-                placeholder="apt"
-                value={apt}
-                onChange={(e) => setApt(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="zipcode">Zip code*</label>
-              <input
-                type="zipcode"
-                name="zipcode"
-                id="zipcode"
-                placeholder="Zip Code"
-                value={zipcode}
-                onChange={(e) => setZipcode(e.target.value)}
-                required
-              />
-            </div>
-            <button className="checkout-button" type="submit">
-              Continue to Payment
-            </button>
           </form>
 
           <form id="form3" className="hide" onSubmit={form3}>
+            <div className="payment-cycle">
+              <p>1. Information&nbsp;</p>
+              <p>2. Pick up or delivery &nbsp;</p>
+              <p>
+                <b>3. Payment</b>
+              </p>
+            </div>
+            <br></br>
             <div>
               <label htmlFor="name">Name on card</label>
               <input

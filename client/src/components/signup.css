@@ -1,0 +1,24 @@
+.signup-button {
+  height: 74px;
+  width: 450px;
+  border-radius: 12px;
+  background-color: #cc5547;
+  margin-top: 50px;
+}
+
+.signup-input {
+  width: 350px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  background-image: url();
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
