@@ -21,7 +21,32 @@ const Farms = () => {
         <div className="farm-container">
           {rows.length > 0 &&
             rows.map((row, i) => {
-              return <FarmRow key={i} farm1={row.farm1} farm2={row.farm2} />;
+              if (i % 2){
+                return(
+                  <FarmRow 
+                    key={i} 
+                    farm1={row.farm1} 
+                    farm2={row.farm2} 
+                    background1={"#595454"} 
+                    background2={"#FFDD9D"} 
+                    color1={"#FFFFFF"}
+                    color2={"#595454"}
+                  />
+                ) 
+              } else {
+                return(
+                  <FarmRow 
+                    key={i} 
+                    farm1={row.farm1} 
+                    farm2={row.farm2} 
+                    background1={"#FFDD9D"} 
+                    background2={"#595454"} 
+                    color1={"#595454"}
+                    color2={"#FFFFFF"}
+                  />
+                ) 
+              }
+              
             })}
         </div>
       </div>

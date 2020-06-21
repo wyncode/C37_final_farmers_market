@@ -15,6 +15,8 @@ const FarmRow = (props) => {
             farm={props.farm1}
             setCurrentSelection={() => setCurrentSelection('left')}
             currentSelection={currentSelection}
+            background={props.background1}
+            color={props.color1}
           />
         ) : null}
         {props.farm2 ? (
@@ -22,6 +24,8 @@ const FarmRow = (props) => {
             farm={props.farm2}
             setCurrentSelection={() => setCurrentSelection('right')}
             currentSelection={currentSelection}
+            background={props.background2}
+            color={props.color2}
           />
         ) : null}
       </div>
@@ -34,6 +38,8 @@ const FarmRow = (props) => {
             farm={props.farm1}
             setCurrentSelection={() => setCurrentSelection('closed')}
             currentSelection={currentSelection}
+            background={props.background1}
+            color={props.color1}
           />
         ) : null}
       </div>
@@ -46,6 +52,8 @@ const FarmRow = (props) => {
             farm={props.farm2}
             setCurrentSelection={() => setCurrentSelection('closed')}
             currentSelection={currentSelection}
+            background={props.background2}
+            color={props.color2}
           />
         ) : null}
       </div>
