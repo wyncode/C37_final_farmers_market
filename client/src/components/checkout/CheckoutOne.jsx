@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import './cart.css';
+import { Link } from 'react-router-dom';
 
 const CheckoutOne = () => {
   const { setUser, setLoggedIn } = useContext(AppContext);
@@ -94,18 +95,25 @@ const CheckoutOne = () => {
       .catch((e) => console.log(e.message.toString()));
   };
 
-
   return (
     <div>
-          <div className="payment-cycle">
-            <h3>1. Information</h3>
-            <h3>2. Pick up or delivery</h3>
-            <h3>3. Payment</h3>
-          </div>
-
+      <div className="static-checkout-div">
+        <div className="payment-cycle">
+          <p>1. Information &nbsp;</p>
+          <p>2. Pick up or delivery &nbsp;</p>
+          <p>3. Payment</p>
+        </div>
+        <br></br>
+        <div className="miniformdiv">
           <form id="form1" onSubmit={form1}>
             <h2>Contact Information</h2>
-            <h3>Have an account? Log in</h3>
+            <br></br>
+            <p style={{ fontSize: '22px' }}>
+              Have an account?
+              <Link>
+                <b>Log in</b>
+              </Link>
+            </p>
 
             <div>
               <label htmlFor="name">Name*</label>
@@ -153,7 +161,9 @@ const CheckoutOne = () => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
-            <button type="submit">Next</button>
+            <button className="checkout-button" type="submit">
+              Next
+            </button>
           </form>
 
           <form className="hide" id="form2" onSubmit={form2}>
@@ -222,7 +232,9 @@ const CheckoutOne = () => {
                 required
               />
             </div>
-            <button type="submit">Continue to Payment</button>
+            <button className="checkout-button" type="submit">
+              Continue to Payment
+            </button>
           </form>
 
           <form id="form3" className="hide" onSubmit={form3}>
@@ -260,17 +272,12 @@ const CheckoutOne = () => {
                 required
               />
             </div>
-            <button
-              type="submit"
-              onClick={
-                signUp
-              }
-            >
+            <button className="checkout-button" type="submit" onClick={signUp}>
               Proceed to Checkout
             </button>
           </form>
-        
-      
+        </div>
+      </div>
     </div>
   );
 };
