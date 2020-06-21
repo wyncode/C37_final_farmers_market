@@ -1,12 +1,12 @@
 import React, { useContext, useMemo } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
-import { Card, Button } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const FeaturedItems = () => {
-  const { produceList } = useContext(AppContext);
+  const { produceList, farmers } = useContext(AppContext);
+  const history = useHistory()
 
   const getRandomItemRecursive = (acc) => {
     const randomIndex = Math.floor(Math.random() * produceList.length);
@@ -30,15 +30,18 @@ const FeaturedItems = () => {
       <h1>Featured Items</h1>
       <div className="featured">
         {featuredItems.map((item) => (
-          <Card style={{ width: '30rem' }}>
-            <Card.Img variant="top" src={item.images || logo} />
-            <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
-              <Card.Text>{item.description}</Card.Text>
-              <Card.Text>{item.farmerStore}</Card.Text>
-              <Link>Tell me more</Link>
-            </Card.Body>
-          </Card>
+          <div>
+            <div>
+              <img src={item.images || logo} alt="product image"/>
+              <h1>{item.name}</h1>
+              <h3>{item.description}</h3>
+              <h3>{farmers && farmers.map(farm => {if(farm._id === item.farmerStore){return farm.storeName}})}</h3>
+              <p
+              className="link"
+              onClick={() => history.push(`/produce/${item._id}`)}
+              >Tell me more</p> 
+            </div>
+          </div>
         ))}
       </div>
     </div>

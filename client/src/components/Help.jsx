@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './footer/Footer';
 import NavbarTwo from './header/NavbarTwo';
 import { Form, Row, Col } from 'react-bootstrap';
-import Aboutus from '../components/Aboutus';
+import Aboutus from './Aboutus';
 
 const Help = () => {
   return (
