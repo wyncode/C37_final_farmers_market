@@ -6,16 +6,25 @@
 }
 .dropdown-checkout-button {
   height: 74px;
-  width: 484px;
+  width: 400px;
   border-radius: 12px;
   background-color: #cc5547;
   margin-left: 8px;
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
 }
 
 div.order-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 8px 6px -6px #cc5547;
+  background-color: #ffdd9d;
+  height: 1391px;
+  width: 668px;
 }
 
 .dropdown-checkout-div {

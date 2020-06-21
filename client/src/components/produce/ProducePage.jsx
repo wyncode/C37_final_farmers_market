@@ -98,8 +98,8 @@ const Produce = () => {
   return (
     <div>
       <NavbarTwo />
-      <FeaturedItems />
       <Container className="produce-div">
+        <FeaturedItems />
         <Row>
           <Col lg="3">
             <FarmerFilter
@@ -129,15 +129,20 @@ const Produce = () => {
                     >
                       <Card.Img
                         variant="top"
-                        src={item.images}
-                        alt={item.description}
+                        src={item.images[0]}
+                        alt="food-item"
                         width={200}
                         onClick={() => history.push(`/produce/${item._id}`)}
                       />
                       <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>${item.price}</Card.Text>
-                        <Card.Text>quantity = {shoppingCart[item._id] ? shoppingCart[item._id].count : 0}</Card.Text>
+                        <Card.Text>
+                          quantity ={' '}
+                          {shoppingCart[item._id]
+                            ? shoppingCart[item._id].count
+                            : 0}
+                        </Card.Text>
                       </Card.Body>
                       <button
                         className="add-to-cart-button"
