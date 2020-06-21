@@ -2,7 +2,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
   }
-  
+  .card img {
+      max-height: 25%;
+      object-fit: cover;
+      width: 100%;
+      }
+
+
   html {
     box-sizing: border-box;
   }
@@ -21,12 +27,13 @@ body {
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+    width: 25%;
   }
   
   .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
+    background-color: #9d9ea3;
     color: white;
   }
   .row:after {
@@ -46,7 +53,7 @@ body {
   }
   
   .title {
-    color: grey;
+    color: rgb(165, 163, 163);
   }
   
   .button {
@@ -63,6 +70,12 @@ body {
   
   .button:hover {
     background-color: #555;
+  }
+
+  .card-container{
+      display: flex;
+      flex-direction: row;
+      
   }
   
   @media screen and (max-width: 650px) {

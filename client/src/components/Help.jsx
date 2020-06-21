@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './footer/Footer';
 import Navbar from './header/Navbar';
 import { Form, Row, Col } from 'react-bootstrap';
+import Aboutus from '../components/Aboutus';
 
 const Help = () => {
   return (
@@ -21,6 +22,7 @@ const Help = () => {
         <Form.Label>Example textarea</Form.Label>
         <Form.Control as="textarea" rows="3" />
       </Form.Group>
+      <Aboutus/>
       <Footer />
     </div>
   );
