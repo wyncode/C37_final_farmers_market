@@ -52,7 +52,6 @@ const CartDrodown = () => {
               </div>
               <div>${total}</div>
             </div>
-            {/* {item.produce.name} - {item.count} */}
           </div>
         );
       })}

@@ -15,36 +15,34 @@ const Aboutus = () => {
         </div>
         
         <h2 style={{textAlign:"center"}}>Our Team</h2>
-        <div class="row">
-        <div class="col">
+
+        <div className="card-container">
           <div class="card">
-            <img src={katie} alt="Katie" style={{width:"80%"}} />
+            <img src={katie} alt="Katie" />
             <div class="container">
               <h2>Katie Breuil</h2>
               <p class="title">Full-Stack Developer, Concept & Design Wyncode Cohort 37</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p> Katie is a Web Development student at Wyncode, who is excited to create
+                  solutions to every day problems with technology.</p>
               <p>katie@example.com</p>
               <p><button class="button">Contact</button></p>
             </div>
-          </div>
-        </div>
+            </div>
         
-        <div class="col">
           <div class="card">
-            <img src={roberto} alt="Roberto" style={{width:"80%"}}/>
+            <img src={roberto} alt="Roberto" />
             <div class="container">
-              <h2>Robert Garcia</h2>
+              <h2>Roberto Garcia</h2>
               <p class="title">Full-Stack Developer, Wyncode Cohort 37</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>Roberto is a Web Development student at Wyncode, who is excited to create
+                  solutions to every day problems with technology.</p>
               <p>robert@example.com</p>
               <p><button class="button">Contact</button></p>
-            </div>
+              </div>
           </div>
-        </div>
         
-        <div class="col">
           <div class="card">
-            <img src={michael} alt="Michael" style={{width:"80%"}} />
+            <img src={michael} alt="Michael" />
             <div class="container">
               <h2>Michael Edgecombe</h2>
               <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
@@ -53,23 +51,21 @@ const Aboutus = () => {
                  Michael most recently updated his skillset with a tour of training through Wyncode Academy, for Full-Stack-Developer Miami, FL.</p>
               <p>305mpg@gmail.com</p>
               <p><button class="button">Contact</button></p>
+              </div>
             </div>
-          </div>
-        </div>
-        </div>
-        
-        <div class="column">
-          <div class="card">
-            <img src={matthew} alt="Mathew" style={{width:"100%"}} />
+            
+              <div class="card">
+            <img src={matthew} alt="Mathew"/>
             <div class="container">
               <h2>Matthew De Moraes</h2>
               <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>Matthew is a Web Development student at Wyncode, who is excited to create
+                  solutions to every day problems with technology.</p>
               <p>john@example.com</p>
               <p><button class="button">Contact</button></p>
-            </div>
           </div>
-        </div>
+          </div>
+          </div>
         
        </>
     )

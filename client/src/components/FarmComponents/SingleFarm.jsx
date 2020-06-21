@@ -119,6 +119,7 @@ const SingleFarm = () => {
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
+                    <Card.Text>quantity = {shoppingCart[item._id] ? shoppingCart[item._id].count : 0}</Card.Text>
                   </Card.Body>
                   <button
                     className="add-to-cart-button"
