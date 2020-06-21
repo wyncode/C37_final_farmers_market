@@ -21,6 +21,8 @@ const IdProduct = () => {
   const farm =
     product && farmers.find((farm) => farm._id === product.farmerStore);
 
+  const accuProd = shoppingCart[id] ? shoppingCart[id].count : 0
+
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
 
@@ -108,6 +110,7 @@ const IdProduct = () => {
         <div id="productInfo">
           <h1 style={{ fontSize: '50px' }}>{product && product.name}</h1>
           <h3 style={{ fontSize: '25px' }}>${product && product.price}/lb</h3>
+          <h3 style={{ fontSize: '25px' }}>quantity = {accuProd}</h3>
           <p style={{ fontSize: '22px', maxWidth: '438px' }}>
             {product && product.description}
           </p>

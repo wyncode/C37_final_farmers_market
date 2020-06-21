@@ -3,10 +3,11 @@ import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
 import { Card, Button } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const FeaturedItems = () => {
   const { produceList } = useContext(AppContext);
+  const history = useHistory()
 
   const getRandomItemRecursive = (acc) => {
     const randomIndex = Math.floor(Math.random() * produceList.length);
@@ -36,7 +37,11 @@ const FeaturedItems = () => {
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>{item.description}</Card.Text>
               <Card.Text>{item.farmerStore}</Card.Text>
-              <Link>Tell me more</Link>
+              <Link to="/products/">Tell me more</Link>
+              {/* <p
+              className="link"
+              onClick={() => history.push(`/products/${item._id}`)}
+              ></p> */}
             </Card.Body>
           </Card>
         ))}
