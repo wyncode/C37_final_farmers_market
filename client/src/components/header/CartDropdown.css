@@ -1,16 +1,10 @@
-.payment-cycle {
-  display: flex;
-  justify-content: space-around;
-  max-width: 600px;
-}
-
 .item-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 50px;
 }
-.checkout-button {
+.dropdown-checkout-button {
   height: 74px;
   width: 484px;
   border-radius: 12px;
@@ -24,7 +18,7 @@ div.order-container {
   justify-content: space-between;
 }
 
-.checkout-div {
+.dropdown-checkout-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
