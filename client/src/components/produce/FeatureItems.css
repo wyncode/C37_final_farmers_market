@@ -10,3 +10,15 @@
   width: 300px;
   height: 400px;
 }
+
+.featured-items {
+  height: 56px;
+  width: 317px;
+  color: #595454;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 0.31px;
+  line-height: 60px;
+  text-align: center;
+}

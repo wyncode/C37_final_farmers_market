@@ -1,14 +1,11 @@
 import React, { useContext, useMemo } from 'react';
 import { AppContext } from '../../context/AppContext';
 import './FeatureItems.css';
-import logo from '../../assets/images/logo.png';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const FeaturedItems = () => {
   const { produceList, farmers } = useContext(AppContext);
-
-  const history = useHistory();
 
   const getRandomItemRecursive = (acc) => {
     const randomIndex = Math.floor(Math.random() * produceList.length);
@@ -29,7 +26,7 @@ const FeaturedItems = () => {
 
   return (
     <div>
-      <h1>Featured Items</h1>
+      <h1 className="featured-items">Featured Items</h1>
       <div className="featured">
         {featuredItems.map((item) => (
           <Card style={{ width: '30rem', maxHeight: '150' }}>

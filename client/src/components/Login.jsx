@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import './login.css';
-import Footer from './footer/Footer';
 import { Link, useHistory } from 'react-router-dom';
 
 const Login = () => {
@@ -57,13 +56,14 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
             className="login-input"
+            style={{ marginBottom: '25px' }}
           />
           <button type="submit" className="login-button">
-            LOG IN
+            Log in
           </button>
           <div>
-            <h3>
-              Don't have an account?{' '}
+            <h3 style={{ marginTop: '25px' }}>
+              Don't have an account? &nbsp;
               <Link onClick={() => history.push(`/signup`)}>Sign Up</Link>
             </h3>
           </div>

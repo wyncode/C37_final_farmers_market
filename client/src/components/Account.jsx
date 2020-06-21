@@ -15,7 +15,7 @@ const Account = () => {
       <NavbarTwo className="accountNav" />
 
       <div className="accountPage">
-        <h1 style={{ textAlign: 'center' }}>
+        <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
           Welcome {user.name ? user.name : ''}
           <img src=""></img>
         </h1>

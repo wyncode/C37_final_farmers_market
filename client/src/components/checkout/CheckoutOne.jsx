@@ -111,8 +111,8 @@ const CheckoutOne = () => {
             <h2>Contact Information</h2>
             <br></br>
             <p style={{ fontSize: '22px' }}>
-              Have an account?
-              <Link>
+              Have an account? &nbsp;
+              <Link to="/account">
                 <b>Log in</b>
               </Link>
             </p>

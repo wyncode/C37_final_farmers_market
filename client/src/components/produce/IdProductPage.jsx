@@ -172,20 +172,22 @@ const IdProduct = () => {
           </p>
         </div>
       </div>
-      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Recipes</h1>
+      <h1
+        style={{
+          textAlign: 'center',
+          marginTop: '50px',
+          color: '#595454',
+          fontFamily: 'Poppins',
+          fontSize: '40px',
+          fontWeight: 'bold'
+        }}
+      >
+        Recipes
+      </h1>
       <div>
         <RandomRecipes searchTerm={product && product.name} />
       </div>
-      <div className="recipe-block">
-        <div>
-          <img src="" alt="recipe pic" />
-          <Link>Recipe Title</Link>
-        </div>
-        <div>
-          <img src="" alt="recipe pic" />
-          <Link>Recipe title</Link>
-        </div>
-      </div>
+
       <h1 style={{ textAlign: 'center' }}>
         Enjoy {product && product.name} with
       </h1>

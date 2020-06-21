@@ -5,6 +5,7 @@ import CheckoutLoggedIn from './CheckoutLoggedIn';
 import NavbarTwo from '../header/NavbarTwo';
 import { AppContext } from '../../context/AppContext';
 import Footer from '../footer/Footer';
+import './cart.css';
 
 const Checkout = () => {
   const { systemMessage, loggedIn } = useContext(AppContext);
@@ -12,7 +13,7 @@ const Checkout = () => {
   return (
     <div classname="full-checkout-div">
       {loggedIn ? (
-        <div>
+        <div className="checkout-issue-div">
           <NavbarTwo />
           <CheckoutLoggedIn />
           <Cart />
@@ -20,7 +21,7 @@ const Checkout = () => {
           <Footer />
         </div>
       ) : (
-        <div>
+        <div className="checkout-issue-div">
           <NavbarTwo />
           <CheckoutOne />
           <Cart />
