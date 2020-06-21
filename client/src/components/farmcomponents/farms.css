@@ -28,7 +28,6 @@
 .background-image {
   height: 420px;
   width: 50%;
-  background-image: url('../../assets/images/logo.png');
   object-fit: contain;
   background-size: cover;
   background-repeat: no-repeat;

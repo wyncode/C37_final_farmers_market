@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 const FarmCard = (props) => {
   const history = useHistory();
-
+console.log(props.farm)
   return (
     <div
       className={
@@ -12,12 +12,11 @@ const FarmCard = (props) => {
       }
       onClick={props.setCurrentSelection}
     >
-      {/* <img
+      <div
+        style={{backgroundImage:`url(${props.farm.storeImage})`}}
         className="background-image"
-        src={props.farm.storeImage}
         alt="farm-image"
-      /> */}
-      <div className="background-image" />
+      />
       <div className="info">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <h2>{props.farm.storeName}</h2>
