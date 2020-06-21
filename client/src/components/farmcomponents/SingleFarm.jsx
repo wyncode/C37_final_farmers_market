@@ -89,12 +89,16 @@ const SingleFarm = () => {
           ></img>
           <div className="minifarminfo">
             <h1>{farm && farm.storeName}</h1>
-            <h1>{farm && farm.description}</h1>
-            <h1>Location: {farm && farm.address}</h1>
+            <h3>{farm && farm.address}</h3>
+            <h4>{farm && farm.phoneNumber}</h4>
+            <p>About the farm: {farm && farm.description}</p>
           </div>
         </div>
       </div>
-
+      <br></br>
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
+        Check out {farm && farm.storeName}s fresh items!
+      </h1>
       <Container className="farm-items-div">
         <Row>
           {newProduceList &&
