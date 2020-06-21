@@ -98,8 +98,8 @@ const Produce = () => {
   return (
     <div>
       <NavbarTwo />
+      <FeaturedItems />
       <Container className="produce-div">
-        <FeaturedItems />
         <Row>
           <Col lg="3">
             <FarmerFilter

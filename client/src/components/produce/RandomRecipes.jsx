@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './RandomRecipes.css';
 
 const RandomRecipes = ({ searchTerm }) => {
   const [recipeOne, setRecipeOne] = useState([]);
@@ -29,15 +30,12 @@ const RandomRecipes = ({ searchTerm }) => {
   console.log('Recipe 2: ', recipeTwo);
 
   return (
-    <div>
-      <h1>Recipes</h1>
-
+    <div className="recipe">
       <img src={recipeOne.image} />
       <a href={recipeOne.sourceUrl} target="_blank">
         {recipeOne.title}
       </a>
       <img src={recipeTwo.image} />
-
       <a href={recipeTwo.sourceUrl} target="_blank">
         {recipeTwo.title}
       </a>
