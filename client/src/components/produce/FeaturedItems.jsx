@@ -38,7 +38,7 @@ const FeaturedItems = () => {
               <h3>{farmers && farmers.map(farm => {if(farm._id === item.farmerStore){return farm.storeName}})}</h3>
               <p
               className="link"
-              onClick={() => history.push(`/products/${item._id}`)}
+              onClick={() => history.push(`/produce/${item._id}`)}
               >Tell me more</p> 
             </div>
           </div>
