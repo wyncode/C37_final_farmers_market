@@ -84,7 +84,7 @@ const SingleFarm = () => {
         <div className="singlefarminfo">
           <img
             className="farmPic"
-            src={farm_img}
+            src={farm && farm.storeImage}
             style={{ textAlign: 'center' }}
           ></img>
           <div className="minifarminfo">
@@ -96,7 +96,15 @@ const SingleFarm = () => {
         </div>
       </div>
       <br></br>
-      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
+
+      <h1
+        style={{
+          textAlign: 'center',
+          marginTop: '50px',
+          height: '200px',
+          backgroundColor: '#FFDD9D'
+        }}
+      >
         Check out {farm && farm.storeName}s fresh items!
       </h1>
       <Container className="farm-items-div">
@@ -115,15 +123,19 @@ const SingleFarm = () => {
                 >
                   <Card.Img
                     variant="top"
-                    src={noImg}
-                    alt={item.description}
-                    width={200}
+                    src={item.images[0]}
+                    alt="product picture"
+                    style={{ maxHeight: '50%' }}
                     onClick={() => history.push(`/produce/${item._id}`)}
                   />
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Text>${item.price}</Card.Text>
-                    <Card.Text>quantity = {shoppingCart[item._id] ? shoppingCart[item._id].count : 0}</Card.Text>
+                    <Card.Text>
+                      {shoppingCart[item._id]
+                        ? shoppingCart[item._id].count
+                        : 0}
+                    </Card.Text>
                   </Card.Body>
                   <button
                     className="add-to-cart-button"

@@ -28,10 +28,10 @@
 .background-image {
   height: 420px;
   width: 50%;
-  background-image: url('../../assets/images/logo.png');
   object-fit: contain;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .info {
@@ -39,7 +39,6 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  background-color: #ffdd9d;
   color: #595454;
   font-family: Poppins;
   font-size: 25px;
@@ -65,12 +64,6 @@
 .link:hover {
   color: green;
 }
-
-/* #farmImage {
-  padding: 75px;
-  max-width: 100%;
-  height: auto;
-} */
 
 .top-farm-cont {
   display: flex;
