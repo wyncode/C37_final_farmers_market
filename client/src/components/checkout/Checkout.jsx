@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import CheckoutOne from './CheckoutOne';
 import Cart from './Cart';
+
 import CheckoutLoggedIn from './CheckoutLoggedIn'
 import NavbarTwo from '../header/NavbarTwo';
 import { AppContext } from '../../context/AppContext';
@@ -17,6 +18,7 @@ const Checkout = () => {
       <NavbarTwo />
       <CheckoutLoggedIn />
       <Cart />
+      
       {systemMessage ? systemMessage : null}
       <Footer />
       </div>

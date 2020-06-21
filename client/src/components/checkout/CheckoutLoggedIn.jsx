@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import CartDropdown from '../header/CartDropdown';
 
 
 
@@ -66,7 +67,7 @@ const CheckoutLoggedIn = () => {
       };
 
     return (
-        <div>
+        <div style={{display: 'flex', flexWrap: 'wrap' }}>
         {
         updateUser ? (
         <div>
@@ -153,6 +154,7 @@ const CheckoutLoggedIn = () => {
         </div>
             )
         }
+        <CartDropdown />
         </div>
     )
 
