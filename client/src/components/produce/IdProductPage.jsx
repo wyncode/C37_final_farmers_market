@@ -88,23 +88,23 @@ const IdProduct = () => {
         <div className="imageFlex">
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[0]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[1]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[2]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[3]}
+            alt="product image"
           />
         </div>
         <div id="productInfo">
