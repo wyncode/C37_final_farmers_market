@@ -21,7 +21,7 @@ const IdProduct = () => {
   const farm =
     product && farmers.find((farm) => farm._id === product.farmerStore);
 
-  const accuProd = shoppingCart[id] ? shoppingCart[id].count : 0
+  const accuProd = shoppingCart[id] ? shoppingCart[id].count : 0;
 
   const handleUpdateCart = (produce) => {
     const currentItemInCart = shoppingCart[produce._id];
@@ -88,34 +88,36 @@ const IdProduct = () => {
         <div className="imageFlex">
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[0]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[1]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[2]}
+            alt="product image"
           />
           <img
             className="product-image"
-            src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579564/marisa-morton-GunHGc3Xxu8-unsplash_Copy_urzwwp.png"
-            alt=""
+            src={product && product.images[3]}
+            alt="product image"
           />
         </div>
         <div id="productInfo">
           <h1 style={{ fontSize: '50px' }}>{product && product.name}</h1>
           <h3 style={{ fontSize: '25px' }}>${product && product.price}/lb</h3>
-          <h3 style={{ fontSize: '25px' }}>quantity = {accuProd}</h3>
-          <p style={{ fontSize: '22px', maxWidth: '438px' }}>
+          <div className="accProdDiv">{accuProd}</div>
+          <p style={{ fontSize: '22px', maxWidth: '438px', marginTop: '10px' }}>
             {product && product.description}
           </p>
           <br></br>
-          <h3 style={{ fontSize: '25px' }}>{product && product.category}</h3>
+          <h3 style={{ fontSize: '22px', color: '#595454' }}>
+            {product && product.category}
+          </h3>
           <br></br>
           <h3 style={{ fontSize: '25px' }}>Contributing Farm</h3>
           <p
@@ -131,7 +133,12 @@ const IdProduct = () => {
             Add to Cart
           </button>
           {product && currentItemCart(product) ? (
-            <button onClick={() => decrementUpdateCart(product)}>Remove</button>
+            <button
+              className="removefromcart"
+              onClick={() => decrementUpdateCart(product)}
+            >
+              Remove
+            </button>
           ) : null}
         </div>
       </div>
@@ -165,20 +172,22 @@ const IdProduct = () => {
           </p>
         </div>
       </div>
-      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Recipes</h1>
+      <h1
+        style={{
+          textAlign: 'center',
+          marginTop: '50px',
+          color: '#595454',
+          fontFamily: 'Poppins',
+          fontSize: '40px',
+          fontWeight: 'bold'
+        }}
+      >
+        Recipes
+      </h1>
       <div>
-        <RandomRecipes searchTerm={product && product.name}/>
+        <RandomRecipes searchTerm={product && product.name} />
       </div>
-      <div className="recipe-block">
-        <div>
-          <img src="" alt="recipe pic" />
-          <Link>Recipe Title</Link>
-        </div>
-        <div>
-          <img src="" alt="recipe pic" />
-          <Link>Recipe title</Link>
-        </div>
-      </div>
+
       <h1 style={{ textAlign: 'center' }}>
         Enjoy {product && product.name} with
       </h1>

@@ -122,22 +122,29 @@ const Produce = () => {
                     <Card
                       style={{
                         width: 200,
-                        height: 350,
+                        height: 300,
                         margin: 5,
-                        overflow: 'hidden'
+                        border: 'none',
+                        overflow: 'hidden',
+                        marginLeft: '20px'
                       }}
                     >
                       <Card.Img
+                        className="produce-img"
                         variant="top"
-                        src={item.images}
-                        alt={item.description}
-                        width={200}
+                        src={item.images[0]}
+                        alt="food-item"
+                        style={{ maxHeight: '50%', objectFit: 'cover' }}
                         onClick={() => history.push(`/produce/${item._id}`)}
                       />
                       <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>${item.price}</Card.Text>
-                        <Card.Text>quantity = {shoppingCart[item._id] ? shoppingCart[item._id].count : 0}</Card.Text>
+                        <Card.Text>
+                          {shoppingCart[item._id]
+                            ? shoppingCart[item._id].count
+                            : 0}
+                        </Card.Text>
                       </Card.Body>
                       <button
                         className="add-to-cart-button"

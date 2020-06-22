@@ -39,5 +39,12 @@ ol.breadcrumb:active {
 }
 
 .farmPic {
-  width: 550px;
+  width: 600px;
+  object-fit: cover;
+}
+
+#farmImage {
+  padding: 75px;
+  max-width: 100%;
+  height: auto;
 }

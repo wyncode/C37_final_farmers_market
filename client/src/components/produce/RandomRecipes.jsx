@@ -1,34 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './RandomRecipes.css';
 
 const RandomRecipes = ({ searchTerm }) => {
-  const [recipeImage, setRecipeImage] = useState(null);
-  const [recipeLink, setRecipeLink] = useState(null);
-  const [recipeName, setRecipeName] = useState(null);
+  const [recipeOne, setRecipeOne] = useState([]);
+  const [recipeTwo, setRecipeTwo] = useState([]);
 
-  console.log(searchTerm)
+  const getFirstRecipe = async () => {
+    await axios.get(`/recipe/${searchTerm}`).then((response) => {
+      setRecipeOne(response.data);
+    });
+  };
+
+  const getSecondRecipe = async () => {
+    await axios.get(`/recipe/${searchTerm}`).then((response) => {
+      setRecipeTwo(response.data);
+    });
+  };
 
   useEffect(() => {
-
-    axios.get(`/recipe/${searchTerm}`).then(response => {
-      console.log(response.data)
-   setRecipeImage(response.data.image)
-   setRecipeName(response.data.title)
-   setRecipeLink(response.data.sourceUrl)
-    });
-    
-  
-  },[searchTerm]);
+    getFirstRecipe();
+    getSecondRecipe();
+  }, [searchTerm]);
 
   return (
-    <div>
-      <h1>Recipes</h1>
-     
-      <img src={recipeImage}/>
-
-      <a href={recipeLink} target="_blank">{recipeName}</a>
-  
+    <div className="recipe-block">
+      <div className="recipe">
+        <img src={recipeOne.image} />
+        <a href={recipeOne.sourceUrl} target="_blank">
+          {recipeOne.title}
+        </a>
+      </div>
+      <div className="recipe">
+        <img src={recipeTwo.image} />
+        <a href={recipeTwo.sourceUrl} target="_blank">
+          {recipeTwo.title}
+        </a>
+      </div>
     </div>
   );
 };
