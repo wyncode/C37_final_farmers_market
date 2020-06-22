@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
   },
   foodType: {
     type: String,
-    enum: ['Fruit', 'Vegetable', 'Dairy', 'Meat', , 'Eggs', 'Donation'],
+    enum: ['Fruit', 'Vegetable', 'Dairy', 'Meat', 'Body Care', 'Eggs', 'Donation'],
     required: true
   },
   price: {
