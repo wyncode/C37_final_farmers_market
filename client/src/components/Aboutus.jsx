@@ -36,8 +36,30 @@ const Aboutus = () => {
               </a>
             </p>
           </div>
+          
+          <div class="card">
+            <img src={michael} alt="Michael" />
+            <div class="container">
+              <h2>Michael Edgecombe</h2>
+              <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
+              <p>Michael has returned to the Information Technology field after several years in the Medical field (The Ohio State University) and earning an MBA from Regis University. 
+                 He has worked as a data analyst for NASA spinoffs, USAF Finance Center Denver,CO and University of Miami in (P.I.M.S.)-AKA Pesticide research for the State Legislature of Florida. 
+                 Michael most recently updated his skillset with a tour of training through Wyncode Academy, for Full-Stack-Developer Miami, FL.</p>
+              <p>305mpg@gmail.com</p>
+              <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+            
+              <div class="card">
+            <img src={matthew} alt="Mathew"/>
+            <div class="container">
+              <h2>Matthew De Moraes</h2>
+              <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
+              <p>Matthew is a Web Development student at Wyncode, who is excited to create
+                  solutions to every day problems with technology.</p>
+              <p>mdemoraes1999@gmail.com</p>
+              <p><button class="button">Contact</button></p>
         </div>
-
         <div class="card">
           <img src={roberto} alt="Roberto" />
           <div class="container">
@@ -55,49 +77,6 @@ const Aboutus = () => {
             </p>
           </div>
         </div>
-
-        <div class="card">
-          <img src={michael} alt="Michael" />
-          <div class="container">
-            <h2>Michael Edgecombe</h2>
-            <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
-            <p>
-              Michael has returned to the Information Technology field after
-              several years in the Medical field (The Ohio State University) and
-              earning an MBA from Regis University. He has worked as a data
-              analyst for NASA spinoffs, USAF Finance Center Denver,CO and
-              University of Miami in (P.I.M.S.)-AKA Pesticide research for the
-              State Legislature of Florida. Michael most recently updated his
-              skillset with a tour of training through Wyncode Academy, for
-              Full-Stack-Developer Miami, FL.
-            </p>
-            <p>305mpg@gmail.com</p>
-            <p>
-              <a href="mailto: 305mpg@gmail.com">
-                <button class="button">Contact</button>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src={matthew} alt="Mathew" />
-          <div class="container">
-            <h2>Matthew De Moraes</h2>
-            <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
-            <p>
-              Matthew is a Web Development student at Wyncode, who is excited to
-              create solutions to every day problems with technology.
-            </p>
-            <p>john@example.com</p>
-            <p>
-              <a href="mailto: mdemoraes1999@gmail.com">
-                <button class="button">Contact</button>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
