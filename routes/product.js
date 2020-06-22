@@ -68,7 +68,8 @@ router.patch('/products/:id', async (req, res) => {
     'farmerStore',
     'description',
     'category',
-    'inventory'
+    'inventory',
+    'images'
   ];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
