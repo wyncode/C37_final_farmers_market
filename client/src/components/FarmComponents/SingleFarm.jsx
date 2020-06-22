@@ -139,20 +139,22 @@ const SingleFarm = () => {
                         : 0}
                     </Card.Text>
                   </Card.Body>
-                  <button
-                    className="add-to-cart-button"
-                    onClick={() => handleUpdateCart(item)}
-                  >
-                    +
-                  </button>
-                  {currentItemCart(item) ? (
+                  <div className="flex-button">
                     <button
-                      className="remove-from-cart-button"
-                      onClick={() => decrementUpdateCart(item)}
+                      className="add-to-cart-button"
+                      onClick={() => handleUpdateCart(item)}
                     >
-                      -
+                      +
                     </button>
-                  ) : null}
+                    {currentItemCart(item) ? (
+                      <button
+                        className="remove-from-cart-button"
+                        onClick={() => decrementUpdateCart(item)}
+                      >
+                        -
+                      </button>
+                    ) : null}
+                  </div>
                 </Card>
               </Col>
             ))}

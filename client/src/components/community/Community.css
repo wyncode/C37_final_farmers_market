@@ -15,6 +15,7 @@
   letter-spacing: 0.19px;
   line-height: 38px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .community-connection {
@@ -36,7 +37,7 @@
   line-height: 38px;
 }
 
-.communityPage{
+.communityPage {
   display: flex;
   flex-direction: column;
   justify-content: center;

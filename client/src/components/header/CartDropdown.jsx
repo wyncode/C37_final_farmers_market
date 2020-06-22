@@ -34,7 +34,9 @@ const CartDrodown = () => {
   };
   return (
     <div className="order-container">
-      <h2 style={{ textAlign: 'center' }}>Order Summary</h2>
+      <h2 className="order-summ-title" style={{ textAlign: 'center' }}>
+        Order Summary
+      </h2>
       {Object.values(shoppingCart).map((item) => {
         const total = item.produce.price * item.count;
 
@@ -54,14 +56,22 @@ const CartDrodown = () => {
                 <p>${item.produce.price.toFixed(2)}</p>
                 <div className="count">{item.count}</div>
               </div>
-              <div>${total.toFixed(2)}</div>
+              <div style={{ fontSize: '22px' }}>${total.toFixed(2)}</div>
             </div>
           </div>
         );
       })}
 
       <div className="dropdown-checkout-div">
-        <p className="subtotal" style={{ textAlign: 'center' }}>
+        <p
+          className="subtotal"
+          style={{
+            textAlign: 'center',
+            fontSize: '25px',
+            fontWeight: 'bold',
+            color: '#464646'
+          }}
+        >
           Subtotal: ${grandTotal.toFixed(2)}
         </p>
         <button

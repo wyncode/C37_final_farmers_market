@@ -6,18 +6,22 @@ const RandomRecipes = (props) => {
   const [recipeOne, setRecipeOne] = useState([]);
   const [recipeTwo, setRecipeTwo] = useState([]);
 
-  console.log(props)
+  console.log(props);
 
   const getFirstRecipe = async () => {
     await axios.get(`/recipe/${props.searchTerm}`).then((response) => {
-      console.log(response)
-      setRecipeOne(response.data[Math.floor(Math.random() * response.data.length)]);
+      console.log(response);
+      setRecipeOne(
+        response.data[Math.floor(Math.random() * response.data.length)]
+      );
     });
   };
 
   const getSecondRecipe = async () => {
     await axios.get(`/recipe/${props.searchTerm}`).then((response) => {
-      setRecipeTwo(response.data[Math.floor(Math.random() * response.data.length)]);
+      setRecipeTwo(
+        response.data[Math.floor(Math.random() * response.data.length)]
+      );
     });
   };
 

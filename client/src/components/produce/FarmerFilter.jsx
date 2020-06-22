@@ -9,7 +9,7 @@ const FarmerFilter = ({
 }) => {
   return (
     <div>
-      <h1>Farmers</h1>
+      <h1 className="produce-title">Farmers</h1>
       <div className="farm-rectangle">
         <p
           onClick={() => {
@@ -34,7 +34,7 @@ const FarmerFilter = ({
             );
           })}
       </div>
-      <h1>Search Bar</h1>
+      <h1 className="produce-title">Search Bar</h1>
       <input
         type="text"
         value={searchTerm}
