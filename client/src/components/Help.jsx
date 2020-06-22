@@ -10,7 +10,7 @@ const Help = () => {
       <NavbarTwo />
       <Aboutus/>
       <div className="section">
-      <h2>Contact Us</h2>
+      <h4>Contact Us</h4>
       <Form>
         <Row>
           <Col>
@@ -22,8 +22,8 @@ const Help = () => {
         </Row>
       </Form>
       <Form.Group controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
-        <Form.Control as="textarea" rows="3" />
+        <Form.Label></Form.Label>
+        <Form.Control placeholder = "Comments Here" rows="3" />
       </Form.Group>
       <Footer />
       </div>

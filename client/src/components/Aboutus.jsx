@@ -9,7 +9,7 @@ const Aboutus = () => {
     return(
         <>
         <div class="about-section">
-        <h1>About Us Page</h1>
+        <h1>About Us</h1>
         <p>Here is the Wyncode 37 team that has brought you "The Market".</p>
         <p></p>
         </div>
@@ -61,7 +61,7 @@ const Aboutus = () => {
               <p class="title">Full-Stack Developer, Wyncode, Cohort 37</p>
               <p>Matthew is a Web Development student at Wyncode, who is excited to create
                   solutions to every day problems with technology.</p>
-              <p>john@example.com</p>
+              <p>mdemoraes1999@gmail.com</p>
               <p><button class="button">Contact</button></p>
           </div>
           </div>
