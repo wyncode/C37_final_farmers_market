@@ -41,3 +41,23 @@
   margin: 5px;
   border-radius: 5px;
 }
+
+.logout-button {
+  height: 50px;
+  width: 200px;
+  border-radius: 12px;
+  background-color: #cc5547;
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.19px;
+  line-height: 38px;
+  display: flex;
+  justify-content: center;
+}
+
+.logout-div {
+  display: flex;
+  justify-content: center;
+}

@@ -35,8 +35,32 @@
 .howitwork {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-around;
 }
 
 .howitwork p {
   width: 314px;
+}
+
+.p-works {
+  height: 110px;
+  width: 314px;
+  color: #1c1c1c;
+  font-family: Poppins;
+  font-size: 25px;
+  letter-spacing: 0.19px;
+  line-height: 38px;
+}
+
+.howTitle {
+  height: 61px;
+  width: 263px;
+  color: #595454;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 0.31px;
+  line-height: 60px;
+  text-align: center;
 }

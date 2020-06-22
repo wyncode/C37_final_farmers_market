@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
+import './login.css';
 
 const Logout = () => {
   const { setUser, setLoggedIn } = useContext(AppContext);

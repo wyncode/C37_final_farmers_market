@@ -4,32 +4,39 @@ import { useHistory } from 'react-router-dom';
 
 const FarmCard = (props) => {
   const history = useHistory();
-console.log(props.farm)
+  console.log(props.farm);
   return (
     <div
       className={
         props.currentSelection === 'closed' ? 'farm-card' : 'full-card'
       }
       onClick={props.setCurrentSelection}
-      style={{backgroundColor:`${props.background}`}}
+      style={{ backgroundColor: `${props.background}` }}
     >
       <div
-        style={{backgroundImage:`url(${props.farm.storeImage})`}}
+        style={{ backgroundImage: `url(${props.farm.storeImage})` }}
         className="background-image"
         alt="farm-image"
       />
       <div className="info">
-        <div style={{ display: 'flex', justifyContent: 'space-between', color:`${props.color}` }}>
-          <h2>{props.farm.storeName}</h2>
-          <h2>{props.currentSelection === 'closed' ? null : 'X'}</h2>
+        <div className="x-div" style={{ color: `${props.color}` }}>
+          <p>{props.farm.storeName}</p>
+          <p className="x-button">
+            {props.currentSelection === 'closed' ? null : 'X'}
+          </p>
         </div>
         <div className="addInfo">
-          <h4
+          <p style={{ textAlign: 'center', color: `${props.color}` }}>
+            {props.currentSelection === 'closed'
+              ? null
+              : props.farm.description}
+          </p>
+          <p
             className="link"
             onClick={() => history.push(`/farms/${props.farm._id}`)}
           >
             {props.currentSelection === 'closed' ? null : 'Visit The Store'}
-          </h4>
+          </p>
         </div>
       </div>
     </div>

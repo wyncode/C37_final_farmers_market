@@ -88,10 +88,14 @@ const SingleFarm = () => {
             style={{ textAlign: 'center' }}
           ></img>
           <div className="minifarminfo">
-            <h1>{farm && farm.storeName}</h1>
-            <h3>{farm && farm.address}</h3>
-            <h4>{farm && farm.phoneNumber}</h4>
-            <p>About the farm: {farm && farm.description}</p>
+            <h1 style={{ marginBottom: '30px' }}>{farm && farm.storeName}</h1>
+            <h3 style={{ color: '#595454', marginBottom: '20px' }}>
+              {farm && farm.address}
+            </h3>
+            <h4 style={{ marginBottom: '30px' }}>{farm && farm.phoneNumber}</h4>
+            <p>
+              <b>About the farm:</b> {farm && farm.description}
+            </p>
           </div>
         </div>
       </div>
@@ -100,6 +104,9 @@ const SingleFarm = () => {
       <h1
         style={{
           textAlign: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           marginTop: '50px',
           height: '200px',
           backgroundColor: '#FFDD9D'
@@ -156,6 +163,44 @@ const SingleFarm = () => {
             ))}
         </Row>
       </Container>
+
+      <h2
+        style={{
+          textAlign: 'center',
+          marginBottom: '35px',
+          marginTop: '50px',
+          fontSize: '30px'
+        }}
+      >
+        #themarketmiami
+      </h2>
+      <div className="socialMedia">
+        <img
+          className="insta"
+          src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579572/radish_reduced_size_lifpjd.jpg"
+          alt="produce"
+        />
+        <img
+          className="insta"
+          src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579678/anna-earl-cTtE2FlIRoU-unsplash_jkkndf.jpg"
+          alt="produce"
+        />
+        <img
+          className="insta"
+          src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579567/dragon_fruit_reduced_size_ygqhy6.jpg"
+          alt="produce"
+        />
+        <img
+          className="insta"
+          src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579588/carrots_reduced_size_bgfpqr.jpg"
+          alt="produce"
+        />
+        <img
+          className="insta"
+          src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579581/local-farmers-market-shopping-1068x713_za74xp.jpg"
+          alt="produce"
+        />
+      </div>
       <Footer />
     </div>
   );

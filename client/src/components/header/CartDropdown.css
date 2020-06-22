@@ -23,7 +23,6 @@ div.order-container {
   justify-content: space-between;
   box-shadow: 0 8px 6px -6px #cc5547;
   background-color: #ffdd9d;
-  height: 1391px;
   width: 668px;
 }
 
@@ -39,4 +38,10 @@ div.order-container {
   display: flex;
   justify-content: center;
   max-width: 45px;
+}
+
+.image-checkout-div {
+  max-width: 183px;
+  object-fit: cover;
+  min-height: 183px;
 }
