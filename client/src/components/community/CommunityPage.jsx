@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarTwo from '../header/NavbarTwo'
 import Footer from '../footer/Footer'
-import './community.css'
+import './hamsammich.css'
 
 const CommunityPage = () => {
     return (
