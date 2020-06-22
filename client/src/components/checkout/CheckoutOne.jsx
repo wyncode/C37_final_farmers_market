@@ -3,6 +3,7 @@ import axios from 'axios';
 import { AppContext } from '../../context/AppContext';
 import './cart.css';
 import { Link } from 'react-router-dom';
+import CartDropdown from '../header/CartDropdown';
 
 const CheckoutOne = () => {
   const { setUser, setLoggedIn } = useContext(AppContext);
@@ -298,6 +299,7 @@ const CheckoutOne = () => {
               Proceed to Checkout
             </button>
           </form>
+          <CartDropdown />
         </div>
       </div>
     </div>

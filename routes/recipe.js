@@ -28,7 +28,7 @@ router.get('/recipe/:searchTerm', async (request, response) => {
       })
     )
     .catch((error) => response.send(error));
-  console.log(recipeArray);
+  console.log(recipeArray, 'recipe array');
   // response.send(data)
 });
 

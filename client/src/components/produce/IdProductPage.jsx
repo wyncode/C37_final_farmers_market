@@ -230,7 +230,7 @@ const IdProduct = () => {
           textAlign: 'center',
           marginBottom: '35px',
           marginTop: '50px',
-          fontSize: '25px'
+          fontSize: '30px'
         }}
       >
         Follow us on social media #themarketmiami

@@ -22,3 +22,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.static-signup-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.miniformdiv input {
+  height: 50px;
+  width: 480px;
+  border: 1px solid #979797;
+  display: flex;
+  margin-bottom: 5px;
+}

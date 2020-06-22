@@ -36,6 +36,7 @@
 
 .info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -44,12 +45,25 @@
   font-size: 25px;
   letter-spacing: 0.19px;
   line-height: 38px;
+  position: relative;
 }
 
+.x-div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+.x-button {
+  position: absolute;
+  right: 35px;
+  top: 25px;
+  cursor: pointer;
+}
 .addInfo {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
 }
 
 .start {

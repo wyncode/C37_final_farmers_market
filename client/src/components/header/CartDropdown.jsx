@@ -42,15 +42,19 @@ const CartDrodown = () => {
           <div>
             <div className="item-block">
               <div>
-                <img src="" alt="product image" />
+                <img
+                  src={item.produce.images[0]}
+                  className="image-checkout-div"
+                  alt="product image"
+                />
               </div>
 
               <div className="item-div">
                 <p>{item.produce.name}</p>
-                <p>${item.produce.price}</p>
+                <p>${item.produce.price.toFixed(2)}</p>
                 <div className="count">{item.count}</div>
               </div>
-              <div>${total}</div>
+              <div>${total.toFixed(2)}</div>
             </div>
           </div>
         );
@@ -58,7 +62,7 @@ const CartDrodown = () => {
 
       <div className="dropdown-checkout-div">
         <p className="subtotal" style={{ textAlign: 'center' }}>
-          Subtotal: ${grandTotal}
+          Subtotal: ${grandTotal.toFixed(2)}
         </p>
         <button
           className="dropdown-checkout-button"
