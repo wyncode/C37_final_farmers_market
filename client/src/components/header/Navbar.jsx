@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">
-                <img src={cart} style={{ height: '41px', width: '46px' }}></img>
+                <img src={cart} alt="cart" style={{ height: '41px', width: '46px' }}></img>
                 <span>{cartCount || ''}</span>
               </div>
             </Link>

@@ -1,6 +1,6 @@
 .comPicture {
   height: 488px;
-  width: 767px;
+  margin-right: 30px;
 }
 
 .community-button {
@@ -15,8 +15,6 @@
   letter-spacing: 0.19px;
   line-height: 38px;
   text-align: center;
-  margin-top: 50px;
-  margin-left: 20px;
 }
 
 .community-connection {
@@ -29,22 +27,13 @@
   margin: 10px;
 }
 
-.small-div p {
-  height: 145px;
+.small-div {
   width: 335px;
-  color: #595454;
+  color: #1c1c1c;
   font-family: Poppins;
   font-size: 25px;
   letter-spacing: 0.19px;
   line-height: 38px;
-  margin-left: 30px;
-}
-
-.comm-title {
-  color: #595454;
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: bold;
 }
 
 .communityPage{

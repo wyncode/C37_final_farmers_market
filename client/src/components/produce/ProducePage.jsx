@@ -65,9 +65,6 @@ const Produce = () => {
 
   const history = useHistory();
 
-  const noImg =
-    'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
-
   useEffect(() => {
     if (chosenStore === '' && !searchTerm) {
       return setDisplayedList(produceList), setSelectedFarmer({});
