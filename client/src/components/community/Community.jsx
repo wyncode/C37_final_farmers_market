@@ -1,13 +1,12 @@
 import React from 'react';
-import comPic from './gardenkids.jpg';
-import './Community.css';
+import './community.css';
 
 const Community = () => {
   return (
     <div>
       <h2 style={{ textAlign: 'center' }}>Community Connection</h2>
       <div className="community-connection">
-        <img src={comPic} className="comPicture"></img>
+        <img src="https://res.cloudinary.com/farmersmarket/image/upload/v1592579793/kids_pic_homepage_fydjeq.png" className="comPicture"></img>
         <div className="small-div">
           <p>
             We believe in healthy food accessible to all. We offer educational

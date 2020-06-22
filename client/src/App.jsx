@@ -12,6 +12,7 @@ import Checkout from './components/checkout/Checkout';
 import Help from './components/Help';
 import Signup from './components/Signup';
 import Confirmation from './components/checkout/Confirmation'
+import CommunityPage from './components/community/CommunityPage'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/confirm/:id" component={Confirmation} />
+          <Route exact path="/community" component={CommunityPage} />
         </Switch>
       </AppContextProvider>
     </Router>
