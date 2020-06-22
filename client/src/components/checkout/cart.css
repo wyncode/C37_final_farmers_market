@@ -41,13 +41,6 @@
   align-items: center;
 }
 
-/* #form2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-
 .delivery-div {
   width: 480px;
 }
@@ -91,4 +84,11 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+}
+
+.delivery-button {
+  height: 61px;
+  width: 251px;
+  border-radius: 4px;
+  background-color: #017021;
 }
