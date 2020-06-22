@@ -47,7 +47,7 @@ const CartDrodown = () => {
                 <img
                   src={item.produce.images[0]}
                   className="image-checkout-div"
-                  alt="product image"
+                  alt="product"
                 />
               </div>
 

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
@@ -39,11 +39,11 @@ const Navbar = () => {
               <div className="navbar__item">Help</div>
             </Link>
             <Link to="/account">
-              <div className="navbar__item">Account</div>
+            <img src={"https://res.cloudinary.com/farmersmarket/image/upload/v1592794964/profile_icon_gqhoam.png"} style={{ height: '41px', width: '46px' }}></img>
             </Link>
             <Link to="/checkout">
               <div className="navbar__item">
-                <img src={cart} style={{ height: '41px', width: '46px' }}></img>
+                <img src={cart} alt="cart" style={{ height: '41px', width: '46px' }}></img>
                 <span>{cartCount || ''}</span>
               </div>
             </Link>

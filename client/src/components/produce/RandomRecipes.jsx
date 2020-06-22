@@ -33,13 +33,13 @@ const RandomRecipes = (props) => {
   return (
     <div className="recipe-block">
       <div className="recipe">
-        <img src={recipeOne && recipeOne.image} />
+        <img src={recipeOne && recipeOne.image} alt="recipe-image"/>
         <a href={recipeOne && recipeOne.sourceUrl} target="_blank">
           {recipeOne && recipeOne.title}
         </a>
       </div>
       <div className="recipe">
-        <img src={recipeTwo && recipeTwo.image} />
+        <img src={recipeTwo && recipeTwo.image} alt="recipe-image"/>
         <a href={recipeTwo && recipeTwo.sourceUrl} target="_blank">
           {recipeTwo && recipeTwo.title}
         </a>

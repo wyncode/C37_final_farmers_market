@@ -52,6 +52,7 @@ const NavbarTwo = () => {
                 <img
                   src={cartB}
                   style={{ height: '41px', width: '46px' }}
+                  alt="cart"
                 ></img>
                 <span>{cartCount || ''}</span>
               </div>

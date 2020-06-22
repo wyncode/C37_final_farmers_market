@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Breadcrumb, Card, Button, Container, Col, Row } from 'react-bootstrap';
+import { Breadcrumb, Card, Container, Col, Row } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import NavbarTwo from '../header/NavbarTwo';
@@ -7,7 +7,6 @@ import Footer from '../footer/Footer';
 import './farms.css';
 import './singlefarm.css';
 import '../produce/producepage.css';
-import farm_img from '../../assets/images/farm_img.jpg';
 
 const SingleFarm = () => {
   const history = useHistory();
@@ -66,11 +65,6 @@ const SingleFarm = () => {
     }
   };
 
-  const noImg =
-    'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
-  const farmImg =
-    'https://www.vhv.rs/dpng/d/226-2261166_farm-cartoon-png-transparent-png.png';
-
   return (
     <div>
       <NavbarTwo />
@@ -84,6 +78,7 @@ const SingleFarm = () => {
         <div className="singlefarminfo">
           <img
             className="farmPic"
+            alt="storeImage"
             src={farm && farm.storeImage}
             style={{ textAlign: 'center' }}
           ></img>

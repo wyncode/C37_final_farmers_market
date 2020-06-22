@@ -13,7 +13,7 @@ const HowWorks = () => {
       <h2 className="howTitle">How it works</h2>
       <div className="howitwork">
         <div>
-          <img src={Farmer} className="howImg"></img>
+          <img src={Farmer} className="howImg" alt="farmer"></img>
           <p className="p-works">
             We partner with local food providers to create a one stop hub for
             you
@@ -22,6 +22,7 @@ const HowWorks = () => {
         <div>
           <img
             src={Avocado}
+            alt="avocado"
             className="howImg"
             style={{ marginBottom: '15px' }}
           ></img>
@@ -30,7 +31,7 @@ const HowWorks = () => {
           </p>
         </div>
         <div>
-          <img src={utensils} className="howImg"></img>
+          <img src={utensils} className="howImg" alt="utensils"></img>
           <p className="p-works">
             Select pick up or delivery at checkout. We deliver throughout Dade
             County

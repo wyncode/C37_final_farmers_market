@@ -1,6 +1,6 @@
 .comPicture {
   height: 488px;
-  margin-right: 30px;
+  width: 767px;
 }
 
 .community-button {
@@ -16,6 +16,7 @@
   line-height: 38px;
   text-align: center;
   margin-top: 50px;
+  margin-left: 20px;
 }
 
 .community-connection {
@@ -28,9 +29,10 @@
   margin: 10px;
 }
 
-.small-div {
+.small-div p {
+  height: 145px;
   width: 335px;
-  color: #1c1c1c;
+  color: #595454;
   font-family: Poppins;
   font-size: 25px;
   letter-spacing: 0.19px;

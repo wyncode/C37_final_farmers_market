@@ -67,9 +67,6 @@ const IdProduct = () => {
     }
   };
 
-  const prodImg =
-    'https://pluspng.com/img-png/vegetable-png-hd-vegetable-png-transparent-image-1799.png';
-
   return (
     <div>
       <NavbarTwo />
@@ -89,22 +86,22 @@ const IdProduct = () => {
           <img
             className="product-image"
             src={product && product.images[0]}
-            alt="product image"
+            alt="product"
           />
           <img
             className="product-image"
             src={product && product.images[1]}
-            alt="product image"
+            alt="product"
           />
           <img
             className="product-image"
             src={product && product.images[2]}
-            alt="product image"
+            alt="product"
           />
           <img
             className="product-image"
             src={product && product.images[3]}
-            alt="product image"
+            alt="product"
           />
         </div>
         <div id="productInfo">
