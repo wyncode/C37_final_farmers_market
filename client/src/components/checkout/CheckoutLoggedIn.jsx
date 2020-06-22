@@ -10,8 +10,7 @@ const CheckoutLoggedIn = () => {
     user,
     setUser,
     shoppingCart,
-    setShoppingCart,
-    setSystemMessage
+    setShoppingCart
   } = useContext(AppContext);
   const [updateUser, setUpdateUser] = useState(false);
   const history = useHistory();

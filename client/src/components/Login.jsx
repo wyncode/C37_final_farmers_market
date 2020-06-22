@@ -5,7 +5,7 @@ import './login.css';
 import { Link, useHistory } from 'react-router-dom';
 
 const Login = () => {
-  const { user, setUser, setLoggedIn } = useContext(AppContext);
+  const { setUser, setLoggedIn } = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
