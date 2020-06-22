@@ -1,6 +1,5 @@
 const express = require('express');
 const axios = require('axios');
-const { all } = require('../app');
 const router = new express.Router();
 
 // Get Recipe by Ingredient
@@ -13,7 +12,7 @@ router.get('/recipe/:searchTerm', async (request, response) => {
   const allRecipes = data.map(async (recipe) => recipe.id);
 
   Promise.all(allRecipes)
-    .then((res) =>
+    .then((res) =>{
       res.map((recipeId) => {
         axios
           .get(
@@ -21,11 +20,10 @@ router.get('/recipe/:searchTerm', async (request, response) => {
           )
           .then((data) => {
             console.log('DATA', data.data.image);
-            const sourceUrl = data.data.sourceUrl;
-            const image = data.data.image;
-            response.send(data.data);
           });
       })
+      response.send(data);
+    }
     )
     .catch((error) => response.send(error));
   console.log(recipeArray);
