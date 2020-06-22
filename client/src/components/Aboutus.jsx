@@ -36,6 +36,7 @@ const Aboutus = () => {
               </a>
             </p>
           </div>
+        </div>
           
           <div class="card">
             <img src={michael} alt="Michael" />
@@ -50,7 +51,7 @@ const Aboutus = () => {
               </div>
             </div>
             
-              <div class="card">
+            <div class="card">
             <img src={matthew} alt="Mathew"/>
             <div class="container">
               <h2>Matthew De Moraes</h2>
@@ -59,6 +60,8 @@ const Aboutus = () => {
                   solutions to every day problems with technology.</p>
               <p>mdemoraes1999@gmail.com</p>
               <p><button class="button">Contact</button></p>
+            </div>
+
         </div>
         <div class="card">
           <img src={roberto} alt="Roberto" />
@@ -76,6 +79,7 @@ const Aboutus = () => {
               </a>
             </p>
           </div>
+        </div>
         </div>
     </>
   );

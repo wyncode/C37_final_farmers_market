@@ -82,6 +82,11 @@ body {
       
       margin: 0 5%;
   }
+
+  .section{
+    width: 90%;
+    margin: 0 auto;
+  }
   
   @media screen and (max-width: 650px) {
     .column {
@@ -89,7 +94,3 @@ body {
       display: block;
     }
   }
-
-  .section {
-    margin: 5%;
-}

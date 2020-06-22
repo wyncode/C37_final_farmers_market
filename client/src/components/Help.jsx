@@ -25,8 +25,8 @@ const Help = () => {
         <Form.Label></Form.Label>
         <Form.Control placeholder = "Comments Here" rows="3" />
       </Form.Group>
-      <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
