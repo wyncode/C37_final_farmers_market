@@ -15,6 +15,7 @@
   letter-spacing: 0.19px;
   line-height: 38px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .community-connection {
@@ -34,9 +35,17 @@
   font-size: 25px;
   letter-spacing: 0.19px;
   line-height: 38px;
+  margin-left: 30px;
 }
 
-.communityPage{
+.comm-title {
+  color: #595454;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.communityPage {
   display: flex;
   flex-direction: column;
   justify-content: center;

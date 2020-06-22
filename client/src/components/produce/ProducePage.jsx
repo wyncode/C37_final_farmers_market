@@ -65,9 +65,6 @@ const Produce = () => {
 
   const history = useHistory();
 
-  const noImg =
-    'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg';
-
   useEffect(() => {
     if (chosenStore === '' && !searchTerm) {
       return setDisplayedList(produceList), setSelectedFarmer({});
@@ -146,20 +143,22 @@ const Produce = () => {
                             : 0}
                         </Card.Text>
                       </Card.Body>
-                      <button
-                        className="add-to-cart-button"
-                        onClick={() => handleUpdateCart(item)}
-                      >
-                        +
-                      </button>
-                      {currentItemCart(item) ? (
+                      <div className="button-flex">
                         <button
-                          className="remove-from-cart-button"
-                          onClick={() => decrementUpdateCart(item)}
+                          className="add-to-cart-button"
+                          onClick={() => handleUpdateCart(item)}
                         >
-                          -
+                          +
                         </button>
-                      ) : null}
+                        {currentItemCart(item) ? (
+                          <button
+                            className="remove-from-cart-button"
+                            onClick={() => decrementUpdateCart(item)}
+                          >
+                            -
+                          </button>
+                        ) : null}
+                      </div>
                     </Card>
                   </Col>
                 ))}

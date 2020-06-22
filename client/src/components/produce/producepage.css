@@ -49,3 +49,16 @@
   margin-top: 10px;
   width: 200px;
 }
+
+.button-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.produce-title {
+  color: #595454;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}

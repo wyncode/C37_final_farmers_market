@@ -24,7 +24,7 @@ const TypeFilter = ({ setChosenType }) => {
 
   return (
     <div className="type-container">
-      <h1>Type</h1>
+      <h1 className="produce-title">Type</h1>
       <div className="type-div">
         <div className="veggie-div">
           <label htmlFor="Vegetables">Vegetable</label>

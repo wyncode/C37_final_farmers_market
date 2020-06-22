@@ -11,12 +11,14 @@
 }
 
 .static-checkout-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 772px;
+  width: 100%;
 }
+.miniformdiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .miniformdiv input {
   height: 50px;
   width: 480px;
