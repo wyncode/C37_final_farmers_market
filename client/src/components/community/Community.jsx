@@ -5,7 +5,9 @@ import './Community.css';
 const Community = () => {
   return (
     <div>
-      <h2 style={{ textAlign: 'center' }}>Community Connection</h2>
+      <h2 className="comm-title" style={{ textAlign: 'center' }}>
+        Community Connection
+      </h2>
       <div className="community-connection">
         <img src={comPic} className="comPicture"></img>
         <div className="small-div">

@@ -10,7 +10,7 @@ const Loveus = () => {
 
   return (
     <div className="loveus">
-      <h2>Reasons to love us</h2>
+      <h2 className="title">Reasons to love us</h2>
       <div className="loveflex">
         <div className="baby-div">
           <img
