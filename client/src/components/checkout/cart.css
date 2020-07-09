@@ -94,3 +94,13 @@
   border-radius: 4px;
   background-color: #017021;
 }
+
+.delivery-button-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.benjaminButton {
+  display: flex;
+}
