@@ -77,13 +77,6 @@ The Market is an SPA
 
 It is deployed on Heroku
 
-## To deploy
-
-NOTE: Heroku specifically runs `npm start`, so don't remove that from your package.json file.
-
-- `heroku create your-app-name`
-- `heroku config:set MONGODB_URL=<insertYourAtlasDbUri>`
-- `git push heroku master`
 
 ## A list of technologies used are:
 
