@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 const FarmCard = (props) => {
   const history = useHistory();
-  console.log(props.farm);
+
   return (
     <div
       className={

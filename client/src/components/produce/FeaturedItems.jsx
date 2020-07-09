@@ -51,7 +51,7 @@ const FeaturedItems = () => {
                   pathname: `/produce/${item._id}`
                 }}
               >
-                <p>Tell More</p>
+                <p>Tell Me More</p>
               </Link>
             </Card.Body>
           </Card>

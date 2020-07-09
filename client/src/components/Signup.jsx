@@ -201,13 +201,19 @@ const Signup = () => {
                 </div>
                 <br></br>
                 <div className="delivery-div">
-                  <button className="delivery-button">Delivery</button>
-                  <button className="delivery-button">Pick up</button>
-                  <p>
+                  <div className="benjaminButton">
+                    <button className="delivery-button">Delivery</button>
+                    <button className="delivery-button">Pick up</button>
+                  </div>
+                  <h5>
                     Delivery available in Miami Dade Country. Minimum order $50,
-                    $7 fee. Free delivery for $150+
-                  </p>
+                    &nbsp; $7 fee. Free delivery for $150+
+                  </h5>
                 </div>
+                <h5>
+                  Delivery available in Miami Dade Country. Minimum order $50,
+                  $7 fee. Free delivery for $150+
+                </h5>
                 <div>
                   <label htmlFor="address">Street address*</label>
                   <input
