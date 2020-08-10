@@ -1,6 +1,6 @@
 ## The Market
 
-Full stack web application built for c37 final project at Wyncodw Academy
+Full stack web application built for c37 final project at Wyncode Academy
 
 ## Table of contents
 
