@@ -6,11 +6,8 @@ const RandomRecipes = (props) => {
   const [recipeOne, setRecipeOne] = useState([]);
   const [recipeTwo, setRecipeTwo] = useState([]);
 
-  console.log(props);
-
   const getFirstRecipe = async () => {
     await axios.get(`/recipe/${props.searchTerm}`).then((response) => {
-      console.log(response);
       setRecipeOne(
         response.data[Math.floor(Math.random() * response.data.length)]
       );
@@ -33,13 +30,13 @@ const RandomRecipes = (props) => {
   return (
     <div className="recipe-block">
       <div className="recipe">
-        <img src={recipeOne && recipeOne.image} alt="recipe-image"/>
+        <img src={recipeOne && recipeOne.image} alt="recipe-image" />
         <a href={recipeOne && recipeOne.sourceUrl} target="_blank">
           {recipeOne && recipeOne.title}
         </a>
       </div>
       <div className="recipe">
-        <img src={recipeTwo && recipeTwo.image} alt="recipe-image"/>
+        <img src={recipeTwo && recipeTwo.image} alt="recipe-image" />
         <a href={recipeTwo && recipeTwo.sourceUrl} target="_blank">
           {recipeTwo && recipeTwo.title}
         </a>

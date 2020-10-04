@@ -14,7 +14,6 @@ Built with // Build commands
 Contributing
 Project details
 Author
-License
 Acknowledgements
 
 ## Feature List
@@ -77,6 +76,13 @@ The Market is an SPA
 
 It is deployed on Heroku
 
+## To deploy
+
+NOTE: Heroku specifically runs `npm start`, so don't remove that from your package.json file.
+
+- `heroku create your-app-name`
+- `heroku config:set MONGODB_URL=<insertYourAtlasDbUri>`
+- `git push heroku master`
 
 ## A list of technologies used are:
 
@@ -155,6 +161,18 @@ NOTE: Heroku specifically runs `npm start`, so don't remove that from your packa
 - `heroku create your-app-name`
 - `heroku config:set MONGODB_URL=<insertYourAtlasDbUri>`
 - `git push heroku master`
-  Branches:
-  master
-  Main branch.
+
+## Branches
+
+master | Main branch
+
+## Authors
+
+Katie Breuil | Web Developer
+Roberto Garcia | Web Developer
+Michael Edgecombe | Web Developer
+Matthew | Web Developer
+
+## Acknowlegments
+
+Thank you to the whole staff at Wyncode for their support and contributions to the Market. Additionally, special shout out to Kimbely Tupy, our UX|UI designer on the project.

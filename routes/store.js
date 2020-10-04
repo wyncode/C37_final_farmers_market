@@ -54,7 +54,6 @@ router.patch('/stores/:id', auth, async (req, res) => {
       owner: req.user._id
     });
     if (!store) {
-      console.log('oopsies');
       res.status(404).send({ message: 'Must be a farmer to update' });
     }
     updates.forEach((update) => {
@@ -64,7 +63,6 @@ router.patch('/stores/:id', auth, async (req, res) => {
 
     res.send(store);
   } catch (e) {
-    console.log('oopsies x2');
     res.status(400).send(e);
   }
 });
@@ -83,9 +81,9 @@ router.post('/stores', auth, async (req, res) => {
 
 // delete a store
 router.delete('/stores/:id', async (req, res) => {
-  const _id = req.params.id
+  const _id = req.params.id;
   try {
-    const store = await Store.findOne({_id})
+    const store = await Store.findOne({ _id });
     await Store.deleteOne(store);
     if (!store) {
       res.status(404).send();
@@ -99,12 +97,8 @@ router.delete('/stores/:id', async (req, res) => {
 //this gets the current users store
 
 router.get('/currentStore', auth, async (req, res) => {
-console.log(req.user)
   try {
-    console.log("insdie try")
-    await req.user
-      .populate('stores')
-      .execPopulate();
+    await req.user.populate('stores').execPopulate();
     res.send(req.user.stores);
   } catch (e) {
     res.status(500).send(e.toString());

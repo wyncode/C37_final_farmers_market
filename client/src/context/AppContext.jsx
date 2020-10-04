@@ -11,8 +11,6 @@ const AppContextProvider = ({ children }) => {
   const [shoppingCart, setShoppingCart] = useState({});
   const [systemMessage, setSystemMessage] = useState('');
 
-  // setShoppingCart([...shoppingCart, item])
-
   const token = localStorage.getItem('token');
 
   useEffect(() => {
